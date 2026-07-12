@@ -1,0 +1,67 @@
+14:50:44  INFO     apscheduler.scheduler  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+14:50:45  INFO     run_daily  === DISCOVERY ===
+14:50:47  INFO     job_pipeline.discovery  RemoteOK: 1 matching postings
+14:52:25  INFO     apscheduler.scheduler  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+14:52:25  INFO     run_daily  === DISCOVERY ===
+14:52:27  INFO     job_pipeline.discovery  RemoteOK: 1 matching postings
+14:52:28  INFO     job_pipeline.discovery  Jobicy: 6 matching postings
+14:52:30  INFO     job_pipeline.discovery  Arbeitnow: 1 matching postings
+14:53:40  INFO     apscheduler.scheduler  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+14:53:41  INFO     run_daily  === DISCOVERY ===
+14:53:43  INFO     job_pipeline.discovery  RemoteOK: 1 matching postings
+14:53:43  INFO     job_pipeline.discovery  Jobicy: 6 matching postings
+14:53:45  INFO     job_pipeline.discovery  Arbeitnow: 1 matching postings
+14:53:45  INFO     run_daily  Discovered 8 total, 8 new
+14:53:45  INFO     run_daily  === SCORING ===
+14:53:53  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:53:53  INFO     run_daily  ✓ IT Business Analyst (m/w/d) @ MY Humancapital GmbH  score=62  → approved
+14:53:58  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:53:58  INFO     run_daily  ✗ Technical Program Manager @ Able  score=52  → rejected
+14:54:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:54:03  INFO     run_daily  ✗ Senior Project Manager AI & Technology Initiatives - Managed IT @ Truelogic  score=48  → rejected
+14:54:08  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:54:08  INFO     run_daily  ✗ Senior Project Manager - Digital Marketing & Advertising @ Truelogic  score=42  → rejected
+14:54:13  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:54:13  INFO     run_daily  ✗ Semi Senior Project Manager - Digital Marketing & Advertising @ Truelogic  score=42  → rejected
+14:54:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:54:18  INFO     run_daily  ✗ Senior Business Analyst, Revenue Analytics @ Reddit  score=42  → rejected
+14:54:23  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:54:23  INFO     run_daily  ✗ Technical Project Manager - Digital Media and News @ Truelogic  score=42  → rejected
+14:54:29  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:54:29  INFO     run_daily  ✓ Project Coordinator @ Franklin Fitch  score=62  → approved
+14:54:29  INFO     run_daily  === AUTO-APPLY ===
+14:54:29  INFO     run_daily  2 job(s) to attempt
+14:54:34  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:54:34  INFO     job_pipeline.auto_apply  auto_apply: IT Business Analyst (m/w/d) @ MY Humancapital GmbH  [generic]
+14:55:46  INFO     apscheduler.scheduler  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+14:55:46  INFO     run_daily  === DISCOVERY ===
+14:55:49  INFO     job_pipeline.discovery  RemoteOK: 1 matching postings
+14:55:49  INFO     job_pipeline.discovery  Jobicy: 6 matching postings
+14:55:50  INFO     job_pipeline.discovery  Arbeitnow: 1 matching postings
+14:55:50  INFO     run_daily  Discovered 8 total, 0 new
+14:55:50  INFO     run_daily  === SCORING ===
+14:55:50  INFO     run_daily  No new jobs to score
+14:55:50  INFO     run_daily  === AUTO-APPLY ===
+14:55:50  INFO     run_daily  2 job(s) to attempt
+14:55:56  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:55:56  INFO     job_pipeline.auto_apply  auto_apply: IT Business Analyst (m/w/d) @ MY Humancapital GmbH  [generic]
+14:56:13  INFO     job_pipeline.auto_apply  ✓ CV attached
+14:57:21  INFO     apscheduler.scheduler  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+14:57:21  INFO     run_daily  === DISCOVERY ===
+14:57:23  INFO     job_pipeline.discovery  RemoteOK: 1 matching postings
+14:57:24  INFO     job_pipeline.discovery  Jobicy: 6 matching postings
+14:57:27  INFO     job_pipeline.discovery  Arbeitnow: 1 matching postings
+14:57:27  INFO     run_daily  Discovered 8 total, 0 new
+14:57:27  INFO     run_daily  === SCORING ===
+14:57:27  INFO     run_daily  No new jobs to score
+14:57:27  INFO     run_daily  === AUTO-APPLY ===
+14:57:27  INFO     run_daily  2 job(s) to attempt
+14:57:32  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:57:32  INFO     job_pipeline.auto_apply  auto_apply: IT Business Analyst (m/w/d) @ MY Humancapital GmbH  [generic]
+14:57:38  INFO     job_pipeline.auto_apply  ✓ CV attached
+14:57:39  INFO     run_daily  IT Business Analyst (m/w/d) → escalated  (fill_rate_too_low (3/6 = 50% < 65%))
+14:57:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:57:46  INFO     job_pipeline.auto_apply  auto_apply: Project Coordinator @ Franklin Fitch  [generic]
+14:57:53  INFO     run_daily  Project Coordinator → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+14:57:56  INFO     apscheduler.scheduler  Added job "main.<locals>.<lambda>" to job store "default"
+14:57:56  INFO     apscheduler.scheduler  Scheduler started

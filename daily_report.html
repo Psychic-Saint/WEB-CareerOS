@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<title>Job Pipeline — Daily Report</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;color:#1a1a1a}
+  h1{font-size:1.5rem;margin-bottom:4px}
+  .sub{color:#666;font-size:.9rem;margin-bottom:32px}
+  .cards{display:flex;gap:16px;margin-bottom:32px}
+  .card{flex:1;padding:20px;border-radius:10px;text-align:center}
+  .card .num{font-size:2.5rem;font-weight:700}
+  .card .lbl{font-size:.85rem;color:#555;margin-top:4px}
+  .green{background:#d1fae5}.amber{background:#fef3c7}.red{background:#fee2e2}.blue{background:#dbeafe}
+  table{width:100%;border-collapse:collapse;margin-bottom:32px}
+  th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:.85rem;border-bottom:2px solid #e5e7eb}
+  td{padding:10px 12px;border-bottom:1px solid #e5e7eb;font-size:.9rem;vertical-align:top}
+  h2{font-size:1.1rem;margin:24px 0 8px}
+  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.75rem;font-weight:600}
+  .escalated{background:#fef3c7;color:#92400e}
+  .tip{background:#f0f9ff;border-left:4px solid #0ea5e9;padding:12px 16px;border-radius:4px;font-size:.9rem;margin-bottom:24px}
+</style>
+</head>
+<body>
+<h1>📋 Job Pipeline — Daily Report</h1>
+<div class="sub">Generated Sunday, 12 July 2026 at 14:57 · SAST</div>
+
+<div class="cards">
+  <div class="card green"><div class="num">0</div><div class="lbl">Auto-submitted</div></div>
+  <div class="card amber"><div class="num">2</div><div class="lbl">Need your attention</div></div>
+  <div class="card blue"><div class="num">0</div><div class="lbl">In queue</div></div>
+  <div class="card red"><div class="num">0</div><div class="lbl">Failed</div></div>
+</div>
+
+<div class='tip'>⚠️ 2 job(s) were escalated and need your manual attention. Run: <code>streamlit run app/review_app.py</code></div>
+
+<h2>✅ Submitted Today (0)</h2>
+<table>
+  <tr><th>Title</th><th>Company</th><th>URL</th><th>Notes</th></tr>
+  <tr><td colspan='4' style='color:#888;padding:12px'>None</td></tr>
+</table>
+
+<h2>⚠️ Escalated — Your Action Needed (2)</h2>
+<table>
+  <tr><th>Title</th><th>Company</th><th>URL</th><th>Reason</th></tr>
+  <tr><td><b>IT Business Analyst (m/w/d)</b></td><td>MY Humancapital GmbH</td><td><a href='https://www.arbeitnow.com/jobs/companies/my-humancapital-gmbh/it-business-analyst-munich-168601' target='_blank'>Link</a></td><td>platform=generic | fill_rate_too_low (3/6 = 50% < 65%) | screenshot:C:\Users\Ted</td></tr><tr><td><b>Project Coordinator</b></td><td>Franklin Fitch</td><td><a href='https://remoteOK.com/remote-jobs/remote-project-coordinator-franklin-fitch-1134634' target='_blank'>Link</a></td><td>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:C:\Users\Tedd</td></tr>
+</table>
+
+<h2>Full Queue Status</h2>
+<table>
+  <tr><th>Status</th><th>Count</th></tr>
+  <tr><td>escalated</td><td>2</td></tr><tr><td>rejected</td><td>6</td></tr>
+</table>
+
+</body></html>

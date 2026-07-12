@@ -1,0 +1,182 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# WEB CareerOS™ — Daily Job Pipeline (GitHub Actions)
+#
+# Runs every day at 05:00 UTC = 07:00 SAST so jobs are applied before you wake.
+# Also runs on push to main (useful for testing) and on manual dispatch.
+#
+# HOW IT WORKS:
+#   1. Checks out your repo (which contains job_queue/job_queue.sqlite3)
+#   2. Installs Python deps (cached for speed)
+#   3. Runs: python run_daily.py --now  (discover → score → apply)
+#   4. Commits the updated SQLite back to the repo so the dashboard sees it
+#
+# SECRETS YOU MUST ADD (GitHub → Settings → Secrets → Actions):
+#   ANTHROPIC_API_KEY      — your Claude API key
+#   GMAIL_APP_PASSWORD     — zgjy dmlv nzqo zelt
+#   APPLICANT_PHONE        — +27 84 323 2662
+#   APPLICANT_ID_NUMBER    — your SA ID (optional, only needed for SA ATS forms)
+#   CV_DATA_BASE64         — base64-encoded PDF of your CV (see DEPLOY.md)
+#
+# DASHBOARD:
+#   Deploy app/review_app.py on Streamlit Community Cloud pointing at this repo.
+#   It reads job_queue/job_queue.sqlite3 directly from the repo — always fresh.
+# ──────────────────────────────────────────────────────────────────────────────
+
+name: WEB CareerOS — Daily Pipeline
+
+on:
+  schedule:
+    # 05:00 UTC = 07:00 Africa/Johannesburg (SAST = UTC+2)
+    - cron: "0 5 * * *"
+
+  # Run immediately when you push to main (great for testing)
+  push:
+    branches: [main]
+    paths:
+      # Only re-run on code changes, not every DB commit
+      - "discovery/**"
+      - "fill_engine/**"
+      - "ai/**"
+      - "config/**"
+      - "run_daily.py"
+
+  # Manual trigger from GitHub → Actions tab → Run workflow
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Pipeline mode"
+        required: false
+        default: "--now"
+        type: choice
+        options:
+          - "--now"
+          - "--discover"
+          - "--apply"
+
+jobs:
+  run-pipeline:
+    name: Apply to Jobs
+    runs-on: ubuntu-latest
+    timeout-minutes: 45          # safety: kill if stuck
+
+    permissions:
+      contents: write            # needed to commit SQLite back
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # Need full history so git push works cleanly
+          fetch-depth: 1
+
+      # ── 2. Python setup ──────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      # ── 3. Install dependencies ──────────────────────────────────
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          # Install Playwright browsers (Chromium only — fastest)
+          playwright install chromium --with-deps
+
+      # ── 4. Restore CV from base64 secret ─────────────────────────
+      - name: Restore CV file
+        env:
+          CV_DATA_BASE64: ${{ secrets.CV_DATA_BASE64 }}
+        run: |
+          mkdir -p cv
+          echo "$CV_DATA_BASE64" | base64 -d > cv/Eddie_Bila_CV.pdf
+          echo "CV_PATH=$(pwd)/cv/Eddie_Bila_CV.pdf" >> $GITHUB_ENV
+
+      # ── 5. Write .env from GitHub Secrets ────────────────────────
+      - name: Write .env
+        env:
+          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
+          APPLICANT_PHONE:      ${{ secrets.APPLICANT_PHONE }}
+          APPLICANT_ID_NUMBER:  ${{ secrets.APPLICANT_ID_NUMBER }}
+        run: |
+          cat > .env << EOF
+          ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+          GEMINI_API_KEY=
+          DEFAULT_AI_ENGINE=claude
+
+          APPLICANT_FULL_NAME=Eddie Bila
+          APPLICANT_FIRST_NAME=Eddie
+          APPLICANT_LAST_NAME=Bila
+          APPLICANT_EMAIL=eddiebila10@gmail.com
+          APPLICANT_PHONE=${APPLICANT_PHONE}
+          APPLICANT_LINKEDIN=https://www.linkedin.com/in/your-profile
+          APPLICANT_ORG=Camblish Training Institute
+          APPLICANT_ID_NUMBER=${APPLICANT_ID_NUMBER}
+
+          CV_PATH=${CV_PATH}
+
+          AUTO_SUBMIT_ENABLED=true
+          HEADLESS=true
+          AUTO_COVER_LETTER=true
+          DAILY_AUTO_APPLY_LIMIT=15
+          AUTO_APPLY_MIN_SCORE=60
+          MIN_FIT_SCORE=55
+          DAILY_RUN_TIME=07:00
+
+          GMAIL_APP_PASSWORD=${GMAIL_APP_PASSWORD}
+          EOF
+
+      # ── 6. Create required directories ───────────────────────────
+      - name: Prepare directories
+        run: |
+          mkdir -p logs job_queue screenshots cover_letters
+
+      # ── 7. Run the pipeline ──────────────────────────────────────
+      - name: Run job pipeline
+        env:
+          DISPLAY: ":99"         # virtual display for Playwright
+        run: |
+          # Start virtual display (needed for non-headless fallback)
+          Xvfb :99 -screen 0 1280x720x24 &
+          # Determine mode (manual dispatch vs scheduled)
+          MODE="${{ github.event.inputs.mode || '--now' }}"
+          echo "Running pipeline in mode: $MODE"
+          python run_daily.py $MODE
+
+      # ── 8. Show summary ──────────────────────────────────────────
+      - name: Print pipeline summary
+        if: always()
+        run: |
+          echo "=== Pipeline Log (last 50 lines) ==="
+          tail -50 logs/pipeline.log 2>/dev/null || echo "No log file found"
+
+      # ── 9. Commit updated SQLite back to repo ────────────────────
+      - name: Commit updated job queue
+        if: always()    # commit even if pipeline had partial failures
+        run: |
+          git config user.name  "WEB CareerOS Bot"
+          git config user.email "eddiebila10@gmail.com"
+
+          git add job_queue/job_queue.sqlite3 daily_report.html || true
+          git add logs/pipeline.log || true
+
+          # Only commit if there are actual changes
+          git diff --staged --quiet || \
+            git commit -m "🤖 Pipeline run $(date '+%Y-%m-%d %H:%M UTC') — auto-update"
+
+          git push || echo "Nothing to push"
+
+      # ── 10. Upload artifacts (screenshots, logs) ─────────────────
+      - name: Upload run artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-run-${{ github.run_number }}
+          path: |
+            logs/
+            daily_report.html
+            screenshots/
+          retention-days: 7

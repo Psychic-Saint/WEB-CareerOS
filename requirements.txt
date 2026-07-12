@@ -1,0 +1,25 @@
+# Core
+requests
+python-dotenv
+apscheduler
+
+# Browser automation
+playwright
+
+# AI scoring & cover letters
+anthropic
+google-generativeai
+
+# CV text extraction (install at least one)
+pdfplumber      # preferred — cleaner text extraction from PDFs
+pypdf           # fallback PDF reader
+python-docx     # for .docx CV files
+
+# Review dashboard
+streamlit
+
+# Excel export (WEB-branded .xlsx from the dashboard)
+openpyxl
+
+# (optional) Schedule from Windows Task Scheduler instead of apscheduler
+# pywin32
