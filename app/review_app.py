@@ -1,8 +1,5 @@
 """
-app/review_app.py — WEB CareerOS™ Live Dashboard
-
-Run locally:   streamlit run app/review_app.py
-Hosted:        Streamlit Community Cloud → https://share.streamlit.io
+app/review_app.py — WEB CareerOS™ Live Dashboard  (v2)
 """
 
 from __future__ import annotations
@@ -19,9 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from job_queue.store import JobQueueStore
 import config.settings as settings
 
-# ---------------------------------------------------------------------------
-# Page config
-# ---------------------------------------------------------------------------
+# ── Page config ─────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="WEB CareerOS",
     page_icon="🚀",
@@ -29,9 +24,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ---------------------------------------------------------------------------
-# WEB Brand CSS
-# ---------------------------------------------------------------------------
+# ── Brand CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
   :root {
@@ -43,22 +36,30 @@ st.markdown("""
     --web-white:  #e0f7fa;
     --web-accent: #00bfa5;
   }
+
+  /* ── Remove Streamlit top padding ─────────────────────────── */
+  .block-container { padding-top: 0.6rem !important; padding-bottom: 1rem !important; }
+  #MainMenu, footer, header { visibility: hidden; }
+
   html, body, .stApp { background: var(--web-dark) !important; }
   .stApp { color: var(--web-white); }
   h1, h2, h3, h4, h5, h6 { color: var(--web-cyan) !important; }
 
+  /* ── Sidebar ───────────────────────────────────────────────── */
   [data-testid="stSidebar"] {
-    background: #010f12 !important;
-    border-right: 1px solid #00e5ff22;
+    background: linear-gradient(180deg,#010f12 0%,#010d0f 100%) !important;
+    border-right: 1px solid #00e5ff1a;
   }
   [data-testid="stSidebar"] label,
   [data-testid="stSidebar"] p { color: var(--web-muted) !important; }
 
+  /* ── Tabs ──────────────────────────────────────────────────── */
   .stTabs [data-baseweb="tab-list"] {
     background: var(--web-card);
     border-radius: 10px;
     padding: 4px;
     gap: 4px;
+    border: 1px solid #00e5ff15;
   }
   .stTabs [data-baseweb="tab"] { color: var(--web-muted) !important; border-radius: 7px; }
   .stTabs [aria-selected="true"] {
@@ -67,9 +68,11 @@ st.markdown("""
     font-weight: 700;
   }
 
+  /* ── Metrics ───────────────────────────────────────────────── */
   [data-testid="stMetricValue"] { color: var(--web-cyan) !important; font-weight: 800; }
   [data-testid="stMetricLabel"] { color: var(--web-muted) !important; }
 
+  /* ── Buttons ───────────────────────────────────────────────── */
   .stButton > button {
     background: var(--web-card) !important;
     border: 1px solid var(--web-cyan) !important;
@@ -77,64 +80,120 @@ st.markdown("""
     border-radius: 8px;
     font-weight: 600;
     transition: all .2s;
+    width: 100%;
   }
   .stButton > button:hover {
     background: var(--web-cyan) !important;
     color: var(--web-dark) !important;
   }
   .stDownloadButton > button {
-    background: var(--web-accent) !important;
+    background: linear-gradient(135deg,#00bfa5,#00838f) !important;
     border: none !important;
     color: white !important;
     font-weight: 700;
     border-radius: 8px;
+    width: 100%;
   }
+
+  /* ── Badges ────────────────────────────────────────────────── */
   .badge {
     display: inline-block;
     padding: 2px 10px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: .04em;
   }
-  .job-card {
-    background: var(--web-card);
-    border: 1px solid #00e5ff22;
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin-bottom: 12px;
-  }
-  .job-card h4 { color: var(--web-white); margin: 0 0 4px; }
-  .job-card .meta { color: var(--web-muted); font-size: .85rem; }
+
+  /* ── Stat cards ────────────────────────────────────────────── */
   .stat-bar {
     background: var(--web-card);
-    border: 1px solid #00e5ff22;
+    border: 1px solid #00e5ff18;
     border-radius: 10px;
-    padding: 14px 18px;
+    padding: 12px 16px;
     margin-bottom: 8px;
   }
-  .stat-bar .num { font-size: 1.8rem; font-weight: 800; color: var(--web-cyan); }
+  .stat-bar .num { font-size: 1.7rem; font-weight: 800; color: var(--web-cyan); }
   .stat-bar .lbl {
-    font-size: .75rem;
+    font-size: .7rem;
     color: var(--web-muted);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-top: 2px;
+  }
+
+  /* ── Job table ─────────────────────────────────────────────── */
+  .job-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  .job-table thead tr {
+    background: #021a1e;
+    color: #7ecdd8;
+    font-size: .75rem;
     text-transform: uppercase;
     letter-spacing: .08em;
   }
+  .job-table thead th {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #00e5ff22;
+    font-weight: 700;
+  }
+  .job-table tbody tr {
+    border-bottom: 1px solid #00e5ff0d;
+    transition: background .15s;
+  }
+  .job-table tbody tr:hover { background: #021a1e88; }
+  .job-table tbody td { padding: 10px 12px; font-size: .85rem; vertical-align: middle; }
+  .job-table .role { color: #e0f7fa; font-weight: 600; }
+  .job-table .company { color: #7ecdd8; font-size: .8rem; }
+  .job-table .score-hi { color: #00c853; font-weight: 700; }
+  .job-table .score-md { color: #ffb300; font-weight: 700; }
+  .job-table .score-lo { color: #ff5252; font-weight: 700; }
+
+  /* ── Action card ───────────────────────────────────────────── */
+  .action-card {
+    background: var(--web-card);
+    border: 1px solid #ffb30033;
+    border-left: 4px solid #ffb300;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 8px;
+  }
+  .action-card .role { color: #e0f7fa; font-size: 1rem; font-weight: 700; }
+  .action-card .meta { color: #7ecdd8; font-size: .82rem; margin-top: 3px; }
+  .action-card .reason { color: #ffb300; font-size: .84rem; margin-top: 8px; }
+
+  /* ── Scrollbar ─────────────────────────────────────────────── */
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: var(--web-dark); }
   ::-webkit-scrollbar-thumb { background: #00e5ff44; border-radius: 4px; }
-  hr { border-color: #00e5ff22 !important; }
-  .stTextInput input, .stSelectbox select {
+  hr { border-color: #00e5ff18 !important; }
+
+  .stTextInput input, .stSelectbox > div > div {
     background: var(--web-card) !important;
     color: var(--web-white) !important;
     border: 1px solid #00e5ff33 !important;
+    border-radius: 8px !important;
+  }
+
+  /* ── Selectbox label ───────────────────────────────────────── */
+  .stSelectbox label { color: var(--web-muted) !important; font-size: .8rem !important; }
+  .stTextInput label { color: var(--web-muted) !important; font-size: .8rem !important; }
+
+  /* ── Alert box ─────────────────────────────────────────────── */
+  .info-box {
+    background: #001f22;
+    border: 1px solid #00e5ff22;
+    border-left: 4px solid #00e5ff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #7ecdd8;
+    font-size: .85rem;
+    margin-bottom: 18px;
   }
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------------------------------------------------------------------
-# Constants
-# ---------------------------------------------------------------------------
+# ── Constants ────────────────────────────────────────────────────────────────
 SOURCE_COLORS = {
     "remoteok":       "#ff4d00",
     "jobicy":         "#6366f1",
@@ -146,22 +205,20 @@ SOURCE_COLORS = {
     "remoteco":       "#be185d",
     "linkedin":       "#0077b5",
     "indeed":         "#003a9b",
-    "facebook":       "#1877f2",
-    "twitter":        "#1da1f2",
     "email":          "#00bfa5",
 }
 
 STATUS_CFG = {
-    "submitted":      ("✅ Auto-Applied",    "#00c853"),
-    "escalated":      ("⚠️ Needs You",        "#ffb300"),
-    "rejected":       ("❌ Poor Fit",          "#ff5252"),
-    "approved":       ("🟢 Queued",            "#00bfa5"),
-    "new":            ("🔵 New",               "#607d8b"),
-    "scored":         ("🟡 Scored",            "#ffd740"),
-    "failed":         ("💥 Failed",             "#e040fb"),
-    "skipped":        ("⏭️ Skipped",           "#546e7a"),
-    "pending_review": ("👁 In Review",         "#7ecdd8"),
-    "drafted":        ("📝 Drafted",           "#7ecdd8"),
+    "submitted":      ("✅ Auto-Applied",     "#00c853"),
+    "escalated":      ("⚠️ Needs You",         "#ffb300"),
+    "rejected":       ("❌ Poor Fit",           "#ff5252"),
+    "approved":       ("🟢 Queued",             "#00bfa5"),
+    "new":            ("🔵 New",                "#607d8b"),
+    "scored":         ("🟡 Scored",             "#ffd740"),
+    "failed":         ("💥 Failed",              "#e040fb"),
+    "skipped":        ("⏭️ Skipped",            "#546e7a"),
+    "pending_review": ("👁 In Review",          "#7ecdd8"),
+    "drafted":        ("📝 Drafted",            "#7ecdd8"),
 }
 
 
@@ -175,19 +232,14 @@ def status_badge(status: str) -> str:
     return f'<span class="badge" style="background:{c}22;color:{c};border:1px solid {c}44">{label}</span>'
 
 
-def action_label(job: dict) -> str:
-    s = job.get("status", "")
-    n = (job.get("notes") or "").lower()
-    if s == "submitted":
-        return "✉️ Email Sent" if ("email_sent_to" in n or "platform=email" in n) else "✅ Form Submitted"
-    if s == "escalated":
-        if "captcha" in n:      return "🚧 CAPTCHA Block"
-        if "manual_only" in n:  return "🔒 Manual Platform"
-        if "fill_rate" in n:    return "📝 Form Incomplete"
-        return "⚠️ Escalated"
-    if s == "rejected": return "❌ Poor Fit"
-    if s == "approved": return "🟢 Queued"
-    return s.replace("_", " ").title()
+def score_class(score) -> str:
+    if not score:
+        return "score-md"
+    if score >= 70:
+        return "score-hi"
+    if score >= 50:
+        return "score-md"
+    return "score-lo"
 
 
 def fmt_date(iso: str) -> str:
@@ -211,9 +263,7 @@ def load_cover_letter(job: dict) -> str:
     return ""
 
 
-# ---------------------------------------------------------------------------
-# Data loader
-# ---------------------------------------------------------------------------
+# ── Data loader ──────────────────────────────────────────────────────────────
 @st.cache_resource
 def get_store():
     return JobQueueStore(settings.QUEUE_DB_PATH)
@@ -234,23 +284,30 @@ with st.sidebar:
     _logo_path = Path(__file__).parent / "assets" / "web_logo.png"
     if _logo_path.exists():
         st.image(str(_logo_path), use_column_width=True)
-        st.markdown("<div style='margin-bottom:8px'></div>", unsafe_allow_html=True)
     else:
         st.markdown("""
-        <div style="background:#021a1e;border:1px solid #00e5ff33;border-radius:12px;
-          padding:18px 16px;text-align:center;margin-bottom:12px">
-          <div style="font-size:30px;font-weight:900;color:#00e5ff;letter-spacing:6px;
-            font-family:'Segoe UI',sans-serif">WEB</div>
-          <div style="font-size:10px;color:#7ecdd8;letter-spacing:4px;
-            text-transform:uppercase;margin-top:3px">CareerOS™</div>
+        <div style="background:linear-gradient(135deg,#021a1e,#010f12);
+          border:1px solid #00e5ff33;border-radius:14px;
+          padding:20px 16px;text-align:center;margin-bottom:4px">
+          <div style="font-size:32px;font-weight:900;color:#00e5ff;
+            letter-spacing:8px;font-family:'Segoe UI',sans-serif;
+            text-shadow:0 0 20px #00e5ff66">WEB</div>
+          <div style="font-size:9px;color:#7ecdd8;letter-spacing:5px;
+            text-transform:uppercase;margin-top:2px;opacity:.8">CareerOS™</div>
+          <div style="width:40px;height:2px;background:linear-gradient(90deg,transparent,#00e5ff,transparent);
+            margin:8px auto 0"></div>
         </div>
         """, unsafe_allow_html=True)
 
+    # ── Pipeline status ────────────────────────────────────────
     st.markdown("""
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+    <div style="display:flex;align-items:center;gap:8px;
+      margin:10px 0 14px;padding:8px 12px;
+      background:#021a1e;border-radius:8px;border:1px solid #00e5ff18">
       <span style="width:8px;height:8px;background:#00c853;border-radius:50%;
-        display:inline-block;box-shadow:0 0 6px #00c853"></span>
-      <span style="color:#7ecdd8;font-size:.82rem;font-weight:600">LIVE PIPELINE</span>
+        display:inline-block;box-shadow:0 0 8px #00c853;flex-shrink:0"></span>
+      <span style="color:#7ecdd8;font-size:.78rem;font-weight:600;
+        letter-spacing:.06em">LIVE PIPELINE · ACTIVE</span>
     </div>
     """, unsafe_allow_html=True)
 
@@ -262,32 +319,34 @@ with st.sidebar:
     n_rejected  = counts.get("rejected",  0)
     total       = sum(counts.values())
 
+    # ── Stats ──────────────────────────────────────────────────
     st.markdown(f"""
     <div class="stat-bar">
       <div class="num">{total}</div>
       <div class="lbl">Total Discovered</div>
     </div>
-    <div class="stat-bar">
+    <div class="stat-bar" style="border-color:#00c85322">
       <div class="num" style="color:#00c853">{n_submitted}</div>
       <div class="lbl">Auto-Applied For You</div>
     </div>
-    <div class="stat-bar">
+    <div class="stat-bar" style="border-color:#ffb30022">
       <div class="num" style="color:#ffb300">{n_escalated}</div>
-      <div class="lbl">Need Your Action</div>
+      <div class="lbl">Need Your Attention</div>
     </div>
-    <div class="stat-bar">
+    <div class="stat-bar" style="border-color:#ff525222">
       <div class="num" style="color:#ff5252">{n_rejected}</div>
-      <div class="lbl">Poor Fit (can override)</div>
+      <div class="lbl">Poor Fit (Override Available)</div>
     </div>
-    <div class="stat-bar">
+    <div class="stat-bar" style="border-color:#00bfa522">
       <div class="num" style="color:#00bfa5">{n_approved}</div>
-      <div class="lbl">Queued to Apply</div>
+      <div class="lbl">Queued · Next Run</div>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("---")
+    st.markdown("<div style='height:6px'></div>", unsafe_allow_html=True)
 
-    if st.button("🔄  Refresh Data", use_container_width=True):
+    # ── Action buttons ─────────────────────────────────────────
+    if st.button("🔄  Refresh Dashboard", use_container_width=True):
         st.cache_resource.clear()
         st.rerun()
 
@@ -301,32 +360,42 @@ with st.sidebar:
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             use_container_width=True,
         )
-    except Exception as exc:
-        st.caption(f"Excel unavailable: {exc}")
+    except Exception:
+        pass
 
     st.markdown(
-        f"<div style='color:#3d7a85;font-size:.75rem;text-align:center;margin-top:8px'>"
-        f"Refreshed {datetime.now().strftime('%H:%M')}</div>",
+        f"<div style='color:#2a5a63;font-size:.72rem;text-align:center;"
+        f"margin-top:10px;padding-top:10px;border-top:1px solid #00e5ff12'>"
+        f"🕐 Last refreshed {datetime.now().strftime('%H:%M')} · "
+        f"Runs daily 07:00 SAST</div>",
         unsafe_allow_html=True,
     )
 
 
 # ============================================================
-# MAIN HEADER
+# MAIN HEADER — tight, no wasted space
 # ============================================================
-st.markdown("""
-<div style="margin-bottom:24px">
-  <h1 style="margin:0;font-size:2rem;font-weight:900;color:#00e5ff">🚀 WEB CareerOS™</h1>
-  <div style="color:#7ecdd8;font-size:.9rem;margin-top:4px">
-    Autonomous Job Application Pipeline — applying on your behalf, 24/7
-  </div>
-</div>
-""", unsafe_allow_html=True)
+h_col, _ = st.columns([6, 1])
+with h_col:
+    st.markdown("""
+    <div style="padding-bottom:10px;border-bottom:1px solid #00e5ff18;margin-bottom:14px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-size:1.8rem">🚀</span>
+        <div>
+          <div style="font-size:1.6rem;font-weight:900;color:#00e5ff;
+            line-height:1;letter-spacing:1px">WEB CareerOS™</div>
+          <div style="color:#7ecdd8;font-size:.8rem;margin-top:2px">
+            Autonomous Job Application Pipeline — applying on your behalf, 24/7
+          </div>
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 if n_escalated:
     st.warning(
-        f"⚠️ **{n_escalated} job(s) need your attention** — see the **Needs Your Action** tab.",
-        icon="🔔",
+        f"🔔 **{n_escalated} job(s) need your manual attention** — check the **Needs Your Action** tab.",
+        icon="⚠️",
     )
 
 # ============================================================
@@ -340,70 +409,78 @@ tab_ov, tab_all, tab_act, tab_poor, tab_cl = st.tabs([
     "✉️ Cover Letters",
 ])
 
-# ─────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────
 # TAB 1 — OVERVIEW
-# ─────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
 with tab_ov:
     c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric("Jobs Found",   total)
-    c2.metric("Auto-Applied", n_submitted, help="System submitted these on your behalf")
-    c3.metric("Need You",     n_escalated, help="CAPTCHA / login required / form incomplete")
-    c4.metric("Poor Fit",     n_rejected,  help="Scored below threshold — you can override")
-    c5.metric("In Queue",     n_approved,  help="Scored well — applying next run")
+    c2.metric("Auto-Applied", n_submitted,  help="System submitted these on your behalf")
+    c3.metric("Need You",     n_escalated,  help="CAPTCHA / login required / form incomplete")
+    c4.metric("Poor Fit",     n_rejected,   help="Scored below threshold — you can override")
+    c5.metric("In Queue",     n_approved,   help="Scored well — applying on next run")
 
     st.markdown("---")
 
     src_counts = store.counts_by_source()
     if src_counts:
         st.markdown("### 🌐 Jobs by Source")
-        cols = st.columns(min(len(src_counts), 4))
+        cols = st.columns(min(len(src_counts), 5))
         for i, (src, cnt) in enumerate(sorted(src_counts.items(), key=lambda x: -x[1])):
             color = SOURCE_COLORS.get(src, "#7ecdd8")
-            with cols[i % 4]:
+            with cols[i % 5]:
                 st.markdown(f"""
-                <div style="background:#021a1e;border:1px solid {color}44;
-                  border-left:4px solid {color};border-radius:10px;
-                  padding:14px 16px;margin-bottom:8px">
-                  <div style="font-size:1.6rem;font-weight:800;color:{color}">{cnt}</div>
-                  <div style="font-size:.75rem;color:#7ecdd8;text-transform:uppercase;
-                    letter-spacing:.06em">{src}</div>
+                <div style="background:#021a1e;border:1px solid {color}33;
+                  border-top:3px solid {color};border-radius:10px;
+                  padding:14px 16px;margin-bottom:8px;text-align:center">
+                  <div style="font-size:1.8rem;font-weight:800;color:{color}">{cnt}</div>
+                  <div style="font-size:.72rem;color:#7ecdd8;text-transform:uppercase;
+                    letter-spacing:.07em;margin-top:2px">{src}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
     st.markdown("---")
     st.markdown("### 🕐 Recent Activity")
-    recent = sorted(all_jobs, key=lambda j: j.get("updated_at", ""), reverse=True)[:10]
+
+    recent = sorted(all_jobs, key=lambda j: j.get("updated_at", ""), reverse=True)[:15]
+    rows = ""
     for job in recent:
-        ca, cb, cc = st.columns([3, 2, 2])
-        with ca:
-            st.markdown(f"**{job['title']}** — {job['company']}")
-        with cb:
-            st.markdown(
-                source_badge(job.get("source","")) + "&nbsp;" + status_badge(job.get("status","")),
-                unsafe_allow_html=True,
-            )
-        with cc:
-            st.markdown(
-                f"<span style='color:#7ecdd8;font-size:.82rem'>"
-                f"{fmt_date(job.get('updated_at',''))}</span>",
-                unsafe_allow_html=True,
-            )
+        sl, sc = STATUS_CFG.get(job.get("status",""), (job.get("status","").upper(), "#7ecdd8"))
+        rows += f"""
+        <tr>
+          <td><div class="role">{job['title']}</div>
+              <div class="company">{job['company']}</div></td>
+          <td>{source_badge(job.get('source',''))}</td>
+          <td><span class="badge" style="background:{sc}22;color:{sc};border:1px solid {sc}44">{sl}</span></td>
+          <td class="{score_class(job.get('fit_score'))}">{job.get('fit_score','—')}</td>
+          <td style="color:#7ecdd8;font-size:.8rem">{fmt_date(job.get('updated_at',''))}</td>
+        </tr>"""
+    st.markdown(f"""
+    <table class="job-table">
+      <thead><tr>
+        <th>Role / Company</th><th>Source</th><th>Status</th>
+        <th>Score</th><th>Date</th>
+      </tr></thead>
+      <tbody>{rows}</tbody>
+    </table>
+    """, unsafe_allow_html=True)
 
-# ─────────────────────────────────────────────────
-# TAB 2 — ALL JOBS
-# ─────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────
+# TAB 2 — ALL JOBS (table view)
+# ─────────────────────────────────────────────────────────────
 with tab_all:
-    st.markdown("### 📋 All Discovered Jobs")
-
+    # ── Filters ───────────────────────────────────────────────
     f1, f2, f3, f4 = st.columns([3, 2, 2, 2])
     with f1:
-        q = st.text_input("🔍 Search title / company", placeholder="e.g. Project Manager")
+        q = st.text_input("🔍 Search", placeholder="title, company…", label_visibility="collapsed")
     with f2:
-        status_f = st.selectbox("Status", ["All"] + sorted({j["status"] for j in all_jobs}))
+        status_f = st.selectbox("Status", ["All"] + sorted({j["status"] for j in all_jobs}), label_visibility="collapsed")
     with f3:
-        source_f = st.selectbox("Source", ["All"] + sorted({j["source"] for j in all_jobs}))
+        source_f = st.selectbox("Source", ["All"] + sorted({j["source"] for j in all_jobs}), label_visibility="collapsed")
     with f4:
-        remote_f = st.selectbox("Location", ["All", "Remote Only", "On-site Only"])
+        remote_f = st.selectbox("Location", ["All", "Remote Only", "On-site Only"], label_visibility="collapsed")
 
     filtered = all_jobs
     if q:
@@ -420,74 +497,84 @@ with tab_all:
         filtered = [j for j in filtered if not j.get("is_remote")]
 
     st.markdown(
-        f"<div style='color:#7ecdd8;font-size:.82rem;margin-bottom:12px'>"
-        f"{len(filtered)} jobs shown</div>",
+        f"<div style='color:#7ecdd8;font-size:.78rem;margin-bottom:8px'>"
+        f"Showing <b style='color:#00e5ff'>{len(filtered)}</b> of {len(all_jobs)} jobs</div>",
         unsafe_allow_html=True,
     )
 
-    for job in filtered[:200]:
-        with st.expander(
-            f"{job['title']}  ·  {job['company']}  ·  {job.get('location','')}", expanded=False
-        ):
-            r1, r2, r3, r4, r5 = st.columns([2, 2, 2, 2, 2])
-            with r1:
-                st.markdown(source_badge(job.get("source","")), unsafe_allow_html=True)
-                loc_txt = "🌐 Remote" if job.get("is_remote") else f"📍 {job.get('location') or 'N/A'}"
-                st.markdown(
-                    f"<div style='color:#7ecdd8;font-size:.78rem;margin-top:4px'>{loc_txt}</div>",
-                    unsafe_allow_html=True,
-                )
-            with r2:
-                st.markdown(status_badge(job.get("status","")), unsafe_allow_html=True)
-                st.markdown(
-                    f"<div style='color:#7ecdd8;font-size:.78rem;margin-top:4px'>"
-                    f"{action_label(job)}</div>",
-                    unsafe_allow_html=True,
-                )
-            with r3:
-                score = job.get("fit_score")
-                sc = "#00c853" if (score and score >= 70) else ("#ffb300" if (score and score >= 55) else "#ff5252")
-                st.markdown(
-                    f"<div style='color:{sc};font-weight:700;font-size:1.1rem'>"
-                    f"{score or '—'}"
-                    f"<span style='color:#7ecdd8;font-size:.75rem'>/100</span></div>"
-                    f"<div style='color:#7ecdd8;font-size:.78rem'>Fit Score</div>",
-                    unsafe_allow_html=True,
-                )
-            with r4:
-                st.markdown(
-                    f"<div style='color:#e0f7fa;font-size:.8rem'>"
-                    f"<b>Posted:</b> {fmt_date(job.get('posted_at',''))}</div>"
-                    f"<div style='color:#e0f7fa;font-size:.8rem'>"
-                    f"<b>Updated:</b> {fmt_date(job.get('updated_at',''))}</div>",
-                    unsafe_allow_html=True,
-                )
-            with r5:
-                if job.get("apply_url"):
-                    st.link_button("🔗 Open Job", job["apply_url"])
-            if job.get("fit_reasoning"):
-                st.markdown(
-                    f"<div style='color:#7ecdd8;font-size:.8rem;margin-top:8px;"
-                    f"padding:8px 12px;background:#010d0f;border-radius:6px'>"
-                    f"🤖 {job['fit_reasoning'][:220]}</div>",
-                    unsafe_allow_html=True,
-                )
+    # ── Table ─────────────────────────────────────────────────
+    rows = ""
+    for job in filtered[:300]:
+        sl, sc = STATUS_CFG.get(job.get("status",""), (job.get("status","").upper(), "#7ecdd8"))
+        loc = "🌐 Remote" if job.get("is_remote") else f"📍 {job.get('location') or 'N/A'}"
+        score = job.get("fit_score")
+        scls  = score_class(score)
+        url   = job.get("apply_url","")
+        action_td = (
+            f'<a href="{url}" target="_blank" style="color:#00e5ff;font-size:.8rem;'
+            f'text-decoration:none;padding:4px 10px;border:1px solid #00e5ff44;'
+            f'border-radius:6px;white-space:nowrap">🔗 Open</a>'
+            if url else "—"
+        )
+        reasoning = (job.get("fit_reasoning") or "")[:120]
+        reason_td = (
+            f'<div style="color:#7ecdd8;font-size:.76rem;margin-top:3px">{reasoning}</div>'
+            if reasoning else ""
+        )
+        rows += f"""
+        <tr>
+          <td>
+            <div class="role">{job['title']}</div>
+            <div class="company">{job['company']}</div>
+            {reason_td}
+          </td>
+          <td>{source_badge(job.get('source',''))}<br>
+              <span style="color:#7ecdd8;font-size:.75rem">{loc}</span></td>
+          <td><span class="badge" style="background:{sc}22;color:{sc};border:1px solid {sc}44">{sl}</span></td>
+          <td class="{scls}" style="text-align:center">{score or '—'}</td>
+          <td style="color:#7ecdd8;font-size:.78rem">{fmt_date(job.get('posted_at',''))}</td>
+          <td>{action_td}</td>
+        </tr>"""
 
-# ─────────────────────────────────────────────────
+    st.markdown(f"""
+    <table class="job-table">
+      <thead><tr>
+        <th style="min-width:200px">Role / Company</th>
+        <th>Source · Location</th>
+        <th>Status</th>
+        <th style="text-align:center">Score</th>
+        <th>Posted</th>
+        <th>Action</th>
+      </tr></thead>
+      <tbody>{rows}</tbody>
+    </table>
+    """, unsafe_allow_html=True)
+
+
+# ─────────────────────────────────────────────────────────────
 # TAB 3 — NEEDS YOUR ACTION
-# ─────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
 with tab_act:
     escalated = [j for j in all_jobs if j.get("status") == "escalated"]
-    st.markdown(f"### ⚠️ Needs Your Action  ·  {len(escalated)} job(s)")
+
+    st.markdown(f"""
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+      <div>
+        <h3 style="margin:0;color:#ffb300">⚠️ Needs Your Action</h3>
+        <div style="color:#7ecdd8;font-size:.82rem;margin-top:2px">
+          {len(escalated)} job(s) the bot couldn't fully auto-submit
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     if not escalated:
-        st.success("🎉 Nothing needs your attention — the pipeline handled everything!")
+        st.success("🎉 Nothing needs your attention — the pipeline handled everything automatically!")
     else:
         st.markdown("""
-        <div style="background:#1a0d00;border:1px solid #ffb30044;border-left:4px solid #ffb300;
-          border-radius:8px;padding:12px 16px;color:#ffb300;font-size:.88rem;margin-bottom:20px">
-          These jobs could not be fully auto-applied. Open the form, complete it yourself,
-          then click <b>Mark as Applied</b> so the pipeline tracks it correctly.
+        <div class="info-box">
+          Open each job form, complete it manually, then click <b>✅ Mark as Applied</b>
+          so the dashboard tracks it. Or skip if not interested.
         </div>
         """, unsafe_allow_html=True)
 
@@ -495,105 +582,156 @@ with tab_act:
             notes = (job.get("notes") or "").lower()
             if "captcha" in notes:
                 icon, reason = "🚧", "CAPTCHA detected — must be solved by a human"
+                reason_color = "#ff7043"
             elif "manual_only" in notes:
-                icon, reason = "🔒", "Platform requires manual login (Workday / LinkedIn / Indeed)"
+                icon, reason = "🔒", "Platform requires manual login (Workday / LinkedIn / Indeed / SmartRecruiters)"
+                reason_color = "#ffb300"
             elif "fill_rate" in notes:
-                icon, reason = "📝", "Too few form fields found — complete manually"
+                icon, reason = "📝", "Form partially completed — please finish and submit"
+                reason_color = "#7ecdd8"
             else:
-                icon, reason = "⚠️", "Review and apply manually"
+                icon, reason = "⚠️", "Needs manual review and submission"
+                reason_color = "#ffb300"
+
+            score = job.get("fit_score")
+            scls  = score_class(score)
 
             st.markdown(f"""
-            <div class="job-card">
-              <h4>{job['title']} &nbsp; {source_badge(job.get('source',''))}</h4>
-              <div class="meta">
-                🏢 {job['company']} &nbsp; 📍 {job.get('location','Remote')}
-                &nbsp; 🎯 Score: {job.get('fit_score','—')}/100
+            <div class="action-card">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div>
+                  <div class="role">{job['title']}</div>
+                  <div class="meta">
+                    🏢 {job['company']} &nbsp;·&nbsp;
+                    📍 {job.get('location') or 'Remote'} &nbsp;·&nbsp;
+                    {source_badge(job.get('source',''))} &nbsp;·&nbsp;
+                    <span class="{scls}">Score: {score or '—'}/100</span>
+                  </div>
+                </div>
               </div>
-              <div style="margin-top:10px;color:#ffb300;font-size:.85rem">
-                {icon} <b>{reason}</b>
-              </div>
+              <div class="reason">{icon} {reason}</div>
+              {f'<div style="color:#7ecdd8;font-size:.8rem;margin-top:6px;font-style:italic">{job["fit_reasoning"][:200]}</div>' if job.get("fit_reasoning") else ''}
             </div>
             """, unsafe_allow_html=True)
 
-            c1, c2, c3 = st.columns([2, 2, 2])
+            url = job.get("apply_url","")
+            c1, c2, c3, c4 = st.columns([2, 2, 2, 2])
             with c1:
-                url = job.get("apply_url", "")
                 if url and not url.startswith("mailto:"):
-                    st.link_button("📂 Open Form", url, use_container_width=True)
+                    st.link_button("📂 Open Application Form", url, use_container_width=True)
                 elif url.startswith("mailto:"):
                     st.markdown(
-                        f"<div style='color:#7ecdd8;font-size:.82rem'>📧 {url[:60]}</div>",
+                        f"<div style='color:#7ecdd8;font-size:.82rem;padding:8px 0'>📧 {url}</div>",
                         unsafe_allow_html=True,
                     )
             with c2:
                 if st.button("✅ Mark as Applied", key=f"done_{job['job_id']}", use_container_width=True):
                     store.update_status(job["job_id"], "submitted", notes="Manually submitted by Eddie")
-                    st.success("Marked!")
+                    st.success("✅ Marked as applied!")
                     st.rerun()
             with c3:
-                if st.button("⏭️ Skip", key=f"skip_{job['job_id']}", use_container_width=True):
+                if st.button("⚡ Force Auto-Apply", key=f"force_{job['job_id']}", use_container_width=True):
+                    store.update_status(job["job_id"], "approved", notes="Force-approved by Eddie")
+                    st.info("Queued for next pipeline run.")
+                    st.rerun()
+            with c4:
+                if st.button("⏭️ Skip / Not Interested", key=f"skip_{job['job_id']}", use_container_width=True):
                     store.update_status(job["job_id"], "skipped")
                     st.rerun()
-            st.markdown("")
+            st.markdown("<hr style='margin:8px 0'>", unsafe_allow_html=True)
 
-# ─────────────────────────────────────────────────
-# TAB 4 — APPROVE POOR FIT
-# ─────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────
+# TAB 4 — APPROVE POOR FIT (table view)
+# ─────────────────────────────────────────────────────────────
 with tab_poor:
     rejected = [j for j in all_jobs if j.get("status") == "rejected"]
-    st.markdown(f"### 🔓 Poor Fit Jobs  ·  {len(rejected)} job(s)")
-    st.markdown("""
-    <div style="color:#7ecdd8;font-size:.85rem;margin-bottom:20px">
-      The AI scored these below your threshold. If a role still interests you,
-      click <b>Apply Anyway</b> — it will be queued for the next pipeline run.
+
+    st.markdown(f"""
+    <div style="margin-bottom:14px">
+      <h3 style="margin:0;color:#ff5252">🔓 Approve Poor Fit Jobs</h3>
+      <div style="color:#7ecdd8;font-size:.82rem;margin-top:2px">
+        {len(rejected)} job(s) scored below threshold — review and override if you want to apply
+      </div>
     </div>
     """, unsafe_allow_html=True)
 
     if not rejected:
-        st.info("No poor-fit jobs in the queue.")
+        st.info("No poor-fit jobs to review.")
     else:
+        # Batch action
+        ba1, ba2, _ = st.columns([2, 2, 4])
+        with ba1:
+            if st.button("⚡ Apply to ALL Poor Fit Jobs", use_container_width=True):
+                for job in rejected:
+                    store.approve_rejected(job["job_id"])
+                st.success(f"Queued {len(rejected)} jobs!")
+                st.rerun()
+
+        st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
+
         for job in rejected:
+            score = job.get("fit_score")
+            scls  = score_class(score)
+            gaps  = job.get("gaps_flagged") or []
+            if isinstance(gaps, str):
+                try:
+                    import json
+                    gaps = json.loads(gaps)
+                except Exception:
+                    gaps = [gaps]
+
+            reasoning = (job.get("fit_reasoning") or "")[:250]
+            gaps_html = (
+                f'<div style="color:#ff7070;font-size:.78rem;margin-top:4px">'
+                f'⚡ Gaps: {", ".join(gaps[:4])}</div>'
+                if gaps else ""
+            )
+
             with st.expander(
-                f"{job['title']}  ·  {job['company']}  ·  Score: {job.get('fit_score','?')}/100",
+                f"{'🔴' if (score or 0) < 40 else '🟡'} "
+                f"{job['title']}  ·  {job['company']}  ·  "
+                f"Score: {score or '?'}/100",
                 expanded=False,
             ):
-                col_info, col_btn = st.columns([4, 1])
-                with col_info:
-                    st.markdown(source_badge(job.get("source","")), unsafe_allow_html=True)
+                left, right = st.columns([4, 1])
+                with left:
                     st.markdown(
-                        f"📍 {job.get('location','Remote')}  ·  🗓 {fmt_date(job.get('posted_at',''))}",
+                        f"{source_badge(job.get('source',''))}&nbsp;"
+                        f"<span style='color:#7ecdd8;font-size:.8rem'>"
+                        f"📍 {job.get('location','Remote')} &nbsp;·&nbsp; "
+                        f"🗓 {fmt_date(job.get('posted_at',''))}</span>",
                         unsafe_allow_html=True,
                     )
-                    if job.get("fit_reasoning"):
+                    if reasoning:
                         st.markdown(
-                            f"<div style='color:#7ecdd8;font-size:.82rem;margin-top:6px'>"
-                            f"🤖 {job['fit_reasoning'][:300]}</div>",
+                            f"<div style='color:#7ecdd8;font-size:.82rem;"
+                            f"margin-top:6px;padding:8px 10px;"
+                            f"background:#010d0f;border-radius:6px'>"
+                            f"🤖 {reasoning}</div>{gaps_html}",
                             unsafe_allow_html=True,
                         )
-                    gaps = job.get("gaps_flagged") or []
-                    if isinstance(gaps, list) and gaps:
-                        st.markdown(
-                            f"<div style='color:#ff7070;font-size:.8rem;margin-top:4px'>"
-                            f"⚡ Gaps: {', '.join(gaps[:3])}</div>",
-                            unsafe_allow_html=True,
-                        )
-                with col_btn:
+                with right:
                     if st.button("⚡ Apply Anyway", key=f"app_{job['job_id']}", use_container_width=True):
                         store.approve_rejected(job["job_id"])
                         st.success("Queued!")
                         st.rerun()
                     if job.get("apply_url"):
-                        st.link_button("🔗 View", job["apply_url"], use_container_width=True)
+                        st.link_button("🔗 View Job", job["apply_url"], use_container_width=True)
+                    if st.button("🗑 Remove", key=f"rm_{job['job_id']}", use_container_width=True):
+                        store.update_status(job["job_id"], "skipped")
+                        st.rerun()
 
-# ─────────────────────────────────────────────────
+
+# ─────────────────────────────────────────────────────────────
 # TAB 5 — COVER LETTERS
-# ─────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
 with tab_cl:
     st.markdown("### ✉️ Cover Letters & Application Emails")
     st.markdown("""
-    <div style="color:#7ecdd8;font-size:.85rem;margin-bottom:20px">
-      AI-generated cover letters tailored to each role. Edit and save — your version
-      will be used on the next apply attempt for that job.
+    <div class="info-box">
+      AI-generated cover letters tailored to each role. Edit and save —
+      your version will be used on the next apply attempt for that job.
     </div>
     """, unsafe_allow_html=True)
 
@@ -604,9 +742,9 @@ with tab_cl:
     ]
 
     if not eligible:
-        st.info("Cover letters appear here after the first pipeline run processes jobs.")
+        st.info("Cover letters appear here after the pipeline processes jobs with auto-cover-letter enabled.")
     else:
-        labels    = {j["job_id"]: f"{j['title']} @ {j['company']}" for j in eligible}
+        labels    = {j["job_id"]: f"{j['title']} @ {j['company']} · {j.get('status','')}" for j in eligible}
         chosen_id = st.selectbox(
             "Select a job",
             options=list(labels.keys()),
@@ -615,18 +753,21 @@ with tab_cl:
         chosen = next((j for j in eligible if j["job_id"] == chosen_id), None)
 
         if chosen:
+            score = chosen.get("fit_score")
+            sl, sc = STATUS_CFG.get(chosen.get("status",""), (chosen.get("status","").upper(), "#7ecdd8"))
             st.markdown(f"""
             <div style="background:#021a1e;border:1px solid #00e5ff22;border-radius:10px;
               padding:14px 18px;margin-bottom:16px">
-              <b style="color:#e0f7fa">{chosen['title']}</b>
-              <span style="color:#7ecdd8">
-                · {chosen['company']} · {chosen.get('location','Remote')}
-              </span><br>
-              {source_badge(chosen.get('source',''))} &nbsp;
-              {status_badge(chosen.get('status',''))} &nbsp;
-              <span style="color:#7ecdd8;font-size:.8rem">
-                Score: {chosen.get('fit_score','—')}/100
-              </span>
+              <b style="color:#e0f7fa;font-size:1rem">{chosen['title']}</b>
+              <span style="color:#7ecdd8"> · {chosen['company']} · {chosen.get('location','Remote')}</span><br>
+              <div style="margin-top:6px">
+                {source_badge(chosen.get('source',''))} &nbsp;
+                <span class="badge" style="background:{sc}22;color:{sc};border:1px solid {sc}44">{sl}</span>
+                &nbsp;
+                <span class="{score_class(score)}" style="font-size:.85rem;font-weight:700">
+                  Score: {score or '—'}/100
+                </span>
+              </div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -638,25 +779,26 @@ with tab_cl:
                 f"Kind regards,\nEddie Bila\neddiebila10@gmail.com"
             )
             edited = st.text_area(
-                "Edit if needed — click Save to persist",
+                "Edit cover letter:",
                 value=existing or placeholder,
                 height=340,
                 key=f"cl_{chosen_id}",
             )
 
-            s_col, o_col = st.columns([1, 3])
-            with s_col:
+            s1, s2, s3 = st.columns([2, 2, 4])
+            with s1:
                 if st.button("💾 Save Cover Letter", use_container_width=True):
                     store.save_cover_letter(chosen_id, edited)
                     st.success("Saved! Will be used on next apply attempt.")
-            with o_col:
+            with s2:
                 if chosen.get("apply_url"):
-                    st.link_button("🔗 Open Application Form", chosen["apply_url"])
+                    st.link_button("🔗 Open Application Form", chosen["apply_url"], use_container_width=True)
 
             if chosen.get("fit_reasoning"):
                 st.markdown("---")
                 st.markdown("**🤖 AI Reasoning:**")
                 st.markdown(
-                    f"<div style='color:#7ecdd8;font-size:.85rem'>{chosen['fit_reasoning']}</div>",
+                    f"<div style='color:#7ecdd8;font-size:.85rem;padding:10px 14px;"
+                    f"background:#010d0f;border-radius:8px'>{chosen['fit_reasoning']}</div>",
                     unsafe_allow_html=True,
                 )

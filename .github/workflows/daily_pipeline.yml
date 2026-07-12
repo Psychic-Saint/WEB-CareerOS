@@ -116,9 +116,9 @@ jobs:
           AUTO_SUBMIT_ENABLED=true
           HEADLESS=true
           AUTO_COVER_LETTER=true
-          DAILY_AUTO_APPLY_LIMIT=15
-          AUTO_APPLY_MIN_SCORE=60
-          MIN_FIT_SCORE=55
+          DAILY_AUTO_APPLY_LIMIT=30
+          AUTO_APPLY_MIN_SCORE=40
+          MIN_FIT_SCORE=35
           DAILY_RUN_TIME=07:00
 
           GMAIL_APP_PASSWORD=${GMAIL_APP_PASSWORD}
