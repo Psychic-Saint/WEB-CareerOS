@@ -12,10 +12,9 @@
 #
 # SECRETS YOU MUST ADD (GitHub → Settings → Secrets → Actions):
 #   ANTHROPIC_API_KEY      — your Claude API key
-#   GMAIL_APP_PASSWORD     — zgjy dmlv nzqo zelt
-#   APPLICANT_PHONE        — +27 84 323 2662
+#   GMAIL_APP_PASSWORD     — your Gmail App Password
+#   APPLICANT_PHONE        — your phone number
 #   APPLICANT_ID_NUMBER    — your SA ID (optional, only needed for SA ATS forms)
-#   CV_DATA_BASE64         — base64-encoded PDF of your CV (see DEPLOY.md)
 #
 # DASHBOARD:
 #   Deploy app/review_app.py on Streamlit Community Cloud pointing at this repo.
