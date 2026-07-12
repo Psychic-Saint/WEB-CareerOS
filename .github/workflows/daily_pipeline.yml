@@ -85,13 +85,9 @@ jobs:
           # Install Playwright browsers (Chromium only — fastest)
           playwright install chromium --with-deps
 
-      # ── 4. Restore CV from base64 secret ─────────────────────────
-      - name: Restore CV file
-        env:
-          CV_DATA_BASE64: ${{ secrets.CV_DATA_BASE64 }}
+      # ── 4. Set CV path (CV is committed directly to the repo) ────
+      - name: Set CV path
         run: |
-          mkdir -p cv
-          echo "$CV_DATA_BASE64" | base64 -d > cv/Eddie_Bila_CV.pdf
           echo "CV_PATH=$(pwd)/cv/Eddie_Bila_CV.pdf" >> $GITHUB_ENV
 
       # ── 5. Write .env from GitHub Secrets ────────────────────────
