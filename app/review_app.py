@@ -230,14 +230,23 @@ def load_data():
 # SIDEBAR
 # ============================================================
 with st.sidebar:
+    # ── Logo ──────────────────────────────────────────────────
+    _logo_path = Path(__file__).parent / "assets" / "web_logo.png"
+    if _logo_path.exists():
+        st.image(str(_logo_path), use_column_width=True)
+        st.markdown("<div style='margin-bottom:8px'></div>", unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <div style="background:#021a1e;border:1px solid #00e5ff33;border-radius:12px;
+          padding:18px 16px;text-align:center;margin-bottom:12px">
+          <div style="font-size:30px;font-weight:900;color:#00e5ff;letter-spacing:6px;
+            font-family:'Segoe UI',sans-serif">WEB</div>
+          <div style="font-size:10px;color:#7ecdd8;letter-spacing:4px;
+            text-transform:uppercase;margin-top:3px">CareerOS™</div>
+        </div>
+        """, unsafe_allow_html=True)
+
     st.markdown("""
-    <div style="background:#021a1e;border:1px solid #00e5ff33;border-radius:12px;
-      padding:18px 16px;text-align:center;margin-bottom:20px">
-      <div style="font-size:30px;font-weight:900;color:#00e5ff;letter-spacing:6px;
-        font-family:'Segoe UI',sans-serif">WEB</div>
-      <div style="font-size:10px;color:#7ecdd8;letter-spacing:4px;
-        text-transform:uppercase;margin-top:3px">CareerOS™</div>
-    </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
       <span style="width:8px;height:8px;background:#00c853;border-radius:50%;
         display:inline-block;box-shadow:0 0 6px #00c853"></span>
