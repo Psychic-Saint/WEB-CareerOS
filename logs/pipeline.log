@@ -65,3 +65,50 @@
 14:57:53  INFO     run_daily  Project Coordinator → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
 14:57:56  INFO     apscheduler.scheduler  Added job "main.<locals>.<lambda>" to job store "default"
 14:57:56  INFO     apscheduler.scheduler  Scheduler started
+08:13:16  INFO     run_daily  === DISCOVERY ===
+08:13:16  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+08:13:18  INFO     job_pipeline.discovery  Jobicy: 2 matching
+08:13:18  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+08:13:19  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+08:13:20  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+08:13:20  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+08:13:20  INFO     job_pipeline.discovery  Himalayas: 0 matching
+08:13:20  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+08:13:35  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+08:13:35  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+08:13:35  INFO     run_daily  Discovered 6 total, 6 new
+08:13:35  INFO     run_daily  === SCORING ===
+08:13:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:13:41  INFO     run_daily  ✓ Elite Software Automation: Business Analyst @ Unknown  score=58  → approved
+08:13:45  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:13:45  INFO     run_daily  ✓ Select Saunas: Customer Support Specialist @ Unknown  score=52  → approved
+08:13:49  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:13:49  INFO     run_daily  ✓ Spiralyze: Project Manager @ Unknown  score=62  → approved
+08:13:54  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:13:54  INFO     run_daily  ✓ Qase: Technical Customer Support Specialist @ Unknown  score=52  → approved
+08:14:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:14:00  INFO     run_daily  ✓ Dental Launch Trainer (UK) @ Dandy  score=62  → approved
+08:14:04  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:14:05  INFO     run_daily  ✓ Translation Project Coordinator (Full Remote/Full Time) - Gaming @ Side  score=42  → approved
+08:14:05  INFO     run_daily  === AUTO-APPLY ===
+08:14:05  INFO     run_daily  6 job(s) to attempt
+08:14:08  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:14:08  INFO     job_pipeline.auto_apply  auto_apply: Spiralyze: Project Manager @ Unknown  [generic]
+08:14:13  INFO     run_daily  Spiralyze: Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+08:14:19  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:14:19  INFO     job_pipeline.auto_apply  auto_apply: Dental Launch Trainer (UK) @ Dandy  [generic]
+08:14:24  INFO     job_pipeline.auto_apply  ✓ CV attached
+08:14:25  INFO     run_daily  Dental Launch Trainer (UK) → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+08:14:31  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:14:31  INFO     job_pipeline.auto_apply  auto_apply: Elite Software Automation: Business Analyst @ Unknown  [generic]
+08:14:35  INFO     run_daily  Elite Software Automation: Business Analyst → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+08:14:42  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:14:42  INFO     job_pipeline.auto_apply  auto_apply: Select Saunas: Customer Support Specialist @ Unknown  [generic]
+08:14:46  INFO     run_daily  Select Saunas: Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+08:14:53  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:14:53  INFO     job_pipeline.auto_apply  auto_apply: Qase: Technical Customer Support Specialist @ Unknown  [generic]
+08:14:57  INFO     run_daily  Qase: Technical Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+08:15:04  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:15:04  INFO     job_pipeline.auto_apply  auto_apply: Translation Project Coordinator (Full Remote/Full Time) - Gaming @ Side  [generic]
+08:15:08  INFO     job_pipeline.auto_apply  ✓ CV attached
+08:15:10  INFO     run_daily  Translation Project Coordinator (Full Remote/Full Time) - Gaming → escalated  (fill_rate_too_low (0/6 = 0% < 65%))

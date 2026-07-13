@@ -1,54 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Job Pipeline — Daily Report</title>
 <style>
-  body{font-family:system-ui,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;color:#1a1a1a}
-  h1{font-size:1.5rem;margin-bottom:4px}
-  .sub{color:#666;font-size:.9rem;margin-bottom:32px}
-  .cards{display:flex;gap:16px;margin-bottom:32px}
-  .card{flex:1;padding:20px;border-radius:10px;text-align:center}
-  .card .num{font-size:2.5rem;font-weight:700}
-  .card .lbl{font-size:.85rem;color:#555;margin-top:4px}
-  .green{background:#d1fae5}.amber{background:#fef3c7}.red{background:#fee2e2}.blue{background:#dbeafe}
-  table{width:100%;border-collapse:collapse;margin-bottom:32px}
-  th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:.85rem;border-bottom:2px solid #e5e7eb}
-  td{padding:10px 12px;border-bottom:1px solid #e5e7eb;font-size:.9rem;vertical-align:top}
-  h2{font-size:1.1rem;margin:24px 0 8px}
-  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.75rem;font-weight:600}
-  .escalated{background:#fef3c7;color:#92400e}
-  .tip{background:#f0f9ff;border-left:4px solid #0ea5e9;padding:12px 16px;border-radius:4px;font-size:.9rem;margin-bottom:24px}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #010d0f;
+    color: #e0f7fa;
+    padding: 32px 20px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header { margin-bottom: 28px; }
+  .header h1 { font-size: 1.6rem; font-weight: 800; color: #00e5ff; }
+  .header .date { color: #7ecdd8; font-size: .85rem; margin-top: 4px; }
+
+  /* Headline */
+  .headline {
+    background: #021a1e;
+    border: 1px solid #00e5ff33;
+    border-left: 5px solid #ffb300;
+    border-radius: 10px;
+    padding: 18px 22px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffb300;
+    margin-bottom: 28px;
+  }
+
+  /* Stat cards */
+  .cards { display: flex; gap: 14px; margin-bottom: 32px; flex-wrap: wrap; }
+  .card {
+    flex: 1; min-width: 130px;
+    background: #021a1e;
+    border: 1px solid #00e5ff22;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+  }
+  .card .num { font-size: 2.4rem; font-weight: 800; color: #00e5ff; line-height: 1; }
+  .card .lbl { font-size: .75rem; color: #7ecdd8; margin-top: 6px; text-transform: uppercase; letter-spacing: .08em; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+  th {
+    background: #021a1e;
+    color: #00e5ff;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    border-bottom: 1px solid #00e5ff33;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid #00e5ff11; font-size: .9rem; vertical-align: top; }
+  tr:hover td { background: #021a1e88; }
+
+  h2 { font-size: 1rem; color: #00e5ff; margin: 28px 0 10px; text-transform: uppercase; letter-spacing: .08em; }
+
+  /* Escalation notice */
+  .notice {
+    background: #1a0d00;
+    border: 1px solid #ffb30055;
+    border-left: 4px solid #ffb300;
+    border-radius: 8px;
+    padding: 14px 18px;
+    color: #ffb300;
+    font-size: .9rem;
+    margin-bottom: 24px;
+  }
+  .notice code {
+    background: #021a1e;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: .85rem;
+    color: #00e5ff;
+  }
+
+  /* Footer */
+  .footer { color: #3d7a85; font-size: .78rem; margin-top: 40px; text-align: center; }
 </style>
 </head>
 <body>
-<h1>📋 Job Pipeline — Daily Report</h1>
-<div class="sub">Generated Sunday, 12 July 2026 at 14:57 · SAST</div>
+<div class="container">
 
-<div class="cards">
-  <div class="card green"><div class="num">0</div><div class="lbl">Auto-submitted</div></div>
-  <div class="card amber"><div class="num">2</div><div class="lbl">Need your attention</div></div>
-  <div class="card blue"><div class="num">0</div><div class="lbl">In queue</div></div>
-  <div class="card red"><div class="num">0</div><div class="lbl">Failed</div></div>
+  <div class="header">
+    <h1>🚀 Eddie's Job Pipeline</h1>
+    <div class="date">Daily Report · Monday, 13 July 2026 at 08:13 SAST</div>
+  </div>
+
+  <div class="headline">⚠️ I applied to 0 jobs. 7 need your help — I couldn't access the form.</div>
+
+  <div class="cards">
+    <div class="card"><div class="num">14</div><div class="lbl">Jobs Found</div></div>
+    <div class="card"><div class="num">0</div><div class="lbl">Applied For You</div></div>
+    <div class="card"><div class="num">7</div><div class="lbl">Need Your Help</div></div>
+    <div class="card"><div class="num">6</div><div class="lbl">Poor Fit</div></div>
+    <div class="card"><div class="num">0</div><div class="lbl">In Queue</div></div>
+  </div>
+
+  <div class='notice'>⚠️ <b>7 application(s) need you</b> — the system couldn't access the form. Run <code>streamlit run app/review_app.py</code> and check the <b>Needs Your Action</b> tab.</div>
+
+  <h2>✅ Applied on Your Behalf Today (1)</h2>
+  <table>
+    <tr><th>Job Title</th><th>Company</th><th>Link</th><th>Score</th></tr>
+    <tr><td><b style='color:#e0f7fa'>IT Business Analyst (m/w/d)</b></td><td style='color:#7ecdd8'>MY Humancapital GmbH</td><td><a href='https://www.arbeitnow.com/jobs/companies/my-humancapital-gmbh/it-business-analyst-munich-168601' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>62/100</td></tr>
+  </table>
+
+  <h2>⚠️ Need Your Action (7)</h2>
+  <table>
+    <tr><th>Job Title</th><th>Company</th><th>Link</th><th>Score</th><th>Reason</th></tr>
+    <tr><td><b style='color:#e0f7fa'>Spiralyze: Project Manager</b></td><td style='color:#7ecdd8'>Unknown</td><td><a href='https://weworkremotely.com/remote-jobs/spiralyze-project-manager-1' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>62/100</td><td style='color:#ff7070;font-size:.8rem'>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:/home/runner/work/WEB-CareerOS/WE</td></tr><tr><td><b style='color:#e0f7fa'>Dental Launch Trainer (UK)</b></td><td style='color:#7ecdd8'>Dandy</td><td><a href='https://jobicy.com/jobs/145872-dental-launch-trainer-uk' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>62/100</td><td style='color:#ff7070;font-size:.8rem'>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:/home/runner/work/WEB-CareerOS/WE</td></tr><tr><td><b style='color:#e0f7fa'>Project Coordinator</b></td><td style='color:#7ecdd8'>Franklin Fitch</td><td><a href='https://remoteOK.com/remote-jobs/remote-project-coordinator-franklin-fitch-1134634' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>62/100</td><td style='color:#ff7070;font-size:.8rem'>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:C:\Users\Teddy\Downloads\WEB & De</td></tr><tr><td><b style='color:#e0f7fa'>Elite Software Automation: Business Analyst</b></td><td style='color:#7ecdd8'>Unknown</td><td><a href='https://weworkremotely.com/remote-jobs/elite-software-automation-business-analyst-2' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>58/100</td><td style='color:#ff7070;font-size:.8rem'>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:/home/runner/work/WEB-CareerOS/WE</td></tr><tr><td><b style='color:#e0f7fa'>Select Saunas: Customer Support Specialist</b></td><td style='color:#7ecdd8'>Unknown</td><td><a href='https://weworkremotely.com/remote-jobs/select-saunas-customer-support-specialist' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>52/100</td><td style='color:#ff7070;font-size:.8rem'>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:/home/runner/work/WEB-CareerOS/WE</td></tr><tr><td><b style='color:#e0f7fa'>Qase: Technical Customer Support Specialist</b></td><td style='color:#7ecdd8'>Unknown</td><td><a href='https://weworkremotely.com/remote-jobs/qase-technical-customer-support-specialist' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>52/100</td><td style='color:#ff7070;font-size:.8rem'>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:/home/runner/work/WEB-CareerOS/WE</td></tr><tr><td><b style='color:#e0f7fa'>Translation Project Coordinator (Full Remote/Full Time) - Gaming</b></td><td style='color:#7ecdd8'>Side</td><td><a href='https://jobicy.com/jobs/145794-translation-project-coordinator-full-remote-full-time-gaming' target='_blank' style='color:#00e5ff'>Apply Link</a></td><td style='color:#7ecdd8'>42/100</td><td style='color:#ff7070;font-size:.8rem'>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:/home/runner/work/WEB-CareerOS/WE</td></tr>
+  </table>
+
+  <h2>📊 Full Queue</h2>
+  <table>
+    <tr><th>Status</th><th>Count</th></tr>
+    <tr><td style='color:#e0f7fa'>Escalated</td><td style='color:#00e5ff'>7</td></tr><tr><td style='color:#e0f7fa'>Rejected</td><td style='color:#00e5ff'>6</td></tr><tr><td style='color:#e0f7fa'>Submitted</td><td style='color:#00e5ff'>1</td></tr>
+  </table>
+
+  <div class="footer">
+    Generated by Eddie's Autonomous Job Pipeline · 2026-07-13 08:13
+  </div>
+
 </div>
-
-<div class='tip'>⚠️ 2 job(s) were escalated and need your manual attention. Run: <code>streamlit run app/review_app.py</code></div>
-
-<h2>✅ Submitted Today (0)</h2>
-<table>
-  <tr><th>Title</th><th>Company</th><th>URL</th><th>Notes</th></tr>
-  <tr><td colspan='4' style='color:#888;padding:12px'>None</td></tr>
-</table>
-
-<h2>⚠️ Escalated — Your Action Needed (2)</h2>
-<table>
-  <tr><th>Title</th><th>Company</th><th>URL</th><th>Reason</th></tr>
-  <tr><td><b>IT Business Analyst (m/w/d)</b></td><td>MY Humancapital GmbH</td><td><a href='https://www.arbeitnow.com/jobs/companies/my-humancapital-gmbh/it-business-analyst-munich-168601' target='_blank'>Link</a></td><td>platform=generic | fill_rate_too_low (3/6 = 50% < 65%) | screenshot:C:\Users\Ted</td></tr><tr><td><b>Project Coordinator</b></td><td>Franklin Fitch</td><td><a href='https://remoteOK.com/remote-jobs/remote-project-coordinator-franklin-fitch-1134634' target='_blank'>Link</a></td><td>platform=generic | fill_rate_too_low (0/6 = 0% < 65%) | screenshot:C:\Users\Tedd</td></tr>
-</table>
-
-<h2>Full Queue Status</h2>
-<table>
-  <tr><th>Status</th><th>Count</th></tr>
-  <tr><td>escalated</td><td>2</td></tr><tr><td>rejected</td><td>6</td></tr>
-</table>
-
-</body></html>
+</body>
+</html>
