@@ -275,7 +275,7 @@ def _logo_html() -> str | None:
             b64 = base64.b64encode(logo_path.read_bytes()).decode()
             return (
                 f'<img src="data:image/png;base64,{b64}" '
-                f'style="width:100%;border-radius:12px;display:block;margin-bottom:4px" />'
+                f'style="width:90px;border-radius:10px;display:block;margin:0 auto 8px auto" />'
             )
         except Exception:
             pass
@@ -304,9 +304,12 @@ def load_data():
 
 
 def _refresh_data():
-    """Clear all caches and force a fresh DB read on next run."""
+    """Clear the data cache so next run fetches fresh rows from SQLite.
+    NOTE: Do NOT clear st.cache_resource -- that holds the SQLite store
+    singleton. Destroying it on Streamlit Cloud causes a blank-screen hang
+    on the subsequent st.rerun(). Clearing cache_data is sufficient.
+    """
     st.cache_data.clear()
-    st.cache_resource.clear()
 
 
 # ============================================================
