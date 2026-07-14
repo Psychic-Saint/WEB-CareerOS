@@ -112,3 +112,35 @@
 08:15:04  INFO     job_pipeline.auto_apply  auto_apply: Translation Project Coordinator (Full Remote/Full Time) - Gaming @ Side  [generic]
 08:15:08  INFO     job_pipeline.auto_apply  ✓ CV attached
 08:15:10  INFO     run_daily  Translation Project Coordinator (Full Remote/Full Time) - Gaming → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:08:17  INFO     run_daily  === DISCOVERY ===
+07:08:18  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+07:08:18  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:08:19  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:08:20  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+07:08:20  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:08:21  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:08:21  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:08:21  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:08:36  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:08:36  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+07:08:36  INFO     run_daily  Discovered 9 total, 3 new
+07:08:36  INFO     run_daily  === SCORING ===
+07:08:43  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:08:43  INFO     run_daily  ✓ Technical Project Manager Heartbeat AI (m/f/d) @ 1KOMMA5˚  score=62  → approved
+07:08:48  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:08:48  INFO     run_daily  ✓ Technical Customer Support Specialist @ Elevenlabs  score=48  → approved
+07:08:53  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:08:53  INFO     run_daily  ✓ Business Analyst @ InterEx Group  score=52  → approved
+07:08:53  INFO     run_daily  === AUTO-APPLY ===
+07:08:53  INFO     run_daily  3 job(s) to attempt
+07:08:57  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:08:57  INFO     job_pipeline.auto_apply  auto_apply: Technical Project Manager Heartbeat AI (m/f/d) @ 1KOMMA5˚  [generic]
+07:09:01  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+07:09:01  INFO     run_daily  Technical Project Manager Heartbeat AI (m/f/d) → escalated  (captcha_detected)
+07:09:08  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:09:08  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst @ InterEx Group  [generic]
+07:09:12  INFO     run_daily  Business Analyst → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:09:21  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:09:21  INFO     job_pipeline.auto_apply  auto_apply: Technical Customer Support Specialist @ Elevenlabs  [generic]
+07:09:25  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:09:26  INFO     run_daily  Technical Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
