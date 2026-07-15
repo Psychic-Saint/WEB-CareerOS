@@ -144,3 +144,24 @@
 07:09:21  INFO     job_pipeline.auto_apply  auto_apply: Technical Customer Support Specialist @ Elevenlabs  [generic]
 07:09:25  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:09:26  INFO     run_daily  Technical Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:11:16  INFO     run_daily  === DISCOVERY ===
+07:11:17  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+07:11:17  INFO     job_pipeline.discovery  Jobicy: 1 matching
+07:11:17  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:11:18  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+07:11:18  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:11:18  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:11:18  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:11:18  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:11:34  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:11:34  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+07:11:34  INFO     run_daily  Discovered 6 total, 1 new
+07:11:34  INFO     run_daily  === SCORING ===
+07:11:39  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:11:39  INFO     run_daily  ✓ Training and Quality Assurance Specialist @ Trupanion  score=62  → approved
+07:11:39  INFO     run_daily  === AUTO-APPLY ===
+07:11:39  INFO     run_daily  1 job(s) to attempt
+07:11:42  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:11:42  INFO     job_pipeline.auto_apply  auto_apply: Training and Quality Assurance Specialist @ Trupanion  [generic]
+07:11:47  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:11:48  INFO     run_daily  Training and Quality Assurance Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
