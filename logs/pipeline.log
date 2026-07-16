@@ -165,3 +165,41 @@
 07:11:42  INFO     job_pipeline.auto_apply  auto_apply: Training and Quality Assurance Specialist @ Trupanion  [generic]
 07:11:47  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:11:48  INFO     run_daily  Training and Quality Assurance Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:20:37  INFO     run_daily  === DISCOVERY ===
+07:20:38  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+07:20:38  INFO     job_pipeline.discovery  Jobicy: 2 matching
+07:20:39  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:20:40  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+07:20:41  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:20:41  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:20:41  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:20:41  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:20:56  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:20:56  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+07:20:56  INFO     run_daily  Discovered 9 total, 5 new
+07:20:56  INFO     run_daily  === SCORING ===
+07:21:01  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:02  INFO     run_daily  ✓ Zapiet: Merchant Support Specialist @ Unknown  score=62  → approved
+07:21:06  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:06  INFO     run_daily  ✓ Tend: Sourcing and CRM Program Manager @ Unknown  score=42  → approved
+07:21:11  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:11  INFO     run_daily  ✓ Customer Support Specialist III @ Wrapbook  score=42  → approved
+07:21:15  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:15  INFO     run_daily  ✓ Jr Creative Strategist @ Trivium Group  score=38  → approved
+07:21:20  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:20  INFO     run_daily  ✓ Customer Success Manager Enterprise @ PointClickCare  score=42  → approved
+07:21:20  INFO     run_daily  === AUTO-APPLY ===
+07:21:20  INFO     run_daily  4 job(s) to attempt
+07:21:23  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:23  INFO     job_pipeline.auto_apply  auto_apply: Zapiet: Merchant Support Specialist @ Unknown  [generic]
+07:21:29  INFO     run_daily  Zapiet: Merchant Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:21:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:36  INFO     job_pipeline.auto_apply  auto_apply: Tend: Sourcing and CRM Program Manager @ Unknown  [generic]
+07:21:40  INFO     run_daily  Tend: Sourcing and CRM Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:21:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:21:46  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist III @ Wrapbook  [generic]
+07:21:51  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:21:53  INFO     run_daily  Customer Support Specialist III → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:22:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:22:00  INFO     job_pipeline.auto_apply  auto_apply: Customer Success Manager Enterprise @ PointClickCare  [generic]
+07:22:04  INFO     run_daily  Customer Success Manager Enterprise → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
