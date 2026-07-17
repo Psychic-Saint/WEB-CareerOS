@@ -203,3 +203,59 @@
 07:22:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 07:22:00  INFO     job_pipeline.auto_apply  auto_apply: Customer Success Manager Enterprise @ PointClickCare  [generic]
 07:22:04  INFO     run_daily  Customer Success Manager Enterprise → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:13:39  INFO     run_daily  === DISCOVERY ===
+07:13:40  INFO     job_pipeline.discovery  RemoteOK: 6 matching
+07:13:40  INFO     job_pipeline.discovery  Jobicy: 2 matching
+07:13:41  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:13:41  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+07:13:42  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:13:43  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:13:43  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:13:43  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:13:58  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:13:58  INFO     job_pipeline.discovery  Total unique jobs across all sources: 12
+07:13:58  INFO     run_daily  Discovered 12 total, 7 new
+07:13:58  INFO     run_daily  === SCORING ===
+07:13:59  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 <none>"
+07:13:59  INFO     anthropic._base_client  Retrying request to /v1/messages in 0.474680 seconds
+07:14:01  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 <none>"
+07:14:01  INFO     anthropic._base_client  Retrying request to /v1/messages in 0.908916 seconds
+07:14:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 <none>"
+07:14:02  ERROR    job_pipeline.scorer  Scoring error: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011Cd7DWD4hBFgMkhz7XfkqU'}
+07:14:02  INFO     run_daily  ✗ Machine Learning Engineer (m/w/d) @ Rockstardevelopers GmbH  score=0  → rejected
+07:14:07  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:07  INFO     run_daily  ✓ Project Manager, Data Centers - Remote (U.S.) @ AECOM  score=42  → approved
+07:14:07  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 529 <none>"
+07:14:07  INFO     anthropic._base_client  Retrying request to /v1/messages in 0.387417 seconds
+07:14:13  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:13  INFO     run_daily  ✓ Product Support Specialist @ Fortive  score=52  → approved
+07:14:19  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:19  INFO     run_daily  ✓ Business Analyst @ EasyPark  score=68  → approved
+07:14:25  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:25  INFO     run_daily  ✓ Product Director EdTech Digital Learning @ peopleworth  score=62  → approved
+07:14:30  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:30  INFO     run_daily  ✓ Project Manager @ Empire Life  score=62  → approved
+07:14:35  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:35  INFO     run_daily  ✓ Project Coordinator @ VeraSafe  score=72  → approved
+07:14:35  INFO     run_daily  === AUTO-APPLY ===
+07:14:35  INFO     run_daily  6 job(s) to attempt
+07:14:39  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:39  INFO     job_pipeline.auto_apply  auto_apply: Project Coordinator @ VeraSafe  [generic]
+07:14:44  INFO     run_daily  Project Coordinator → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:14:51  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:14:51  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst @ EasyPark  [generic]
+07:14:56  INFO     run_daily  Business Analyst → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:15:03  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:15:03  INFO     job_pipeline.auto_apply  auto_apply: Product Director EdTech Digital Learning @ peopleworth  [generic]
+07:15:07  INFO     run_daily  Product Director EdTech Digital Learning → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:15:15  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:15:15  INFO     job_pipeline.auto_apply  auto_apply: Project Manager @ Empire Life  [generic]
+07:15:19  INFO     run_daily  Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:15:26  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:15:26  INFO     job_pipeline.auto_apply  auto_apply: Product Support Specialist @ Fortive  [generic]
+07:15:30  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:15:31  INFO     run_daily  Product Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:15:37  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:15:37  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Data Centers - Remote (U.S.) @ AECOM  [generic]
+07:15:41  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:15:42  INFO     run_daily  Project Manager, Data Centers - Remote (U.S.) → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
