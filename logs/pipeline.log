@@ -259,3 +259,32 @@
 07:15:37  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Data Centers - Remote (U.S.) @ AECOM  [generic]
 07:15:41  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:15:42  INFO     run_daily  Project Manager, Data Centers - Remote (U.S.) → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+06:57:28  INFO     run_daily  === DISCOVERY ===
+06:57:29  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+06:57:29  INFO     job_pipeline.discovery  Jobicy: 2 matching
+06:57:30  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+06:57:30  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+06:57:30  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+06:57:31  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+06:57:31  INFO     job_pipeline.discovery  Himalayas: 0 matching
+06:57:31  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+06:57:46  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+06:57:46  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+06:57:46  INFO     run_daily  Discovered 10 total, 3 new
+06:57:46  INFO     run_daily  === SCORING ===
+06:57:52  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:57:52  INFO     run_daily  ✓ Assistant to the Director & Project Coordinator (all genders) @ IDAGIO GmbH  score=62  → approved
+06:57:58  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:57:58  INFO     run_daily  ✓ Technical Program Manager @ Phaidra  score=52  → approved
+06:58:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:58:02  INFO     run_daily  ✓ Regional Educator - West @ Colgate-Palmolive  score=35  → approved
+06:58:03  INFO     run_daily  === AUTO-APPLY ===
+06:58:03  INFO     run_daily  2 job(s) to attempt
+06:58:07  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:58:07  INFO     job_pipeline.auto_apply  auto_apply: Assistant to the Director & Project Coordinator (all genders) @ IDAGIO GmbH  [generic]
+06:58:12  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+06:58:12  INFO     run_daily  Assistant to the Director & Project Coordinator (all genders) → escalated  (captcha_detected)
+06:58:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:58:18  INFO     job_pipeline.auto_apply  auto_apply: Technical Program Manager @ Phaidra  [generic]
+06:58:22  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:58:23  INFO     run_daily  Technical Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
