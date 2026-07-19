@@ -288,3 +288,31 @@
 06:58:18  INFO     job_pipeline.auto_apply  auto_apply: Technical Program Manager @ Phaidra  [generic]
 06:58:22  INFO     job_pipeline.auto_apply  ✓ CV attached
 06:58:23  INFO     run_daily  Technical Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:24:41  INFO     run_daily  === DISCOVERY ===
+07:24:42  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+07:24:42  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:24:43  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:24:43  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+07:24:44  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:24:44  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:24:44  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:24:44  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:24:59  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:24:59  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+07:24:59  INFO     run_daily  Discovered 10 total, 3 new
+07:24:59  INFO     run_daily  === SCORING ===
+07:25:07  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:25:07  INFO     run_daily  ✓ Customer Education Program Manager @ Ashby  score=62  → approved
+07:25:11  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:25:11  INFO     run_daily  ✗ Machine Learning Engineering Manager - Ads Engagement Modeling @ Reddit  score=22  → rejected
+07:25:16  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:25:16  WARNING  job_pipeline.scorer  Score parse failed: Extra data: line 17 column 1 (char 1139) | raw: {
+  "score": 15,
+  "reasoning": "This is a fundamental mismatch. The Designer role requires design qualifications and experience (BCA suggests backend development focus, not UI/UX design), while Eddie
+07:25:16  INFO     run_daily  ✗ Designer @ RideTEGO  score=15  → rejected
+07:25:16  INFO     run_daily  === AUTO-APPLY ===
+07:25:16  INFO     run_daily  1 job(s) to attempt
+07:25:21  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:25:21  INFO     job_pipeline.auto_apply  auto_apply: Customer Education Program Manager @ Ashby  [generic]
+07:25:27  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:25:28  INFO     run_daily  Customer Education Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
