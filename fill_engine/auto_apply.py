@@ -99,6 +99,47 @@ def _split_name(full_name: str) -> tuple[str, str]:
     return (parts[0] if parts else ""), (parts[1] if len(parts) > 1 else "")
 
 
+def _click_apply_button(page: Page) -> None:
+    """
+    Many job listing pages hide the application form behind an 'Apply' button.
+    This function tries to click through to the form before we attempt to fill fields.
+    If no Apply button is found, or we're already on a form page, this is a no-op.
+    """
+    # Only click if there are no visible text input fields yet (i.e. we're on a listing page)
+    try:
+        visible_inputs = page.locator(
+            'input[type="text"], input[type="email"], input[type="tel"]'
+        ).count()
+        if visible_inputs >= 2:
+            return   # Already on a form page — don't need to click Apply
+    except Exception:
+        pass
+
+    apply_selectors = [
+        'a:has-text("Apply Now")',
+        'a:has-text("Apply for this Job")',
+        'a:has-text("Apply for this job")',
+        'a:has-text("Apply")',
+        'button:has-text("Apply Now")',
+        'button:has-text("Apply for this Job")',
+        'button:has-text("Apply")',
+        '[data-qa="btn-apply"]',
+        '.apply-button',
+        '#apply-button',
+        'a[href*="/apply"]',
+    ]
+    for sel in apply_selectors:
+        try:
+            loc = page.locator(sel).first
+            if loc.count() > 0 and loc.is_visible(timeout=1000):
+                loc.click()
+                page.wait_for_timeout(3000)   # wait for form/redirect
+                logger.info("Clicked Apply button via: %s", sel)
+                break
+        except Exception:
+            continue
+
+
 def _fill_fields(page: Page, adapter: dict, applicant_data: dict) -> dict[str, str]:
     """Fill form fields. Returns {field_key: status}."""
     full = applicant_data.get("full_name", "")
@@ -297,6 +338,11 @@ def attempt_auto_apply(
             result.status = "escalated"
             result.reason = "captcha_detected"
             return result
+
+        # ---- Click "Apply" button if form not yet visible ----
+        # Job listing pages often show the form only after clicking Apply/Apply Now.
+        # Try to click through to the form before attempting to fill fields.
+        _click_apply_button(page)
 
         # ---- Fill fields ----
         fill_res = _fill_fields(page, adapter, applicant_data)
