@@ -361,3 +361,19 @@
 07:56:35  INFO     job_pipeline.auto_apply  auto_apply: Translation Project Manager @ M3 USA  [generic]
 07:56:39  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:56:40  INFO     run_daily  Translation Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+09:18:13  INFO     run_daily  === DISCOVERY ===
+09:18:14  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+09:18:14  INFO     job_pipeline.discovery  Jobicy: 4 matching
+09:18:15  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+09:18:16  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+09:18:16  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:18:17  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:18:17  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:18:17  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:18:32  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:18:32  INFO     job_pipeline.discovery  Total unique jobs across all sources: 11
+09:18:32  INFO     run_daily  Discovered 11 total, 0 new
+09:18:32  INFO     run_daily  === SCORING ===
+09:18:32  INFO     run_daily  No new jobs to score
+09:18:32  INFO     run_daily  === AUTO-APPLY ===
+09:18:32  INFO     run_daily  No approved jobs ready
