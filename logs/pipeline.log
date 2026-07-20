@@ -316,3 +316,48 @@
 07:25:21  INFO     job_pipeline.auto_apply  auto_apply: Customer Education Program Manager @ Ashby  [generic]
 07:25:27  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:25:28  INFO     run_daily  Customer Education Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:54:56  INFO     run_daily  === DISCOVERY ===
+07:54:56  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+07:54:56  INFO     job_pipeline.discovery  Jobicy: 4 matching
+07:54:57  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:54:58  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+07:54:58  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:54:59  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:54:59  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:54:59  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:55:14  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:55:14  INFO     job_pipeline.discovery  Total unique jobs across all sources: 11
+07:55:14  INFO     run_daily  Discovered 11 total, 6 new
+07:55:14  INFO     run_daily  === SCORING ===
+07:55:22  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:55:22  INFO     run_daily  ✓ Customer Support Specialist @ Motive  score=62  → approved
+07:55:26  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:55:26  INFO     run_daily  ✓ Customer Facing, Project Manager – North Carolina @ Agilent Technologies  score=58  → approved
+07:55:32  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:55:32  INFO     run_daily  ✓ Translation Project Manager @ M3 USA  score=42  → approved
+07:55:37  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:55:37  INFO     run_daily  ✓ Lead Business Analyst (Enterprise Modernisation, Platform and Cloud) @ Thoughtworks  score=58  → approved
+07:55:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:55:41  INFO     run_daily  ✗ Technical Specialist @ PeopleLink Collaboration Inc.  score=25  → rejected
+07:55:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:55:46  INFO     run_daily  ✓ Placement Officer @ Grey Sim Learnings Foundation  score=52  → approved
+07:55:46  INFO     run_daily  === AUTO-APPLY ===
+07:55:46  INFO     run_daily  5 job(s) to attempt
+07:55:49  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:55:49  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist @ Motive  [generic]
+07:55:53  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:55:54  INFO     run_daily  Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:56:01  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:56:01  INFO     job_pipeline.auto_apply  auto_apply: Customer Facing, Project Manager – North Carolina @ Agilent Technologies  [generic]
+07:56:06  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:56:06  INFO     run_daily  Customer Facing, Project Manager – North Carolina → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:56:13  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:56:13  INFO     job_pipeline.auto_apply  auto_apply: Lead Business Analyst (Enterprise Modernisation, Platform and Cloud) @ Thoughtworks  [generic]
+07:56:17  INFO     run_daily  Lead Business Analyst (Enterprise Modernisation, Platform and Cloud) → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:56:23  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:56:23  INFO     job_pipeline.auto_apply  auto_apply: Placement Officer @ Grey Sim Learnings Foundation  [generic]
+07:56:28  INFO     run_daily  Placement Officer → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
+07:56:35  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:56:35  INFO     job_pipeline.auto_apply  auto_apply: Translation Project Manager @ M3 USA  [generic]
+07:56:39  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:56:40  INFO     run_daily  Translation Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 65%))
