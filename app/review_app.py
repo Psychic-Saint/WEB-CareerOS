@@ -671,32 +671,32 @@ with tab_act:
                         unsafe_allow_html=True,
                     )
             with c2:
-                # FIX: clear data cache before rerun so UI reflects the DB change
                 if st.button("✅ Mark as Applied", key=f"done_{job['job_id']}", use_container_width=True):
-                    try:
-                        store.update_status(job["job_id"], "submitted", notes="Manually submitted by Eddie")
-                        st.cache_data.clear()
-                        st.success("✅ Marked as applied!")
-                        st.rerun()
-                    except Exception as ex:
-                        st.error(f"Failed to update: {ex}")
+                    with st.spinner("Saving…"):
+                        try:
+                            store.update_status(job["job_id"], "submitted", notes="Manually submitted by Eddie")
+                            st.cache_data.clear()
+                        except Exception as ex:
+                            st.error(f"Failed: {ex}")
+                    st.rerun()
             with c3:
                 if st.button("⚡ Force Auto-Apply", key=f"force_{job['job_id']}", use_container_width=True):
-                    try:
-                        store.update_status(job["job_id"], "approved", notes="Force-approved by Eddie")
-                        st.cache_data.clear()
-                        st.info("Queued for next pipeline run.")
-                        st.rerun()
-                    except Exception as ex:
-                        st.error(f"Failed to update: {ex}")
+                    with st.spinner("Queuing…"):
+                        try:
+                            store.update_status(job["job_id"], "approved", notes="Force-approved by Eddie")
+                            st.cache_data.clear()
+                        except Exception as ex:
+                            st.error(f"Failed: {ex}")
+                    st.rerun()
             with c4:
                 if st.button("⏭️ Skip / Not Interested", key=f"skip_{job['job_id']}", use_container_width=True):
-                    try:
-                        store.update_status(job["job_id"], "skipped")
-                        st.cache_data.clear()
-                        st.rerun()
-                    except Exception as ex:
-                        st.error(f"Failed to update: {ex}")
+                    with st.spinner("Skipping…"):
+                        try:
+                            store.update_status(job["job_id"], "skipped")
+                            st.cache_data.clear()
+                        except Exception as ex:
+                            st.error(f"Failed: {ex}")
+                    st.rerun()
             st.markdown("<hr style='margin:8px 0'>", unsafe_allow_html=True)
 
 
@@ -721,14 +721,14 @@ with tab_poor:
         ba1, ba2, _ = st.columns([2, 2, 4])
         with ba1:
             if st.button("⚡ Apply to ALL Poor Fit Jobs", use_container_width=True):
-                try:
-                    for job in rejected:
-                        store.approve_rejected(job["job_id"])
-                    st.cache_data.clear()
-                    st.success(f"Queued {len(rejected)} jobs!")
-                    st.rerun()
-                except Exception as ex:
-                    st.error(f"Failed: {ex}")
+                with st.spinner(f"Queuing {len(rejected)} jobs…"):
+                    try:
+                        for job in rejected:
+                            store.approve_rejected(job["job_id"])
+                        st.cache_data.clear()
+                    except Exception as ex:
+                        st.error(f"Failed: {ex}")
+                st.rerun()
 
         st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
 
@@ -775,22 +775,23 @@ with tab_poor:
 
                 with right:
                     if st.button("⚡ Apply Anyway", key=f"app_{job['job_id']}", use_container_width=True):
-                        try:
-                            store.approve_rejected(job["job_id"])
-                            st.cache_data.clear()
-                            st.success("Queued!")
-                            st.rerun()
-                        except Exception as ex:
-                            st.error(f"Failed: {ex}")
+                        with st.spinner("Queuing…"):
+                            try:
+                                store.approve_rejected(job["job_id"])
+                                st.cache_data.clear()
+                            except Exception as ex:
+                                st.error(f"Failed: {ex}")
+                        st.rerun()
                     if job.get("apply_url"):
                         st.link_button("🔗 View Job", job["apply_url"], use_container_width=True)
                     if st.button("🗑 Remove", key=f"rm_{job['job_id']}", use_container_width=True):
-                        try:
-                            store.update_status(job["job_id"], "skipped")
-                            st.cache_data.clear()
-                            st.rerun()
-                        except Exception as ex:
-                            st.error(f"Failed: {ex}")
+                        with st.spinner("Removing…"):
+                            try:
+                                store.update_status(job["job_id"], "skipped")
+                                st.cache_data.clear()
+                            except Exception as ex:
+                                st.error(f"Failed: {ex}")
+                        st.rerun()
 
 
 # ─────────────────────────────────────────────────────────────
