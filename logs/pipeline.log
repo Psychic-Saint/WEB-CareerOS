@@ -393,3 +393,40 @@
 09:22:27  INFO     run_daily  No new jobs to score
 09:22:27  INFO     run_daily  === AUTO-APPLY ===
 09:22:27  INFO     run_daily  No approved jobs ready
+07:30:25  INFO     run_daily  === DISCOVERY ===
+07:30:26  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+07:30:26  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:30:27  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:30:27  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+07:30:28  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:30:28  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:30:28  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:30:29  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:30:44  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:30:44  INFO     job_pipeline.discovery  Total unique jobs across all sources: 11
+07:30:44  INFO     run_daily  Discovered 11 total, 4 new
+07:30:44  INFO     run_daily  === SCORING ===
+07:30:48  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:48  INFO     run_daily  ✗ Toptal: Technical Program Manager — SAP Master Data & S/4HANA Migration | Remote @ Unknown  score=28  → rejected
+07:30:53  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:53  INFO     run_daily  ✓ Project Manager Intern @ HOPn UG  score=62  → approved
+07:30:58  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:58  INFO     run_daily  ✓ Commercial Project Manager - Customer Management @ TE Connectivity  score=52  → approved
+07:31:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:02  INFO     run_daily  ✓ Clinical Project Manager II @ ClinChoice  score=42  → approved
+07:31:02  INFO     run_daily  === AUTO-APPLY ===
+07:31:02  INFO     run_daily  3 job(s) to attempt
+07:31:06  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:06  INFO     job_pipeline.auto_apply  auto_apply: Project Manager Intern @ HOPn UG  [generic]
+07:31:11  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+07:31:11  INFO     run_daily  Project Manager Intern → escalated  (captcha_detected)
+07:31:19  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:19  INFO     job_pipeline.auto_apply  auto_apply: Commercial Project Manager - Customer Management @ TE Connectivity  [generic]
+07:31:26  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
+07:31:27  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:31:28  INFO     run_daily  Commercial Project Manager - Customer Management → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:31:35  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:35  INFO     job_pipeline.auto_apply  auto_apply: Clinical Project Manager II @ ClinChoice  [generic]
+07:31:41  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
+07:31:42  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:31:43  INFO     run_daily  Clinical Project Manager II → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
