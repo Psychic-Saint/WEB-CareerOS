@@ -430,3 +430,52 @@
 07:31:41  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
 07:31:42  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:31:43  INFO     run_daily  Clinical Project Manager II → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:31:54  INFO     run_daily  === DISCOVERY ===
+07:31:54  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+07:31:54  INFO     job_pipeline.discovery  Jobicy: 1 matching
+07:31:55  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:31:55  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+07:31:56  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:31:56  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:31:56  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:31:56  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:32:11  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:32:11  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+07:32:11  INFO     run_daily  Discovered 10 total, 7 new
+07:32:11  INFO     run_daily  === SCORING ===
+07:32:17  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:17  INFO     run_daily  ✓ Airtable: Program Manager, Community (Contract) @ Unknown  score=62  → approved
+07:32:22  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:22  INFO     run_daily  ✓ Stripe: People Project Manager @ Unknown  score=42  → approved
+07:32:27  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:27  INFO     run_daily  ✗ Coinbase: Machine Learning Engineer, CX Intelligence @ Unknown  score=15  → rejected
+07:32:32  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:32  INFO     run_daily  ✓ Stripe: People Solutions Program Manager @ Unknown  score=42  → approved
+07:32:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:36  INFO     run_daily  ✓ Twilio: Partner Program Manager @ Unknown  score=42  → approved
+07:32:40  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:40  INFO     run_daily  ✓ Enterprise Project Manager @ Canonical Ltd.  score=52  → approved
+07:32:45  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:45  INFO     run_daily  ✓ Project Management Officer @ Glints  score=62  → approved
+07:32:45  INFO     run_daily  === AUTO-APPLY ===
+07:32:45  INFO     run_daily  6 job(s) to attempt
+07:32:49  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:49  INFO     job_pipeline.auto_apply  auto_apply: Airtable: Program Manager, Community (Contract) @ Unknown  [generic]
+07:32:53  INFO     run_daily  Airtable: Program Manager, Community (Contract) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:33:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:00  INFO     job_pipeline.auto_apply  auto_apply: Project Management Officer @ Glints  [generic]
+07:33:04  INFO     run_daily  Project Management Officer → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:33:10  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:10  INFO     job_pipeline.auto_apply  auto_apply: Enterprise Project Manager @ Canonical Ltd.  [generic]
+07:33:17  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
+07:33:17  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:33:18  INFO     run_daily  Enterprise Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:33:25  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:25  INFO     job_pipeline.auto_apply  auto_apply: Stripe: People Project Manager @ Unknown  [generic]
+07:33:29  INFO     run_daily  Stripe: People Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:33:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:36  INFO     job_pipeline.auto_apply  auto_apply: Stripe: People Solutions Program Manager @ Unknown  [generic]
+07:33:40  INFO     run_daily  Stripe: People Solutions Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:33:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:46  INFO     job_pipeline.auto_apply  auto_apply: Twilio: Partner Program Manager @ Unknown  [generic]
+07:33:50  INFO     run_daily  Twilio: Partner Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
