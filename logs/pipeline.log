@@ -479,3 +479,73 @@
 07:33:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 07:33:46  INFO     job_pipeline.auto_apply  auto_apply: Twilio: Partner Program Manager @ Unknown  [generic]
 07:33:50  INFO     run_daily  Twilio: Partner Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:29:05  INFO     run_daily  === DISCOVERY ===
+07:29:06  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+07:29:06  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:29:06  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:29:07  INFO     job_pipeline.discovery  WeWorkRemotely: 10 matching
+07:29:07  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:29:07  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:29:07  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:29:07  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:29:22  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:29:22  INFO     job_pipeline.discovery  Total unique jobs across all sources: 15
+07:29:22  INFO     run_daily  Discovered 15 total, 13 new
+07:29:22  INFO     run_daily  === SCORING ===
+07:29:27  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:27  INFO     run_daily  ✓ Highmark Health: Business Analyst - Sponsored Programs Financial Services - Clinical Trials @ Unknown  score=52  → approved
+07:29:32  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:32  INFO     run_daily  ✓ Stripe: Program Manager, Risk Ops Enablement @ Unknown  score=42  → approved
+07:29:37  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:37  INFO     run_daily  ✗ Twilio: Senior Manager, Machine Learning @ Unknown  score=12  → rejected
+07:29:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:41  INFO     run_daily  ✓ Stripe: Technical Program Manager, Core Infrastructure @ Unknown  score=38  → approved
+07:29:47  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:47  INFO     run_daily  ✓ Stripe: Technical Program Manager, Money-as-a-Service @ Unknown  score=42  → approved
+07:29:52  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:52  INFO     run_daily  ✓ Stripe: Technical Program Manager, Risk @ Unknown  score=42  → approved
+07:29:57  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:57  INFO     run_daily  ✓ Stripe: Technical Program Manager, Service Infrastructure @ Unknown  score=42  → approved
+07:30:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:02  INFO     run_daily  ✓ Twilio: Senior Program Manager, Disaster Recovery @ Unknown  score=42  → approved
+07:30:07  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:07  INFO     run_daily  ✗ Lead Machine Learning Engineer @ Thoughtworks  score=18  → rejected
+07:30:11  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:11  INFO     run_daily  ✓ Customer Care - Product Technical Support Specialist - Pittsburgh Hybrid / Remote Other Locations @ ZOLL Medical Corporation  score=42  → approved
+07:30:15  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:15  INFO     run_daily  ✗ Lead Machine Learning Engineer @ Thoughtworks  score=18  → rejected
+07:30:22  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:22  INFO     run_daily  ✓ Enterprise IT Support Specialist @ Nymbus  score=48  → approved
+07:30:26  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:26  INFO     run_daily  ✓ Help Desk IT Support Specialist @ Umpisa Inc  score=52  → approved
+07:30:26  INFO     run_daily  === AUTO-APPLY ===
+07:30:26  INFO     run_daily  9 job(s) to attempt
+07:30:29  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:29  INFO     job_pipeline.auto_apply  auto_apply: Highmark Health: Business Analyst - Sponsored Programs Financial Services - Clinical Trials @ Unknown  [generic]
+07:30:35  INFO     run_daily  Highmark Health: Business Analyst - Sponsored Programs Financial Services - Clinical Trials → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:30:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:41  INFO     job_pipeline.auto_apply  auto_apply: Help Desk IT Support Specialist @ Umpisa Inc  [generic]
+07:30:46  INFO     run_daily  Help Desk IT Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:30:53  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:53  INFO     job_pipeline.auto_apply  auto_apply: Enterprise IT Support Specialist @ Nymbus  [generic]
+07:30:57  INFO     run_daily  Enterprise IT Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:31:04  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:04  INFO     job_pipeline.auto_apply  auto_apply: Stripe: Program Manager, Risk Ops Enablement @ Unknown  [generic]
+07:31:08  INFO     run_daily  Stripe: Program Manager, Risk Ops Enablement → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:31:14  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:14  INFO     job_pipeline.auto_apply  auto_apply: Stripe: Technical Program Manager, Money-as-a-Service @ Unknown  [generic]
+07:31:18  INFO     run_daily  Stripe: Technical Program Manager, Money-as-a-Service → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:31:26  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:26  INFO     job_pipeline.auto_apply  auto_apply: Stripe: Technical Program Manager, Risk @ Unknown  [generic]
+07:31:30  INFO     run_daily  Stripe: Technical Program Manager, Risk → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:31:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:36  INFO     job_pipeline.auto_apply  auto_apply: Stripe: Technical Program Manager, Service Infrastructure @ Unknown  [generic]
+07:31:40  INFO     run_daily  Stripe: Technical Program Manager, Service Infrastructure → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:31:47  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:31:47  INFO     job_pipeline.auto_apply  auto_apply: Twilio: Senior Program Manager, Disaster Recovery @ Unknown  [generic]
+07:31:51  INFO     run_daily  Twilio: Senior Program Manager, Disaster Recovery → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:32:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:32:00  INFO     job_pipeline.auto_apply  auto_apply: Customer Care - Product Technical Support Specialist - Pittsburgh Hybrid / Remote Other Locations @ ZOLL Medical Corporation  [generic]
+07:32:07  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
+07:32:08  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:32:09  INFO     run_daily  Customer Care - Product Technical Support Specialist - Pittsburgh Hybrid / Remote Other Locations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
