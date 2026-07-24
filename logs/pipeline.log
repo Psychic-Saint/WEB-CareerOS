@@ -549,3 +549,48 @@
 07:32:07  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
 07:32:08  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:32:09  INFO     run_daily  Customer Care - Product Technical Support Specialist - Pittsburgh Hybrid / Remote Other Locations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:28:13  INFO     run_daily  === DISCOVERY ===
+07:28:13  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+07:28:13  INFO     job_pipeline.discovery  Jobicy: 4 matching
+07:28:14  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:28:15  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+07:28:15  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:28:15  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:28:15  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:28:15  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:28:30  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:28:30  INFO     job_pipeline.discovery  Total unique jobs across all sources: 12
+07:28:30  INFO     run_daily  Discovered 12 total, 7 new
+07:28:30  INFO     run_daily  === SCORING ===
+07:28:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:28:36  INFO     run_daily  ✗ Machine Learning Engineer (m/w/d) @ Rockstardevelopers GmbH  score=15  → rejected
+07:28:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:28:41  INFO     run_daily  ✓ Customer Project Manager for TnT @ NCR Atleos  score=58  → approved
+07:28:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:28:46  INFO     run_daily  ✓ Associate Program Manager, Process & Performance Monitoring, Managed Care (Remote in FL Preferred) @ Molina Healthcare  score=62  → approved
+07:28:49  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:28:49  INFO     run_daily  ✗ Brazilian Subject Matter Expert in Animals and Pets (PhD level) @ Welo Global  score=12  → rejected
+07:28:54  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:28:54  INFO     run_daily  ✓ Director Analyst, L&D Technology (REMOTE UK) @ Gartner  score=38  → approved
+07:29:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:00  INFO     run_daily  ✓ OFFICE ASSISTANT @ Agrinomic Insights LLC  score=48  → approved
+07:29:05  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:05  INFO     run_daily  ✓ IT Support Trainee @ Work Force Nexus  score=72  → approved
+07:29:05  INFO     run_daily  === AUTO-APPLY ===
+07:29:05  INFO     run_daily  4 job(s) to attempt
+07:29:09  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:09  INFO     job_pipeline.auto_apply  auto_apply: IT Support Trainee @ Work Force Nexus  [generic]
+07:29:13  INFO     run_daily  IT Support Trainee → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:29:19  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:19  INFO     job_pipeline.auto_apply  auto_apply: Associate Program Manager, Process & Performance Monitoring, Managed Care (Remote in FL Preferred) @ Molina Healthcare  [generic]
+07:29:26  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
+07:29:27  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:29:27  INFO     run_daily  Associate Program Manager, Process & Performance Monitoring, Managed Care (Remote in FL Preferred) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:29:34  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:34  INFO     job_pipeline.auto_apply  auto_apply: Customer Project Manager for TnT @ NCR Atleos  [generic]
+07:29:40  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
+07:29:41  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:29:42  INFO     run_daily  Customer Project Manager for TnT → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:29:48  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:29:48  INFO     job_pipeline.auto_apply  auto_apply: OFFICE ASSISTANT @ Agrinomic Insights LLC  [generic]
+07:29:52  INFO     run_daily  OFFICE ASSISTANT → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
