@@ -642,3 +642,53 @@
 07:14:27  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
 07:14:27  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:14:29  INFO     run_daily  Technical Customer Support Specialist – Payments & POS (German & English) | Remote Work → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:33:25  INFO     run_daily  === DISCOVERY ===
+07:33:25  INFO     job_pipeline.discovery  RemoteOK: 10 matching
+07:33:25  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:33:26  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:33:26  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+07:33:27  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:33:27  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:33:27  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:33:27  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:33:42  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:33:42  INFO     job_pipeline.discovery  Total unique jobs across all sources: 16
+07:33:42  INFO     run_daily  Discovered 16 total, 9 new
+07:33:42  INFO     run_daily  === SCORING ===
+07:33:47  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:47  INFO     run_daily  ✗ Applied Data Scientist / Machine Learning Engineer (Decision Intelligence) @ WorkWave  score=28  → rejected
+07:33:52  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:52  INFO     run_daily  ✓ Project Manager, Sports @ BCD Travel  score=42  → approved
+07:33:56  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:56  INFO     run_daily  ✓ Senior Technical Project Manager - VPC @ Nebius  score=38  → approved
+07:34:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:02  INFO     run_daily  ✓ Head of Operations @ OpenTrack  score=52  → approved
+07:34:06  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:06  INFO     run_daily  ✓ Creative Project Manager @ MUSEUM OF ICE CREAM  score=72  → approved
+07:34:12  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:12  INFO     run_daily  ✓ Ecommerce Specialist @ Huntress Talent  score=42  → approved
+07:34:16  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:16  INFO     run_daily  ✗ Brand Designer @ CoâStar  score=18  → rejected
+07:34:19  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:19  INFO     run_daily  ✗ Brand Content & Communications Associate Manager @ FuseGlobal  score=32  → rejected
+07:34:24  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:24  INFO     run_daily  ✓ IT Support Analyst @ Work Force Nexus  score=48  → approved
+07:34:24  INFO     run_daily  === AUTO-APPLY ===
+07:34:24  INFO     run_daily  5 job(s) to attempt
+07:34:29  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:29  INFO     job_pipeline.auto_apply  auto_apply: Creative Project Manager @ MUSEUM OF ICE CREAM  [generic]
+07:34:35  INFO     run_daily  Creative Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:34:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:41  INFO     job_pipeline.auto_apply  auto_apply: Head of Operations @ OpenTrack  [generic]
+07:34:45  INFO     run_daily  Head of Operations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:34:52  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:52  INFO     job_pipeline.auto_apply  auto_apply: IT Support Analyst @ Work Force Nexus  [generic]
+07:34:57  INFO     run_daily  IT Support Analyst → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:35:04  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:35:04  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Sports @ BCD Travel  [generic]
+07:35:10  INFO     job_pipeline.auto_apply  Clicked Apply button via: button:has-text("Apply Now")
+07:35:11  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:35:12  INFO     run_daily  Project Manager, Sports → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:35:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:35:18  INFO     job_pipeline.auto_apply  auto_apply: Ecommerce Specialist @ Huntress Talent  [generic]
+07:35:23  INFO     run_daily  Ecommerce Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
