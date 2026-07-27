@@ -692,3 +692,24 @@
 07:35:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 07:35:18  INFO     job_pipeline.auto_apply  auto_apply: Ecommerce Specialist @ Huntress Talent  [generic]
 07:35:23  INFO     run_daily  Ecommerce Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+08:25:26  INFO     run_daily  === DISCOVERY ===
+08:25:27  INFO     job_pipeline.discovery  RemoteOK: 9 matching
+08:25:27  INFO     job_pipeline.discovery  Jobicy: 3 matching
+08:25:28  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+08:25:28  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+08:25:29  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+08:25:29  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+08:25:29  INFO     job_pipeline.discovery  Himalayas: 0 matching
+08:25:29  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+08:25:44  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+08:25:44  INFO     job_pipeline.discovery  Total unique jobs across all sources: 15
+08:25:44  INFO     run_daily  Discovered 15 total, 3 new
+08:25:44  INFO     run_daily  === SCORING ===
+08:25:50  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:25:50  INFO     run_daily  ✓ Regional Educator - Central @ Colgate-Palmolive  score=35  → approved
+08:25:54  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:25:54  INFO     run_daily  ✗ Primary School Tutor (Remote, Flexible Hours) | €20–€40/hr @ Nachhilfeunterricht  score=28  → rejected
+08:25:58  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:25:58  INFO     run_daily  ✗ Associate Tutor - Wildlife, Marine Biology and Conservation - Animals @ learndirect  score=28  → rejected
+08:25:58  INFO     run_daily  === AUTO-APPLY ===
+08:25:58  INFO     run_daily  No approved jobs ready
