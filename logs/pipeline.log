@@ -713,3 +713,53 @@
 08:25:58  INFO     run_daily  ✗ Associate Tutor - Wildlife, Marine Biology and Conservation - Animals @ learndirect  score=28  → rejected
 08:25:58  INFO     run_daily  === AUTO-APPLY ===
 08:25:58  INFO     run_daily  No approved jobs ready
+07:35:41  INFO     run_daily  === DISCOVERY ===
+07:35:42  INFO     job_pipeline.discovery  RemoteOK: 7 matching
+07:35:42  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:35:43  INFO     job_pipeline.discovery  Arbeitnow: 7 matching
+07:35:43  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+07:35:44  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:35:44  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:35:44  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:35:44  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:36:00  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:36:00  INFO     job_pipeline.discovery  Total unique jobs across all sources: 20
+07:36:00  INFO     run_daily  Discovered 20 total, 11 new
+07:36:00  INFO     run_daily  === SCORING ===
+07:36:04  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:04  INFO     run_daily  ✗ Tarkett: Regional Civil Design Engineer Project Manager @ Unknown  score=25  → rejected
+07:36:08  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:08  INFO     run_daily  ✓ 1151 Senior Business Analyst - ServiceNow SPM (Strategic Portfolio Management) @ Intetics 2  score=42  → approved
+07:36:12  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:12  INFO     run_daily  ✗ 1152 Senior Business Analyst - ServiceNow ITOM / ITAM @ Intetics 2  score=28  → rejected
+07:36:16  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:16  INFO     run_daily  ✓ 1153 Senior Business Analyst - ServiceNow SAM (Software Asset Management) @ Intetics 2  score=38  → approved
+07:36:20  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:20  INFO     run_daily  ✗ 1154 Senior Business Analyst - ServiceNow Solution / Platform Architecture @ Intetics 2  score=32  → rejected
+07:36:23  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:23  INFO     run_daily  ✓ 1155 Senior Business Analyst - ServiceNow Interface Analysis @ Intetics 2  score=42  → approved
+07:36:27  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:27  INFO     run_daily  ✓ 1156 Senior Business Analyst - ServiceNow GRC / IRM @ Intetics 2  score=35  → approved
+07:36:31  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:31  INFO     run_daily  ✓ 1157 Senior Business Analyst - ServiceNow SecOps @ Intetics 2  score=38  → approved
+07:36:35  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:35  INFO     run_daily  ✗ HPC Advanced Customer Support Specialist @ Leidos  score=28  → rejected
+07:36:39  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:39  INFO     run_daily  ✓ Technical Program Manager, Security @ Figma  score=42  → approved
+07:36:43  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:43  INFO     run_daily  ✗ System kolejkowy KolejkoBot @ WidNet  score=28  → rejected
+07:36:43  INFO     run_daily  === AUTO-APPLY ===
+07:36:43  INFO     run_daily  3 job(s) to attempt
+07:36:47  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:47  INFO     job_pipeline.auto_apply  auto_apply: 1151 Senior Business Analyst - ServiceNow SPM (Strategic Portfolio Management) @ Intetics 2  [generic]
+07:36:52  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+07:36:52  INFO     run_daily  1151 Senior Business Analyst - ServiceNow SPM (Strategic Portfolio Management) → escalated  (captcha_detected)
+07:36:59  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:59  INFO     job_pipeline.auto_apply  auto_apply: 1155 Senior Business Analyst - ServiceNow Interface Analysis @ Intetics 2  [generic]
+07:37:02  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+07:37:03  INFO     run_daily  1155 Senior Business Analyst - ServiceNow Interface Analysis → escalated  (captcha_detected)
+07:37:09  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:37:09  INFO     job_pipeline.auto_apply  auto_apply: Technical Program Manager, Security @ Figma  [generic]
+07:37:16  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:37:16  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:37:17  INFO     run_daily  Technical Program Manager, Security → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
