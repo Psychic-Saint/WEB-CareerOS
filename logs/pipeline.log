@@ -763,3 +763,38 @@
 07:37:16  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 07:37:16  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:37:17  INFO     run_daily  Technical Program Manager, Security → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:39:43  INFO     run_daily  === DISCOVERY ===
+07:39:43  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+07:39:44  INFO     job_pipeline.discovery  Jobicy: 5 matching
+07:39:44  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:39:45  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+07:39:46  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:39:46  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:39:46  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:39:46  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:40:01  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:40:01  INFO     job_pipeline.discovery  Total unique jobs across all sources: 11
+07:40:01  INFO     run_daily  Discovered 11 total, 4 new
+07:40:01  INFO     run_daily  === SCORING ===
+07:40:06  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:40:06  INFO     run_daily  ✓ Toptal: Technical Project Manager — AI & Data Products (Databricks) | Remote @ Unknown  score=42  → approved
+07:40:11  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:40:11  INFO     run_daily  ✓ Customer Support Specialist im Berliner SaaS Startup @ Yoffix  score=62  → approved
+07:40:16  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:40:16  INFO     run_daily  ✗ Staff Machine Learning Engineer @ Headspace  score=18  → rejected
+07:40:21  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:40:21  INFO     run_daily  ✓ Senior Business Analyst - Health Insurance (Fully Remote) @ CoverGo  score=58  → approved
+07:40:21  INFO     run_daily  === AUTO-APPLY ===
+07:40:21  INFO     run_daily  3 job(s) to attempt
+07:40:25  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:40:25  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist im Berliner SaaS Startup @ Yoffix  [generic]
+07:40:29  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+07:40:29  INFO     run_daily  Customer Support Specialist im Berliner SaaS Startup → escalated  (captcha_detected)
+07:40:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:40:36  INFO     job_pipeline.auto_apply  auto_apply: Senior Business Analyst - Health Insurance (Fully Remote) @ CoverGo  [generic]
+07:40:44  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:40:45  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:40:46  INFO     run_daily  Senior Business Analyst - Health Insurance (Fully Remote) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:40:52  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:40:52  INFO     job_pipeline.auto_apply  auto_apply: Toptal: Technical Project Manager — AI & Data Products (Databricks) | Remote @ Unknown  [generic]
+07:40:57  INFO     run_daily  Toptal: Technical Project Manager — AI & Data Products (Databricks) | Remote → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
