@@ -862,3 +862,59 @@
 07:34:01  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 07:34:01  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:34:02  INFO     run_daily  Lifecycle Project Manager- Power & Energy → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:47:33  INFO     run_daily  === DISCOVERY ===
+07:47:33  INFO     job_pipeline.discovery  RemoteOK: 7 matching
+07:47:34  INFO     job_pipeline.discovery  Jobicy: 8 matching
+07:47:34  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:47:35  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+07:47:35  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:47:36  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:47:36  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:47:36  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:47:51  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:47:51  INFO     job_pipeline.discovery  Total unique jobs across all sources: 20
+07:47:51  INFO     run_daily  Discovered 20 total, 10 new
+07:47:51  INFO     run_daily  === SCORING ===
+07:47:57  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:47:57  INFO     run_daily  ✓ Network Planning Technical Project Manager @ Nebius  score=42  → approved
+07:48:01  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:01  INFO     run_daily  ✗ Technical Program Manager - Compute Systems Engineering @ Nebius  score=28  → rejected
+07:48:05  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:05  INFO     run_daily  ✓ Senior Technical Project Manager - Token Factory @ Nebius  score=42  → approved
+07:48:09  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:09  INFO     run_daily  ✗ Technical Program Manager, Data Centers @ Nebius  score=32  → rejected
+07:48:15  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:15  INFO     run_daily  ✓ Instructor Part Time - Agile Scrum Master @ Fullstack Academy  score=48  → approved
+07:48:20  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:20  INFO     run_daily  ✗ Part time AMC Tutor (Remote in US) @ Think Academy US  score=28  → rejected
+07:48:23  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:23  INFO     run_daily  ✗ Pathophysiology Visiting Professor (part time/remote) @ Covista  score=15  → rejected
+07:48:29  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:29  INFO     run_daily  ✓ Project Management Coordinator @ Arabian Private Holdings  score=72  → approved
+07:48:32  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:32  WARNING  job_pipeline.scorer  Score parse failed: Extra data: line 13 column 1 (char 870) | raw: {
+  "score": 5,
+  "reasoning": "This job posting appears to be a corrupted or misdirected listing for a carnation flower catalog/inventory system with no coherent role description, requirements, or re
+07:48:32  INFO     run_daily  ✗ Lion King @ BiFlorica  score=5  → rejected
+07:48:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:36  INFO     run_daily  ✗ Political @ PowerPlay  score=25  → rejected
+07:48:36  INFO     run_daily  === AUTO-APPLY ===
+07:48:36  INFO     run_daily  4 job(s) to attempt
+07:48:40  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:40  INFO     job_pipeline.auto_apply  auto_apply: Project Management Coordinator @ Arabian Private Holdings  [generic]
+07:48:45  INFO     run_daily  Project Management Coordinator → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:48:52  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:48:52  INFO     job_pipeline.auto_apply  auto_apply: Instructor Part Time - Agile Scrum Master @ Fullstack Academy  [generic]
+07:48:58  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:48:59  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:49:00  INFO     run_daily  Instructor Part Time - Agile Scrum Master → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:49:07  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:49:07  INFO     job_pipeline.auto_apply  auto_apply: Network Planning Technical Project Manager @ Nebius  [generic]
+07:49:13  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:49:14  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:49:15  INFO     run_daily  Network Planning Technical Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:49:22  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:49:22  INFO     job_pipeline.auto_apply  auto_apply: Senior Technical Project Manager - Token Factory @ Nebius  [generic]
+07:49:29  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:49:29  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:49:30  INFO     run_daily  Senior Technical Project Manager - Token Factory → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
