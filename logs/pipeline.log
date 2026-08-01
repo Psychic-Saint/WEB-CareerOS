@@ -918,3 +918,44 @@
 07:49:29  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 07:49:29  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:49:30  INFO     run_daily  Senior Technical Project Manager - Token Factory → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:25:32  INFO     run_daily  === DISCOVERY ===
+07:25:33  INFO     job_pipeline.discovery  RemoteOK: 8 matching
+07:25:33  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:25:34  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:25:34  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+07:25:35  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:25:35  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:25:35  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:25:35  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:25:50  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:25:50  INFO     job_pipeline.discovery  Total unique jobs across all sources: 16
+07:25:50  INFO     run_daily  Discovered 16 total, 4 new
+07:25:50  INFO     run_daily  === SCORING ===
+07:25:55  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:25:55  INFO     run_daily  ✓ Customer Support Specialist @ Juniper Square  score=48  → approved
+07:26:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:26:00  INFO     run_daily  ✓ Customer Support Specialist (Shift Monday - Friday 3:00pm-11:00pm CST) @ AlertMedia  score=42  → approved
+07:26:06  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:26:06  INFO     run_daily  ✓ Technical Support Specialist II - Core Apps (Costa Rica) @ Smartsheet  score=42  → approved
+07:26:11  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:26:11  INFO     run_daily  ✓ Executive Operations &amp; Project Manager @ Viva Wellness Drip  score=62  → approved
+07:26:11  INFO     run_daily  === AUTO-APPLY ===
+07:26:11  INFO     run_daily  4 job(s) to attempt
+07:26:14  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:26:14  INFO     job_pipeline.auto_apply  auto_apply: Executive Operations &amp; Project Manager @ Viva Wellness Drip  [generic]
+07:26:19  INFO     run_daily  Executive Operations &amp; Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:26:25  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:26:25  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist @ Juniper Square  [generic]
+07:26:33  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:26:33  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:26:34  INFO     run_daily  Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:26:40  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:26:40  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist (Shift Monday - Friday 3:00pm-11:00pm CST) @ AlertMedia  [generic]
+07:26:47  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:26:47  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:26:48  INFO     run_daily  Customer Support Specialist (Shift Monday - Friday 3:00pm-11:00pm CST) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:26:55  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:26:55  INFO     job_pipeline.auto_apply  auto_apply: Technical Support Specialist II - Core Apps (Costa Rica) @ Smartsheet  [generic]
+07:27:01  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:27:02  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:27:03  INFO     run_daily  Technical Support Specialist II - Core Apps (Costa Rica) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
