@@ -959,3 +959,36 @@
 07:27:01  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 07:27:02  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:27:03  INFO     run_daily  Technical Support Specialist II - Core Apps (Costa Rica) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:29:55  INFO     run_daily  === DISCOVERY ===
+07:29:56  INFO     job_pipeline.discovery  RemoteOK: 5 matching
+07:29:56  INFO     job_pipeline.discovery  Jobicy: 3 matching
+07:29:57  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:29:57  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+07:29:57  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:29:58  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:29:58  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:29:58  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:30:13  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:30:13  INFO     job_pipeline.discovery  Total unique jobs across all sources: 13
+07:30:13  INFO     run_daily  Discovered 13 total, 4 new
+07:30:13  INFO     run_daily  === SCORING ===
+07:30:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:18  INFO     run_daily  ✓ Onboarding Project Manager @ Cloudbeds  score=62  → approved
+07:30:23  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:23  INFO     run_daily  ✓ Technical Program Manager, Infrastructure @ Stripe  score=42  → approved
+07:30:27  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:27  INFO     run_daily  ✗ construction project coordinator @ Linesteel (1973) Limited  score=32  → rejected
+07:30:32  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:32  INFO     run_daily  ✓ GenAI Engineer AI Builder AI Agent Associate Specialist @ Magic Compass Limited  score=38  → approved
+07:30:32  INFO     run_daily  === AUTO-APPLY ===
+07:30:32  INFO     run_daily  2 job(s) to attempt
+07:30:35  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:35  INFO     job_pipeline.auto_apply  auto_apply: Onboarding Project Manager @ Cloudbeds  [generic]
+07:30:43  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:30:43  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:30:44  INFO     run_daily  Onboarding Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:30:51  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:30:51  INFO     job_pipeline.auto_apply  auto_apply: Technical Program Manager, Infrastructure @ Stripe  [generic]
+07:30:58  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:30:58  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:30:59  INFO     run_daily  Technical Program Manager, Infrastructure → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
