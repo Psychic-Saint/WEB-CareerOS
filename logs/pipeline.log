@@ -1022,3 +1022,36 @@
 08:24:55  INFO     job_pipeline.auto_apply  auto_apply: Scientific Support Specialist @ Uncountable Inc.  [generic]
 08:24:59  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 08:24:59  INFO     run_daily  Scientific Support Specialist → escalated  (captcha_detected)
+07:33:15  INFO     run_daily  === DISCOVERY ===
+07:33:16  INFO     job_pipeline.discovery  RemoteOK: 5 matching
+07:33:16  INFO     job_pipeline.discovery  Jobicy: 4 matching
+07:33:17  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:33:17  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+07:33:18  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:33:18  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:33:18  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:33:18  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:33:33  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:33:33  INFO     job_pipeline.discovery  Total unique jobs across all sources: 13
+07:33:33  INFO     run_daily  Discovered 13 total, 6 new
+07:33:33  INFO     run_daily  === SCORING ===
+07:33:39  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:39  INFO     run_daily  ✓ Toptal : Technical Program Manager — ServiceNow Program | Remote @ Unknown  score=62  → approved
+07:33:42  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:42  INFO     run_daily  ✗ Online Part Time Faculty - Accounting, Graduate @ American Public University System  score=25  → rejected
+07:33:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:46  INFO     run_daily  ✗ Work from home as an private online English Tutor - Part Time @ Nachhilfeunterricht  score=28  → rejected
+07:33:52  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:52  INFO     run_daily  ✗ Online Part Time Faculty - Accounting, Undergrad @ American Public University System  score=28  → rejected
+07:33:58  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:33:58  INFO     run_daily  ✗ Junior Project Manager @ Cosmote Global Solutions  score=28  → rejected
+07:34:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:02  INFO     run_daily  ✓ Customer Support Specialist @ Resource Guru  score=58  → approved
+07:34:02  INFO     run_daily  === AUTO-APPLY ===
+07:34:02  INFO     run_daily  2 job(s) to attempt
+07:34:06  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:06  INFO     job_pipeline.auto_apply  auto_apply: Toptal : Technical Program Manager — ServiceNow Program | Remote @ Unknown  [generic]
+07:34:12  INFO     run_daily  Toptal : Technical Program Manager — ServiceNow Program | Remote → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:34:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:34:18  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist @ Resource Guru  [generic]
+07:34:23  INFO     run_daily  Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
