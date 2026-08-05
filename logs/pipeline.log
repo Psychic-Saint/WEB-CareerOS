@@ -1055,3 +1055,48 @@
 07:34:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 07:34:18  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist @ Resource Guru  [generic]
 07:34:23  INFO     run_daily  Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:35:35  INFO     run_daily  === DISCOVERY ===
+07:35:35  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+07:35:36  INFO     job_pipeline.discovery  Jobicy: 4 matching
+07:35:36  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+07:35:37  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+07:35:37  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:35:37  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:35:37  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:35:37  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:35:53  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:35:53  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+07:35:53  INFO     run_daily  Discovered 9 total, 5 new
+07:35:53  INFO     run_daily  === SCORING ===
+07:35:58  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:35:59  INFO     run_daily  ✓ E-Commerce CRO Project Manager @ Jolly Commerce LLP  score=58  → approved
+07:36:04  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:04  INFO     run_daily  ✓ Career Consultant OPEN RANK @ University of Colorado  score=42  → approved
+07:36:09  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:09  INFO     run_daily  ✓ Commercial Project Manager - Customer Programs @ TE Connectivity  score=52  → approved
+07:36:13  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:13  INFO     run_daily  ✓ Senior Business Analyst, AI & Data @ phData  score=48  → approved
+07:36:18  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:18  INFO     run_daily  ✗ Senior Machine Learning Scientist, Customer Operations @ Monzo  score=22  → rejected
+07:36:18  INFO     run_daily  === AUTO-APPLY ===
+07:36:18  INFO     run_daily  4 job(s) to attempt
+07:36:26  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:26  INFO     job_pipeline.auto_apply  auto_apply: E-Commerce CRO Project Manager @ Jolly Commerce LLP  [generic]
+07:36:32  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:36:32  INFO     job_pipeline.auto_apply  Clicking submit for E-Commerce CRO Project Manager @ Jolly Commerce LLP
+07:36:36  INFO     run_daily  E-Commerce CRO Project Manager → escalated  (success_not_confirmed — check screenshot)
+07:36:42  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:42  INFO     job_pipeline.auto_apply  auto_apply: Commercial Project Manager - Customer Programs @ TE Connectivity  [generic]
+07:36:48  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:36:49  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:36:50  INFO     run_daily  Commercial Project Manager - Customer Programs → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:36:56  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:56  INFO     job_pipeline.auto_apply  auto_apply: Senior Business Analyst, AI & Data @ phData  [generic]
+07:37:02  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:37:03  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:37:04  INFO     run_daily  Senior Business Analyst, AI & Data → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:37:10  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:37:10  INFO     job_pipeline.auto_apply  auto_apply: Career Consultant OPEN RANK @ University of Colorado  [generic]
+07:37:16  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:37:17  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:37:18  INFO     run_daily  Career Consultant OPEN RANK → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
