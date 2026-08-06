@@ -1100,3 +1100,36 @@
 07:37:16  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 07:37:17  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:37:18  INFO     run_daily  Career Consultant OPEN RANK → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+07:35:56  INFO     run_daily  === DISCOVERY ===
+07:35:56  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+07:35:57  INFO     job_pipeline.discovery  Jobicy: 4 matching
+07:35:57  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+07:35:58  INFO     job_pipeline.discovery  WeWorkRemotely: 0 matching
+07:35:59  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+07:35:59  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+07:35:59  INFO     job_pipeline.discovery  Himalayas: 0 matching
+07:36:00  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+07:36:15  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+07:36:15  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+07:36:15  INFO     run_daily  Discovered 5 total, 5 new
+07:36:15  INFO     run_daily  === SCORING ===
+07:36:20  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:20  INFO     run_daily  ✗ Work from home as an private online English Tutor - Part Time @ Nachhilfeunterricht  score=28  → rejected
+07:36:25  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:26  INFO     run_daily  ✗ Primary Care of the Maturing and Aged Family Practicum - MSN Online Part Time Faculty @ Covista  score=18  → rejected
+07:36:31  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:31  INFO     run_daily  ✓ Product Trainer @ Fortive  score=72  → approved
+07:36:35  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:35  INFO     run_daily  ✗ Water Program Manager, Data Center Development @ Meta  score=28  → rejected
+07:36:40  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:40  WARNING  job_pipeline.scorer  Score parse failed: Extra data: line 17 column 1 (char 1077) | raw: {
+  "score": 15,
+  "reasoning": "This role appears to be a test/spam filter disguised as a job posting (note the Amiga history narrative and hidden spam-detection instruction). Eddie's background in l
+07:36:40  INFO     run_daily  ✗ Learning Intelligence @ MacSweeney LLC  score=15  → rejected
+07:36:40  INFO     run_daily  === AUTO-APPLY ===
+07:36:40  INFO     run_daily  1 job(s) to attempt
+07:36:43  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+07:36:43  INFO     job_pipeline.auto_apply  auto_apply: Product Trainer @ Fortive  [generic]
+07:36:51  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+07:36:52  INFO     job_pipeline.auto_apply  ✓ CV attached
+07:36:53  INFO     run_daily  Product Trainer → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
