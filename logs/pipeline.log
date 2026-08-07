@@ -1133,3 +1133,34 @@
 07:36:51  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 07:36:52  INFO     job_pipeline.auto_apply  ✓ CV attached
 07:36:53  INFO     run_daily  Product Trainer → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:07:16  INFO     run_daily  === DISCOVERY ===
+06:07:17  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+06:07:17  INFO     job_pipeline.discovery  Jobicy: 3 matching
+06:07:18  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+06:07:18  INFO     job_pipeline.discovery  WeWorkRemotely: 0 matching
+06:07:19  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+06:07:19  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+06:07:19  INFO     job_pipeline.discovery  Himalayas: 0 matching
+06:07:19  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+06:07:35  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+06:07:35  INFO     job_pipeline.discovery  Total unique jobs across all sources: 3
+06:07:35  INFO     run_daily  Discovered 3 total, 3 new
+06:07:35  INFO     run_daily  === SCORING ===
+06:07:40  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:07:40  INFO     run_daily  ✓ Pensions Project Manager @ WTW  score=42  → approved
+06:07:44  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:07:45  INFO     run_daily  ✗ Senior Machine Learning Engineer, GenAI Security @ Reddit  score=15  → rejected
+06:07:51  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:07:51  INFO     run_daily  ✓ Senior Customer Technical Program Manager - Data Center @ NVIDIA  score=42  → approved
+06:07:51  INFO     run_daily  === AUTO-APPLY ===
+06:07:51  INFO     run_daily  2 job(s) to attempt
+06:07:55  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:07:55  INFO     job_pipeline.auto_apply  auto_apply: Pensions Project Manager @ WTW  [generic]
+06:08:03  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:08:04  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:08:05  INFO     run_daily  Pensions Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:08:11  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:08:11  INFO     job_pipeline.auto_apply  auto_apply: Senior Customer Technical Program Manager - Data Center @ NVIDIA  [generic]
+06:08:18  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:08:19  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:08:20  INFO     run_daily  Senior Customer Technical Program Manager - Data Center → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
