@@ -1164,3 +1164,23 @@
 06:08:18  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 06:08:19  INFO     job_pipeline.auto_apply  ✓ CV attached
 06:08:20  INFO     run_daily  Senior Customer Technical Program Manager - Data Center → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:38:04  INFO     run_daily  === DISCOVERY ===
+05:38:05  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+05:38:06  INFO     job_pipeline.discovery  Jobicy: 3 matching
+05:38:07  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:38:08  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+05:38:09  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:38:09  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:38:09  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:38:09  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:38:24  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:38:24  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+05:38:24  INFO     run_daily  Discovered 5 total, 1 new
+05:38:24  INFO     run_daily  === SCORING ===
+05:38:29  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:38:29  INFO     run_daily  ✓ Toptal: Technical Program Manager (SAP S/4HANA) @ Unknown  score=42  → approved
+05:38:29  INFO     run_daily  === AUTO-APPLY ===
+05:38:29  INFO     run_daily  1 job(s) to attempt
+05:38:33  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:38:33  INFO     job_pipeline.auto_apply  auto_apply: Toptal: Technical Program Manager (SAP S/4HANA) @ Unknown  [generic]
+05:38:39  INFO     run_daily  Toptal: Technical Program Manager (SAP S/4HANA) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
