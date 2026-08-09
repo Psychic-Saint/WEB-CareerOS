@@ -1184,3 +1184,25 @@
 05:38:33  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 05:38:33  INFO     job_pipeline.auto_apply  auto_apply: Toptal: Technical Program Manager (SAP S/4HANA) @ Unknown  [generic]
 05:38:39  INFO     run_daily  Toptal: Technical Program Manager (SAP S/4HANA) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:43:33  INFO     run_daily  === DISCOVERY ===
+05:43:33  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+05:43:34  INFO     job_pipeline.discovery  Jobicy: 2 matching
+05:43:35  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:43:36  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+05:43:36  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:43:37  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:43:37  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:43:37  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:43:52  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:43:52  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+05:43:52  INFO     run_daily  Discovered 5 total, 1 new
+05:43:52  INFO     run_daily  === SCORING ===
+05:43:56  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:43:56  INFO     run_daily  ✓ Senior Customer Support Specialist - Belgium @ Alan  score=42  → approved
+05:43:56  INFO     run_daily  === AUTO-APPLY ===
+05:43:56  INFO     run_daily  1 job(s) to attempt
+05:43:59  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:43:59  INFO     job_pipeline.auto_apply  auto_apply: Senior Customer Support Specialist - Belgium @ Alan  [generic]
+05:44:08  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:44:09  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:44:10  INFO     run_daily  Senior Customer Support Specialist - Belgium → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
