@@ -1243,3 +1243,34 @@
 06:10:14  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 06:10:15  INFO     job_pipeline.auto_apply  ✓ CV attached
 06:10:16  INFO     run_daily  Project Manager II → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:51:10  INFO     run_daily  === DISCOVERY ===
+05:51:11  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+05:51:11  INFO     job_pipeline.discovery  Jobicy: 7 matching
+05:51:11  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:51:12  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+05:51:13  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:51:13  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:51:13  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:51:13  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:51:28  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:51:28  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+05:51:28  INFO     run_daily  Discovered 10 total, 3 new
+05:51:28  INFO     run_daily  === SCORING ===
+05:51:34  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:51:34  INFO     run_daily  ✗ Machine Learning Engineer @ Skylum  score=18  → rejected
+05:51:38  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:51:38  INFO     run_daily  ✓ Instructional Designer, Nebius Academy @ Nebius  score=42  → approved
+05:51:43  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:51:43  INFO     run_daily  ✓ Project Manager I, IPCM @ BCD Travel  score=52  → approved
+05:51:43  INFO     run_daily  === AUTO-APPLY ===
+05:51:43  INFO     run_daily  2 job(s) to attempt
+05:51:46  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:51:46  INFO     job_pipeline.auto_apply  auto_apply: Project Manager I, IPCM @ BCD Travel  [generic]
+05:51:55  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:51:55  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:51:56  INFO     run_daily  Project Manager I, IPCM → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:52:03  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:52:03  INFO     job_pipeline.auto_apply  auto_apply: Instructional Designer, Nebius Academy @ Nebius  [generic]
+05:52:11  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:52:11  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:52:12  INFO     run_daily  Instructional Designer, Nebius Academy → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
