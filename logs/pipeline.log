@@ -1274,3 +1274,32 @@
 05:52:11  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 05:52:11  INFO     job_pipeline.auto_apply  ✓ CV attached
 05:52:12  INFO     run_daily  Instructional Designer, Nebius Academy → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:09:18  INFO     run_daily  === DISCOVERY ===
+06:09:18  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+06:09:18  INFO     job_pipeline.discovery  Jobicy: 5 matching
+06:09:19  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+06:09:20  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+06:09:20  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+06:09:20  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+06:09:20  INFO     job_pipeline.discovery  Himalayas: 0 matching
+06:09:21  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+06:09:36  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+06:09:36  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+06:09:36  INFO     run_daily  Discovered 7 total, 2 new
+06:09:36  INFO     run_daily  === SCORING ===
+06:09:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:09:41  INFO     run_daily  ✓ Principal Project Manager Engineer - remote must be in the US @ TE Connectivity  score=42  → approved
+06:09:44  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:09:44  INFO     run_daily  ✓ Senior Customer Support Specialist - UK @ Juniper Square  score=42  → approved
+06:09:44  INFO     run_daily  === AUTO-APPLY ===
+06:09:44  INFO     run_daily  2 job(s) to attempt
+06:09:48  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:09:48  INFO     job_pipeline.auto_apply  auto_apply: Principal Project Manager Engineer - remote must be in the US @ TE Connectivity  [generic]
+06:09:57  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:09:58  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:09:59  INFO     run_daily  Principal Project Manager Engineer - remote must be in the US → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:10:05  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:05  INFO     job_pipeline.auto_apply  auto_apply: Senior Customer Support Specialist - UK @ Juniper Square  [generic]
+06:10:12  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:10:12  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:10:13  INFO     run_daily  Senior Customer Support Specialist - UK → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
