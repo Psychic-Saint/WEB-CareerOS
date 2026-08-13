@@ -1303,3 +1303,53 @@
 06:10:12  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 06:10:12  INFO     job_pipeline.auto_apply  ✓ CV attached
 06:10:13  INFO     run_daily  Senior Customer Support Specialist - UK → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:12:59  INFO     run_daily  === DISCOVERY ===
+06:12:59  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+06:12:59  INFO     job_pipeline.discovery  Jobicy: 4 matching
+06:13:00  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+06:13:01  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+06:13:01  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+06:13:02  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+06:13:02  INFO     job_pipeline.discovery  Himalayas: 0 matching
+06:13:02  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+06:13:17  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+06:13:17  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+06:13:17  INFO     run_daily  Discovered 8 total, 6 new
+06:13:17  INFO     run_daily  === SCORING ===
+06:13:23  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:23  INFO     run_daily  ✓ SoFi: Director, Learning and Development - Operations @ Unknown  score=62  → approved
+06:13:27  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:27  INFO     run_daily  ✓ Senior Shopify Project Manager / Project Lead (m/k/d) @ Strix Group B.V.  score=35  → approved
+06:13:32  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:32  INFO     run_daily  ✓ Sr. Sales Enablement Program Manager @ Rubrik  score=62  → approved
+06:13:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:36  INFO     run_daily  ✓ Customer Support Specialist (Mon-Fri 3pm-11pm CST) @ AlertMedia  score=52  → approved
+06:13:40  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:40  INFO     run_daily  ✓ Salesforce Business Analyst @ Nielsen  score=52  → approved
+06:13:44  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:44  INFO     run_daily  ✓ Data Support Specialist I, CDS Operations @ BCD Travel  score=42  → approved
+06:13:44  INFO     run_daily  === AUTO-APPLY ===
+06:13:44  INFO     run_daily  5 job(s) to attempt
+06:13:47  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:47  INFO     job_pipeline.auto_apply  auto_apply: SoFi: Director, Learning and Development - Operations @ Unknown  [generic]
+06:13:53  INFO     run_daily  SoFi: Director, Learning and Development - Operations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:13:59  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:13:59  INFO     job_pipeline.auto_apply  auto_apply: Sr. Sales Enablement Program Manager @ Rubrik  [generic]
+06:14:05  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:14:06  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:14:07  INFO     run_daily  Sr. Sales Enablement Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:14:13  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:14:13  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist (Mon-Fri 3pm-11pm CST) @ AlertMedia  [generic]
+06:14:19  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:14:20  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:14:21  INFO     run_daily  Customer Support Specialist (Mon-Fri 3pm-11pm CST) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:14:27  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:14:27  INFO     job_pipeline.auto_apply  auto_apply: Salesforce Business Analyst @ Nielsen  [generic]
+06:14:33  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:14:34  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:14:35  INFO     run_daily  Salesforce Business Analyst → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:14:41  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:14:41  INFO     job_pipeline.auto_apply  auto_apply: Data Support Specialist I, CDS Operations @ BCD Travel  [generic]
+06:14:49  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:14:49  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:14:50  INFO     run_daily  Data Support Specialist I, CDS Operations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
