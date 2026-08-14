@@ -1353,3 +1353,59 @@
 06:14:49  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 06:14:49  INFO     job_pipeline.auto_apply  ✓ CV attached
 06:14:50  INFO     run_daily  Data Support Specialist I, CDS Operations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:09:21  INFO     run_daily  === DISCOVERY ===
+06:09:22  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+06:09:22  INFO     job_pipeline.discovery  Jobicy: 2 matching
+06:09:23  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+06:09:23  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+06:09:24  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+06:09:24  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+06:09:24  INFO     job_pipeline.discovery  Himalayas: 0 matching
+06:09:24  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+06:09:39  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+06:09:39  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+06:09:40  INFO     run_daily  Discovered 10 total, 7 new
+06:09:40  INFO     run_daily  === SCORING ===
+06:09:45  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:09:45  INFO     run_daily  ✓ Senior Project Manager (m/w/d) @ epilot GmbH  score=62  → approved
+06:09:50  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:09:50  INFO     run_daily  ✓ Lead Project Manager @ PSI CRO  score=42  → approved
+06:09:55  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:09:55  INFO     run_daily  ✓ Senior Project Manager @ PSI CRO  score=42  → approved
+06:09:59  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:09:59  WARNING  job_pipeline.scorer  Score parse failed: Extra data: line 17 column 1 (char 1110) | raw: {
+  "score": 15,
+  "reasoning": "This job posting is incomplete and appears to be a navigation/template page rather than an actual job description. Without clear role requirements, responsibilities, o
+06:09:59  INFO     run_daily  ✗ Hiring
+Process @ SandForce  score=15  → rejected
+06:10:02  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:02  WARNING  job_pipeline.scorer  Score parse failed: Extra data: line 14 column 1 (char 699) | raw: {
+  "score": 8,
+  "reasoning": "This is not a genuine job posting—it's a request for automotive industry salary information disguised as a job listing with spam-detection language. Eddie's background 
+06:10:02  INFO     run_daily  ✗ What are the highest paying jobs the automotive industry @ DealerRefresh  score=8  → rejected
+06:10:06  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:06  WARNING  job_pipeline.scorer  Score parse failed: Extra data: line 17 column 1 (char 1015) | raw: {
+  "score": 15,
+  "reasoning": "This job posting appears to be a technical/development test rather than a genuine role, containing only HTML form instructions and spam-detection language with no actu
+06:10:06  INFO     run_daily  ✗ APPLY TODAY @ Napa Valley Country Club  score=15  → rejected
+06:10:12  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:12  INFO     run_daily  ✓ Project leaders @ Niyukti Systems, Inc  score=62  → approved
+06:10:12  INFO     run_daily  === AUTO-APPLY ===
+06:10:12  INFO     run_daily  4 job(s) to attempt
+06:10:16  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:16  INFO     job_pipeline.auto_apply  auto_apply: Senior Project Manager (m/w/d) @ epilot GmbH  [generic]
+06:10:20  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+06:10:20  INFO     run_daily  Senior Project Manager (m/w/d) → escalated  (captcha_detected)
+06:10:28  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:28  INFO     job_pipeline.auto_apply  auto_apply: Project leaders @ Niyukti Systems, Inc  [generic]
+06:10:32  INFO     run_daily  Project leaders → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:10:39  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:39  INFO     job_pipeline.auto_apply  auto_apply: Lead Project Manager @ PSI CRO  [generic]
+06:10:46  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:10:47  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:10:48  INFO     run_daily  Lead Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+06:10:55  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+06:10:55  INFO     job_pipeline.auto_apply  auto_apply: Senior Project Manager @ PSI CRO  [generic]
+06:11:02  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+06:11:03  INFO     job_pipeline.auto_apply  ✓ CV attached
+06:11:04  INFO     run_daily  Senior Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
