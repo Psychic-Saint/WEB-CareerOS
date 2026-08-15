@@ -1409,3 +1409,25 @@ Process @ SandForce  score=15  → rejected
 06:11:02  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 06:11:03  INFO     job_pipeline.auto_apply  ✓ CV attached
 06:11:04  INFO     run_daily  Senior Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:19:48  INFO     run_daily  === DISCOVERY ===
+05:19:48  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+05:19:48  INFO     job_pipeline.discovery  Jobicy: 1 matching
+05:19:48  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:19:49  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+05:19:49  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:19:49  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:19:49  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:19:49  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:20:04  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:20:04  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+05:20:05  INFO     run_daily  Discovered 6 total, 1 new
+05:20:05  INFO     run_daily  === SCORING ===
+05:20:09  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:20:09  INFO     run_daily  ✓ SaaS Associate Customer Support Specialist (Remote - UK) @ Fleetio  score=42  → approved
+05:20:09  INFO     run_daily  === AUTO-APPLY ===
+05:20:09  INFO     run_daily  1 job(s) to attempt
+05:20:13  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:20:13  INFO     job_pipeline.auto_apply  auto_apply: SaaS Associate Customer Support Specialist (Remote - UK) @ Fleetio  [generic]
+05:20:20  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:20:21  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:20:22  INFO     run_daily  SaaS Associate Customer Support Specialist (Remote - UK) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
