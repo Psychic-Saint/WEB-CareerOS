@@ -1431,3 +1431,40 @@ Process @ SandForce  score=15  → rejected
 05:20:20  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 05:20:21  INFO     job_pipeline.auto_apply  ✓ CV attached
 05:20:22  INFO     run_daily  SaaS Associate Customer Support Specialist (Remote - UK) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:22:06  INFO     run_daily  === DISCOVERY ===
+05:22:07  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+05:22:07  INFO     job_pipeline.discovery  Jobicy: 3 matching
+05:22:08  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+05:22:08  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+05:22:09  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:22:09  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:22:09  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:22:09  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:22:24  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:22:24  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+05:22:25  INFO     run_daily  Discovered 8 total, 4 new
+05:22:25  INFO     run_daily  === SCORING ===
+05:22:30  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:22:31  INFO     run_daily  ✓ Project Manager Life Sciences EMEA, Production @ LILT (Production)  score=52  → approved
+05:22:36  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:22:36  INFO     run_daily  ✓ Agentic AI Technical Mentor - Independent Contractor (US Canada, Europe, MENA, APAC) @ Udacity  score=35  → approved
+05:22:42  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:22:42  INFO     run_daily  ✓ AI Mentor (Independent Contractor) - Business Leader Programs @ Udacity  score=48  → approved
+05:22:47  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:22:47  INFO     run_daily  ✓ AI Technical Mentor - Independent Contractor (US Canada, Europe, MENA, APAC) @ Udacity  score=52  → approved
+05:22:47  INFO     run_daily  === AUTO-APPLY ===
+05:22:47  INFO     run_daily  3 job(s) to attempt
+05:22:50  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:22:50  INFO     job_pipeline.auto_apply  auto_apply: Project Manager Life Sciences EMEA, Production @ LILT (Production)  [generic]
+05:22:54  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+05:22:54  INFO     run_daily  Project Manager Life Sciences EMEA, Production → escalated  (captcha_detected)
+05:23:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:00  INFO     job_pipeline.auto_apply  auto_apply: AI Technical Mentor - Independent Contractor (US Canada, Europe, MENA, APAC) @ Udacity  [generic]
+05:23:08  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:23:08  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:23:09  INFO     run_daily  AI Technical Mentor - Independent Contractor (US Canada, Europe, MENA, APAC) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:23:16  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:16  INFO     job_pipeline.auto_apply  auto_apply: AI Mentor (Independent Contractor) - Business Leader Programs @ Udacity  [generic]
+05:23:23  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:23:24  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:23:25  INFO     run_daily  AI Mentor (Independent Contractor) - Business Leader Programs → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
