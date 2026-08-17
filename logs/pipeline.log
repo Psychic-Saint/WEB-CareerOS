@@ -1468,3 +1468,19 @@ Process @ SandForce  score=15  → rejected
 05:23:23  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 05:23:24  INFO     job_pipeline.auto_apply  ✓ CV attached
 05:23:25  INFO     run_daily  AI Mentor (Independent Contractor) - Business Leader Programs → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:30:10  INFO     run_daily  === DISCOVERY ===
+05:30:10  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+05:30:11  INFO     job_pipeline.discovery  Jobicy: 1 matching
+05:30:12  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:30:12  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+05:30:13  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:30:14  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:30:14  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:30:14  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:30:29  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:30:29  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+05:30:29  INFO     run_daily  Discovered 5 total, 0 new
+05:30:29  INFO     run_daily  === SCORING ===
+05:30:29  INFO     run_daily  No new jobs to score
+05:30:29  INFO     run_daily  === AUTO-APPLY ===
+05:30:29  INFO     run_daily  No approved jobs ready
