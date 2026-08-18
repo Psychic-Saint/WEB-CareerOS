@@ -1484,3 +1484,54 @@ Process @ SandForce  score=15  → rejected
 05:30:29  INFO     run_daily  No new jobs to score
 05:30:29  INFO     run_daily  === AUTO-APPLY ===
 05:30:29  INFO     run_daily  No approved jobs ready
+05:23:07  INFO     run_daily  === DISCOVERY ===
+05:23:08  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+05:23:08  INFO     job_pipeline.discovery  Jobicy: 5 matching
+05:23:09  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+05:23:10  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+05:23:11  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:23:12  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:23:12  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:23:12  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:23:27  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:23:27  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+05:23:27  INFO     run_daily  Discovered 9 total, 6 new
+05:23:27  INFO     run_daily  === SCORING ===
+05:23:33  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:33  INFO     run_daily  ✓ Senior IT Project Manager (m/w/d) @ Natuvion GmbH  score=58  → approved
+05:23:38  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:38  INFO     run_daily  ✓ Assessment Item Writer/Editor (CONTRACT) @ Instructure  score=52  → approved
+05:23:42  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:42  INFO     run_daily  ✓ Business Analyst, Clinical & Reimbursement Policy @ Clover Health  score=42  → approved
+05:23:45  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:45  INFO     run_daily  ✗ Senior Machine Learning Engineer @ Sona  score=15  → rejected
+05:23:51  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:51  INFO     run_daily  ✓ Senior Customer Support Operations Readiness Program Manager @ Mercury  score=58  → approved
+05:23:55  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:23:55  INFO     run_daily  ✓ Senior Customer Support Controls & Governance Program Manager @ Mercury  score=48  → approved
+05:23:55  INFO     run_daily  === AUTO-APPLY ===
+05:23:55  INFO     run_daily  5 job(s) to attempt
+05:24:00  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:24:00  INFO     job_pipeline.auto_apply  auto_apply: Senior IT Project Manager (m/w/d) @ Natuvion GmbH  [generic]
+05:24:05  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+05:24:05  INFO     run_daily  Senior IT Project Manager (m/w/d) → escalated  (captcha_detected)
+05:24:12  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:24:12  INFO     job_pipeline.auto_apply  auto_apply: Senior Customer Support Operations Readiness Program Manager @ Mercury  [generic]
+05:24:20  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:24:20  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:24:22  INFO     run_daily  Senior Customer Support Operations Readiness Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:24:28  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:24:28  INFO     job_pipeline.auto_apply  auto_apply: Assessment Item Writer/Editor (CONTRACT) @ Instructure  [generic]
+05:24:34  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:24:35  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:24:36  INFO     run_daily  Assessment Item Writer/Editor (CONTRACT) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:24:42  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:24:42  INFO     job_pipeline.auto_apply  auto_apply: Senior Customer Support Controls & Governance Program Manager @ Mercury  [generic]
+05:24:49  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:24:50  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:24:51  INFO     run_daily  Senior Customer Support Controls & Governance Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:24:57  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:24:57  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst, Clinical & Reimbursement Policy @ Clover Health  [generic]
+05:25:04  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:25:05  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:25:06  INFO     run_daily  Business Analyst, Clinical & Reimbursement Policy → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
