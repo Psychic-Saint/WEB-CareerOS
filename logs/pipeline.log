@@ -1551,3 +1551,27 @@ Process @ SandForce  score=15  → rejected
 05:25:11  INFO     run_daily  No new jobs to score
 05:25:12  INFO     run_daily  === AUTO-APPLY ===
 05:25:12  INFO     run_daily  No approved jobs ready
+05:25:06  INFO     run_daily  === DISCOVERY ===
+05:25:07  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+05:25:07  INFO     job_pipeline.discovery  Jobicy: 2 matching
+05:25:07  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:25:08  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+05:25:09  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:25:10  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:25:10  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:25:10  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:25:25  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:25:25  INFO     job_pipeline.discovery  Total unique jobs across all sources: 3
+05:25:25  INFO     run_daily  Discovered 3 total, 2 new
+05:25:25  INFO     run_daily  === SCORING ===
+05:25:30  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:25:31  INFO     run_daily  ✓ Business Analyst (Technical Consultant) – Integrations @ Launchpad Technologies  score=42  → approved
+05:25:35  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:25:35  INFO     run_daily  ✗ 1 on 1 Math Tutor (Grades 5-8) @ Think Academy US  score=28  → rejected
+05:25:35  INFO     run_daily  === AUTO-APPLY ===
+05:25:35  INFO     run_daily  1 job(s) to attempt
+05:25:38  INFO     httpx  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:25:38  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst (Technical Consultant) – Integrations @ Launchpad Technologies  [generic]
+05:25:47  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:25:48  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:25:49  INFO     run_daily  Business Analyst (Technical Consultant) – Integrations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
