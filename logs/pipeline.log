@@ -1575,3 +1575,34 @@ Process @ SandForce  score=15  → rejected
 05:25:47  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 05:25:48  INFO     job_pipeline.auto_apply  ✓ CV attached
 05:25:49  INFO     run_daily  Business Analyst (Technical Consultant) – Integrations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:27:11  INFO     run_daily  === DISCOVERY ===
+05:27:12  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+05:27:12  INFO     job_pipeline.discovery  Jobicy: 4 matching
+05:27:13  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:27:13  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+05:27:14  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:27:14  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:27:14  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:27:14  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:27:29  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:27:29  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+05:27:30  INFO     run_daily  Discovered 6 total, 3 new
+05:27:30  INFO     run_daily  === SCORING ===
+05:27:34  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:27:34  INFO     run_daily  ✓ Product Support Specialist @ Thinkific  score=58  → approved
+05:27:39  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:27:39  INFO     run_daily  ✓ Marketing Project Manager - 13 Month Contract @ Thinkific  score=62  → approved
+05:27:42  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:27:42  INFO     run_daily  ✗ Senior Technical Program Manager - Security @ OpenAI  score=28  → rejected
+05:27:43  INFO     run_daily  === AUTO-APPLY ===
+05:27:43  INFO     run_daily  2 job(s) to attempt
+05:27:46  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:27:46  INFO     job_pipeline.auto_apply  auto_apply: Marketing Project Manager - 13 Month Contract @ Thinkific  [generic]
+05:27:54  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:27:55  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:27:56  INFO     run_daily  Marketing Project Manager - 13 Month Contract → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:28:02  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:28:02  INFO     job_pipeline.auto_apply  auto_apply: Product Support Specialist @ Thinkific  [generic]
+05:28:09  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:28:09  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:28:10  INFO     run_daily  Product Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
