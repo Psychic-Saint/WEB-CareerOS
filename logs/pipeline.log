@@ -1606,3 +1606,22 @@ Process @ SandForce  score=15  → rejected
 05:28:09  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 05:28:09  INFO     job_pipeline.auto_apply  ✓ CV attached
 05:28:10  INFO     run_daily  Product Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+05:21:28  INFO     run_daily  === DISCOVERY ===
+05:21:29  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+05:21:29  INFO     job_pipeline.discovery  Jobicy: 2 matching
+05:21:29  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:21:30  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+05:21:30  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:21:31  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:21:31  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:21:31  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:21:46  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:21:46  INFO     job_pipeline.discovery  Total unique jobs across all sources: 3
+05:21:46  INFO     run_daily  Discovered 3 total, 2 new
+05:21:46  INFO     run_daily  === SCORING ===
+05:21:50  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:21:50  INFO     run_daily  ✗ 1 on 1 Math Tutor (Remote in US) @ Think Academy US  score=25  → rejected
+05:21:55  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:21:55  INFO     run_daily  ✗ Machine Learning Engineer @ Liftoff  score=22  → rejected
+05:21:56  INFO     run_daily  === AUTO-APPLY ===
+05:21:56  INFO     run_daily  No approved jobs ready
