@@ -1641,3 +1641,27 @@ Process @ SandForce  score=15  → rejected
 05:23:32  INFO     run_daily  No new jobs to score
 05:23:32  INFO     run_daily  === AUTO-APPLY ===
 05:23:32  INFO     run_daily  No approved jobs ready
+05:33:34  INFO     run_daily  === DISCOVERY ===
+05:33:35  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+05:33:35  INFO     job_pipeline.discovery  Jobicy: 2 matching
+05:33:36  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+05:33:36  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+05:33:37  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+05:33:37  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+05:33:37  INFO     job_pipeline.discovery  Himalayas: 0 matching
+05:33:37  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+05:33:53  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+05:33:53  INFO     job_pipeline.discovery  Total unique jobs across all sources: 3
+05:33:53  INFO     run_daily  Discovered 3 total, 2 new
+05:33:53  INFO     run_daily  === SCORING ===
+05:33:57  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:33:57  INFO     run_daily  ✓ BS/MD Admissions Consultant @ Inspira Education  score=42  → approved
+05:34:01  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:34:01  INFO     run_daily  ✓ COMLEX Tutor @ Inspira Education  score=35  → approved
+05:34:01  INFO     run_daily  === AUTO-APPLY ===
+05:34:01  INFO     run_daily  1 job(s) to attempt
+05:34:04  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+05:34:04  INFO     job_pipeline.auto_apply  auto_apply: BS/MD Admissions Consultant @ Inspira Education  [generic]
+05:34:12  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+05:34:13  INFO     job_pipeline.auto_apply  ✓ CV attached
+05:34:14  INFO     run_daily  BS/MD Admissions Consultant → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
