@@ -1710,3 +1710,19 @@ Process @ SandForce  score=15  → rejected
 05:28:42  INFO     run_daily  No new jobs to score
 05:28:42  INFO     run_daily  === AUTO-APPLY ===
 05:28:42  INFO     run_daily  No approved jobs ready
+16:03:30  INFO     run_daily  === DISCOVERY ===
+16:03:31  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+16:03:31  INFO     job_pipeline.discovery  Jobicy: 0 matching
+16:03:32  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+16:03:33  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+16:03:33  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+16:03:34  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+16:03:34  INFO     job_pipeline.discovery  Himalayas: 0 matching
+16:03:34  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+16:03:49  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+16:03:49  INFO     job_pipeline.discovery  Total unique jobs across all sources: 1
+16:03:49  INFO     run_daily  Discovered 1 total, 0 new
+16:03:49  INFO     run_daily  === SCORING ===
+16:03:49  INFO     run_daily  No new jobs to score
+16:03:49  INFO     run_daily  === AUTO-APPLY ===
+16:03:49  INFO     run_daily  No approved jobs ready
