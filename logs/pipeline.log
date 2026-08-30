@@ -1762,3 +1762,34 @@ Process @ SandForce  score=15  → rejected
 11:27:27  INFO     run_daily  No new jobs to score
 11:27:27  INFO     run_daily  === AUTO-APPLY ===
 11:27:27  INFO     run_daily  No approved jobs ready
+10:14:09  INFO     run_daily  === DISCOVERY ===
+10:14:09  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+10:14:09  INFO     job_pipeline.discovery  Jobicy: 3 matching
+10:14:10  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+10:14:11  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+10:14:12  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:14:12  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:14:12  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:14:13  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:14:28  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:14:28  INFO     job_pipeline.discovery  Total unique jobs across all sources: 4
+10:14:28  INFO     run_daily  Discovered 4 total, 3 new
+10:14:28  INFO     run_daily  === SCORING ===
+10:14:34  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:14:34  INFO     run_daily  ✓ Operational Business Analyst & Incident Manager (Technology and Transformation) @ NTT DATA  score=62  → approved
+10:14:38  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:14:38  INFO     run_daily  ✗ Semi-Senior Full Stack Engineer (Python / React) - E-learning @ Truelogic  score=28  → rejected
+10:14:43  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:14:43  INFO     run_daily  ✓ Delivery/Project Manager | GT @ GT  score=52  → approved
+10:14:43  INFO     run_daily  === AUTO-APPLY ===
+10:14:43  INFO     run_daily  2 job(s) to attempt
+10:14:46  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:14:46  INFO     job_pipeline.auto_apply  auto_apply: Operational Business Analyst & Incident Manager (Technology and Transformation) @ NTT DATA  [generic]
+10:14:55  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+10:14:55  INFO     job_pipeline.auto_apply  ✓ CV attached
+10:14:56  INFO     run_daily  Operational Business Analyst & Incident Manager (Technology and Transformation) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:15:03  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:15:03  INFO     job_pipeline.auto_apply  auto_apply: Delivery/Project Manager | GT @ GT  [generic]
+10:15:09  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+10:15:09  INFO     job_pipeline.auto_apply  ✓ CV attached
+10:15:11  INFO     run_daily  Delivery/Project Manager | GT → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
