@@ -1817,3 +1817,48 @@ Process @ SandForce  score=15  → rejected
 11:18:48  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 11:18:49  INFO     job_pipeline.auto_apply  ✓ CV attached
 11:18:50  INFO     run_daily  Dental Field Trainer (UK) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:42:51  INFO     run_daily  === DISCOVERY ===
+09:42:52  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+09:42:52  INFO     job_pipeline.discovery  Jobicy: 5 matching
+09:42:53  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:42:53  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+09:42:54  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:42:54  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:42:54  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:42:54  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:43:09  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:43:09  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+09:43:09  INFO     run_daily  Discovered 6 total, 5 new
+09:43:09  INFO     run_daily  === SCORING ===
+09:43:15  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:15  INFO     run_daily  ✓ Power & Energy Project Manager @ WSP  score=42  → approved
+09:43:20  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:20  INFO     run_daily  ✓ Engineering Project Manager @ CodePath  score=52  → approved
+09:43:25  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:25  INFO     run_daily  ✓ Mentor, Claude Corps @ CodePath  score=42  → approved
+09:43:30  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:30  INFO     run_daily  ✓ Senior Director of Curriculum @ CodePath  score=42  → approved
+09:43:35  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:35  INFO     run_daily  ✗ Senior Manager of AI Practice, Claude Corps @ CodePath  score=28  → rejected
+09:43:35  INFO     run_daily  === AUTO-APPLY ===
+09:43:35  INFO     run_daily  4 job(s) to attempt
+09:43:38  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:38  INFO     job_pipeline.auto_apply  auto_apply: Engineering Project Manager @ CodePath  [generic]
+09:43:45  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:43:46  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:43:47  INFO     run_daily  Engineering Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:43:54  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:54  INFO     job_pipeline.auto_apply  auto_apply: Power & Energy Project Manager @ WSP  [generic]
+09:44:00  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:44:01  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:44:02  INFO     run_daily  Power & Energy Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:44:09  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:44:09  INFO     job_pipeline.auto_apply  auto_apply: Mentor, Claude Corps @ CodePath  [generic]
+09:44:16  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:44:16  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:44:18  INFO     run_daily  Mentor, Claude Corps → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:44:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:44:24  INFO     job_pipeline.auto_apply  auto_apply: Senior Director of Curriculum @ CodePath  [generic]
+09:44:32  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:44:32  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:44:33  INFO     run_daily  Senior Director of Curriculum → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
