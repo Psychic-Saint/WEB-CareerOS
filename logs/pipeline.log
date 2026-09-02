@@ -1862,3 +1862,23 @@ Process @ SandForce  score=15  → rejected
 09:44:32  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 09:44:32  INFO     job_pipeline.auto_apply  ✓ CV attached
 09:44:33  INFO     run_daily  Senior Director of Curriculum → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:15:21  INFO     run_daily  === DISCOVERY ===
+09:15:23  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:15:23  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:15:23  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:15:24  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+09:15:25  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:15:25  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:15:25  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:15:25  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:15:40  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:15:40  INFO     job_pipeline.discovery  Total unique jobs across all sources: 4
+09:15:40  INFO     run_daily  Discovered 4 total, 1 new
+09:15:40  INFO     run_daily  === SCORING ===
+09:15:46  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:15:46  INFO     run_daily  ✓ Business Analyst IT @ Gildan  score=58  → approved
+09:15:47  INFO     run_daily  === AUTO-APPLY ===
+09:15:47  INFO     run_daily  1 job(s) to attempt
+09:15:50  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:15:50  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst IT @ Gildan  [generic]
+09:15:58  INFO     run_daily  Business Analyst IT → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
