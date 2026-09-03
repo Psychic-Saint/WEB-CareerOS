@@ -1882,3 +1882,31 @@ Process @ SandForce  score=15  → rejected
 09:15:50  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 09:15:50  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst IT @ Gildan  [generic]
 09:15:58  INFO     run_daily  Business Analyst IT → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:23:32  INFO     run_daily  === DISCOVERY ===
+09:23:33  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:23:33  INFO     job_pipeline.discovery  Jobicy: 1 matching
+09:23:34  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+09:23:35  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+09:23:36  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:23:36  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:23:36  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:23:36  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:23:51  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:23:51  INFO     job_pipeline.discovery  Total unique jobs across all sources: 4
+09:23:51  INFO     run_daily  Discovered 4 total, 2 new
+09:23:51  INFO     run_daily  === SCORING ===
+09:23:58  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:23:59  INFO     run_daily  ✓ Project Manager, Gaming Localization Production @ LILT (Production)  score=48  → approved
+09:24:03  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:24:03  INFO     run_daily  ✓ Associate Product Support Specialist (Remote - UK) @ Fleetio  score=52  → approved
+09:24:03  INFO     run_daily  === AUTO-APPLY ===
+09:24:03  INFO     run_daily  2 job(s) to attempt
+09:24:07  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:24:07  INFO     job_pipeline.auto_apply  auto_apply: Associate Product Support Specialist (Remote - UK) @ Fleetio  [generic]
+09:24:14  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:24:14  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:24:16  INFO     run_daily  Associate Product Support Specialist (Remote - UK) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:24:23  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:24:23  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Gaming Localization Production @ LILT (Production)  [generic]
+09:24:26  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+09:24:26  INFO     run_daily  Project Manager, Gaming Localization Production → escalated  (captcha_detected)
