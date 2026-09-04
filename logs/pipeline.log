@@ -1910,3 +1910,20 @@ Process @ SandForce  score=15  → rejected
 09:24:23  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Gaming Localization Production @ LILT (Production)  [generic]
 09:24:26  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 09:24:26  INFO     run_daily  Project Manager, Gaming Localization Production → escalated  (captcha_detected)
+09:16:16  INFO     run_daily  === DISCOVERY ===
+09:16:17  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:16:17  INFO     job_pipeline.discovery  Jobicy: 0 matching
+09:16:18  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+09:16:19  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+09:16:19  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:16:20  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:16:20  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:16:20  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:16:35  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:16:35  INFO     job_pipeline.discovery  Total unique jobs across all sources: 3
+09:16:35  INFO     run_daily  Discovered 3 total, 1 new
+09:16:35  INFO     run_daily  === SCORING ===
+09:16:40  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:16:41  INFO     run_daily  ✗ Machine Learning Engineer / MLOps Engineer (m/w/d) @ Rockstardevelopers GmbH  score=15  → rejected
+09:16:41  INFO     run_daily  === AUTO-APPLY ===
+09:16:41  INFO     run_daily  No approved jobs ready
