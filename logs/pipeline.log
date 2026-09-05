@@ -1927,3 +1927,19 @@ Process @ SandForce  score=15  → rejected
 09:16:41  INFO     run_daily  ✗ Machine Learning Engineer / MLOps Engineer (m/w/d) @ Rockstardevelopers GmbH  score=15  → rejected
 09:16:41  INFO     run_daily  === AUTO-APPLY ===
 09:16:41  INFO     run_daily  No approved jobs ready
+08:45:20  INFO     run_daily  === DISCOVERY ===
+08:45:20  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+08:45:21  INFO     job_pipeline.discovery  Jobicy: 0 matching
+08:45:21  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+08:45:22  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+08:45:22  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+08:45:23  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+08:45:23  INFO     job_pipeline.discovery  Himalayas: 0 matching
+08:45:23  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+08:45:38  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+08:45:38  INFO     job_pipeline.discovery  Total unique jobs across all sources: 2
+08:45:38  INFO     run_daily  Discovered 2 total, 0 new
+08:45:38  INFO     run_daily  === SCORING ===
+08:45:38  INFO     run_daily  No new jobs to score
+08:45:38  INFO     run_daily  === AUTO-APPLY ===
+08:45:38  INFO     run_daily  No approved jobs ready
