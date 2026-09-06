@@ -1943,3 +1943,20 @@ Process @ SandForce  score=15  → rejected
 08:45:38  INFO     run_daily  No new jobs to score
 08:45:38  INFO     run_daily  === AUTO-APPLY ===
 08:45:38  INFO     run_daily  No approved jobs ready
+09:06:41  INFO     run_daily  === DISCOVERY ===
+09:06:42  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:06:42  INFO     job_pipeline.discovery  Jobicy: 1 matching
+09:06:42  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:06:43  INFO     job_pipeline.discovery  WeWorkRemotely: 0 matching
+09:06:43  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:06:43  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:06:43  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:06:43  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:06:58  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:06:58  INFO     job_pipeline.discovery  Total unique jobs across all sources: 2
+09:06:58  INFO     run_daily  Discovered 2 total, 1 new
+09:06:58  INFO     run_daily  === SCORING ===
+09:07:03  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:07:03  INFO     run_daily  ✗ Multimedia Designer / Learning Experience (Remote - Costa Rica Only) @ Varicent  score=28  → rejected
+09:07:03  INFO     run_daily  === AUTO-APPLY ===
+09:07:03  INFO     run_daily  No approved jobs ready
