@@ -1976,3 +1976,26 @@ Process @ SandForce  score=15  → rejected
 09:54:03  INFO     run_daily  No new jobs to score
 09:54:04  INFO     run_daily  === AUTO-APPLY ===
 09:54:04  INFO     run_daily  No approved jobs ready
+09:18:20  INFO     run_daily  === DISCOVERY ===
+09:18:21  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:18:21  INFO     job_pipeline.discovery  Jobicy: 1 matching
+09:18:22  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+09:18:23  INFO     job_pipeline.discovery  WeWorkRemotely: 1 matching
+09:18:23  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:18:23  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:18:23  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:18:23  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:18:38  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:18:38  INFO     job_pipeline.discovery  Total unique jobs across all sources: 4
+09:18:38  INFO     run_daily  Discovered 4 total, 2 new
+09:18:38  INFO     run_daily  === SCORING ===
+09:18:45  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:18:45  INFO     run_daily  ✓ Senior Technical Project Manager - PMO (all genders) @ Contabo  score=58  → approved
+09:18:48  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:18:48  INFO     run_daily  ✗ Senior Machine Learning Engineer @ SeatGeek  score=15  → rejected
+09:18:48  INFO     run_daily  === AUTO-APPLY ===
+09:18:48  INFO     run_daily  1 job(s) to attempt
+09:18:52  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:18:52  INFO     job_pipeline.auto_apply  auto_apply: Senior Technical Project Manager - PMO (all genders) @ Contabo  [generic]
+09:18:57  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+09:18:57  INFO     run_daily  Senior Technical Project Manager - PMO (all genders) → escalated  (captcha_detected)
