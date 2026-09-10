@@ -2023,3 +2023,34 @@ Process @ SandForce  score=15  → rejected
 09:21:47  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 09:21:47  INFO     job_pipeline.auto_apply  auto_apply: Assignr LLC: Customer Support Specialist @ Unknown  [generic]
 09:21:52  INFO     run_daily  Assignr LLC: Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:20:10  INFO     run_daily  === DISCOVERY ===
+09:20:10  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:20:11  INFO     job_pipeline.discovery  Jobicy: 3 matching
+09:20:12  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:20:12  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+09:20:13  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:20:13  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:20:13  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:20:13  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:20:28  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:20:28  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+09:20:28  INFO     run_daily  Discovered 7 total, 4 new
+09:20:28  INFO     run_daily  === SCORING ===
+09:20:33  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:20:33  INFO     run_daily  ✓ UTTR: Project Manager @ Unknown  score=62  → approved
+09:20:38  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:20:38  INFO     run_daily  ✗ Project Manager - Ubuntu Embedded Systems @ Canonical  score=28  → rejected
+09:20:43  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:20:43  INFO     run_daily  ✓ Junior Project Manager @ Canonical  score=48  → approved
+09:20:46  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:20:46  INFO     run_daily  ✗ Work from home as a Private Online German Tutor for Ukrainians - Part Time @ Nachhilfeunterricht  score=28  → rejected
+09:20:46  INFO     run_daily  === AUTO-APPLY ===
+09:20:46  INFO     run_daily  2 job(s) to attempt
+09:20:50  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:20:50  INFO     job_pipeline.auto_apply  auto_apply: UTTR: Project Manager @ Unknown  [generic]
+09:20:55  INFO     run_daily  UTTR: Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:21:02  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:21:02  INFO     job_pipeline.auto_apply  auto_apply: Junior Project Manager @ Canonical  [generic]
+09:21:08  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:21:09  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:21:10  INFO     run_daily  Junior Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
