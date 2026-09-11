@@ -2054,3 +2054,32 @@ Process @ SandForce  score=15  → rejected
 09:21:08  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 09:21:09  INFO     job_pipeline.auto_apply  ✓ CV attached
 09:21:10  INFO     run_daily  Junior Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:18:47  INFO     run_daily  === DISCOVERY ===
+09:18:48  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:18:48  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:18:49  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+09:18:50  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+09:18:51  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:18:51  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:18:51  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:18:51  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:19:06  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:19:06  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+09:19:06  INFO     run_daily  Discovered 7 total, 3 new
+09:19:06  INFO     run_daily  === SCORING ===
+09:19:13  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:19:13  INFO     run_daily  ✓ Project Coordinator, Technology Consulting @ Intelance  score=72  → approved
+09:19:17  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:19:18  INFO     run_daily  ✓ Associate Project Manager - Healthcare Advertising @ Precision Medicine Group  score=52  → approved
+09:19:23  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:19:23  INFO     run_daily  ✓ Technical Support Specialist - German Speaking @ Synthesia  score=35  → approved
+09:19:23  INFO     run_daily  === AUTO-APPLY ===
+09:19:23  INFO     run_daily  2 job(s) to attempt
+09:19:27  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:19:27  INFO     job_pipeline.auto_apply  auto_apply: Project Coordinator, Technology Consulting @ Intelance  [generic]
+09:19:31  INFO     run_daily  Project Coordinator, Technology Consulting → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:19:38  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:19:38  INFO     job_pipeline.auto_apply  auto_apply: Associate Project Manager - Healthcare Advertising @ Precision Medicine Group  [generic]
+09:19:44  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:19:45  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:19:46  INFO     run_daily  Associate Project Manager - Healthcare Advertising → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
