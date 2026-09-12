@@ -2083,3 +2083,32 @@ Process @ SandForce  score=15  → rejected
 09:19:44  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 09:19:45  INFO     job_pipeline.auto_apply  ✓ CV attached
 09:19:46  INFO     run_daily  Associate Project Manager - Healthcare Advertising → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+08:59:27  INFO     run_daily  === DISCOVERY ===
+08:59:27  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+08:59:27  INFO     job_pipeline.discovery  Jobicy: 2 matching
+08:59:28  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+08:59:29  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+08:59:29  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+08:59:29  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+08:59:29  INFO     job_pipeline.discovery  Himalayas: 0 matching
+08:59:29  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+08:59:44  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+08:59:44  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+08:59:44  INFO     run_daily  Discovered 5 total, 2 new
+08:59:44  INFO     run_daily  === SCORING ===
+08:59:49  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:59:49  INFO     run_daily  ✓ Temporary Creative Production Project Manager - Germany @ Brafton  score=42  → approved
+08:59:54  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:59:54  INFO     run_daily  ✓ Product Support Specialist - EMEA @ Ashby  score=42  → approved
+08:59:54  INFO     run_daily  === AUTO-APPLY ===
+08:59:54  INFO     run_daily  2 job(s) to attempt
+08:59:57  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+08:59:57  INFO     job_pipeline.auto_apply  auto_apply: Temporary Creative Production Project Manager - Germany @ Brafton  [generic]
+09:00:04  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:00:04  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:00:06  INFO     run_daily  Temporary Creative Production Project Manager - Germany → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:00:12  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:00:12  INFO     job_pipeline.auto_apply  auto_apply: Product Support Specialist - EMEA @ Ashby  [generic]
+09:00:19  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:00:19  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:00:21  INFO     run_daily  Product Support Specialist - EMEA → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
