@@ -2112,3 +2112,19 @@ Process @ SandForce  score=15  → rejected
 09:00:19  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 09:00:19  INFO     job_pipeline.auto_apply  ✓ CV attached
 09:00:21  INFO     run_daily  Product Support Specialist - EMEA → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:55:46  INFO     run_daily  === DISCOVERY ===
+09:55:47  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:55:47  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:55:47  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:55:48  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:55:48  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:55:48  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:55:48  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:55:48  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:56:04  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:56:04  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+09:56:04  INFO     run_daily  Discovered 5 total, 0 new
+09:56:04  INFO     run_daily  === SCORING ===
+09:56:04  INFO     run_daily  No new jobs to score
+09:56:04  INFO     run_daily  === AUTO-APPLY ===
+09:56:04  INFO     run_daily  No approved jobs ready
