@@ -2150,3 +2150,19 @@ Process @ SandForce  score=15  → rejected
 10:16:20  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 10:16:21  INFO     job_pipeline.auto_apply  ✓ CV attached
 10:16:22  INFO     run_daily  Technical Support Specialist (Night Shift) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:44:38  INFO     run_daily  === DISCOVERY ===
+09:44:39  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:44:39  INFO     job_pipeline.discovery  Jobicy: 3 matching
+09:44:40  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:44:41  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:44:42  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:44:42  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:44:42  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:44:42  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:44:57  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:44:57  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+09:44:57  INFO     run_daily  Discovered 6 total, 0 new
+09:44:57  INFO     run_daily  === SCORING ===
+09:44:57  INFO     run_daily  No new jobs to score
+09:44:57  INFO     run_daily  === AUTO-APPLY ===
+09:44:57  INFO     run_daily  No approved jobs ready
