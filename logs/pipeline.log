@@ -2166,3 +2166,25 @@ Process @ SandForce  score=15  → rejected
 09:44:57  INFO     run_daily  No new jobs to score
 09:44:57  INFO     run_daily  === AUTO-APPLY ===
 09:44:57  INFO     run_daily  No approved jobs ready
+09:38:31  INFO     run_daily  === DISCOVERY ===
+09:38:31  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:38:32  INFO     job_pipeline.discovery  Jobicy: 1 matching
+09:38:33  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:38:33  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:38:34  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:38:34  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:38:34  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:38:34  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:38:49  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:38:49  INFO     job_pipeline.discovery  Total unique jobs across all sources: 4
+09:38:49  INFO     run_daily  Discovered 4 total, 1 new
+09:38:49  INFO     run_daily  === SCORING ===
+09:38:54  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:38:54  INFO     run_daily  ✓ Customer Trainer @ Intuitive  score=58  → approved
+09:38:54  INFO     run_daily  === AUTO-APPLY ===
+09:38:54  INFO     run_daily  1 job(s) to attempt
+09:38:57  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:38:57  INFO     job_pipeline.auto_apply  auto_apply: Customer Trainer @ Intuitive  [generic]
+09:39:06  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:39:07  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:39:09  INFO     run_daily  Customer Trainer → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
