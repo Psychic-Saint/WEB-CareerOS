@@ -2204,3 +2204,25 @@ Process @ SandForce  score=15  → rejected
 09:47:16  INFO     run_daily  No new jobs to score
 09:47:16  INFO     run_daily  === AUTO-APPLY ===
 09:47:16  INFO     run_daily  No approved jobs ready
+09:20:36  INFO     run_daily  === DISCOVERY ===
+09:20:36  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:20:36  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:20:37  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+09:20:38  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:20:38  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:20:38  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:20:38  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:20:38  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:20:53  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:20:53  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+09:20:53  INFO     run_daily  Discovered 6 total, 2 new
+09:20:53  INFO     run_daily  === SCORING ===
+09:20:59  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:20:59  INFO     run_daily  ✓ Collibra: CPS Account Program Manager @ Unknown  score=52  → approved
+09:21:03  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:21:04  INFO     run_daily  ✓ Rail Programme Manager @ Tended  score=35  → approved
+09:21:04  INFO     run_daily  === AUTO-APPLY ===
+09:21:04  INFO     run_daily  1 job(s) to attempt
+09:21:07  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:21:07  INFO     job_pipeline.auto_apply  auto_apply: Collibra: CPS Account Program Manager @ Unknown  [generic]
+09:21:12  INFO     run_daily  Collibra: CPS Account Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
