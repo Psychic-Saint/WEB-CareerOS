@@ -2226,3 +2226,25 @@ Process @ SandForce  score=15  → rejected
 09:21:07  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 09:21:07  INFO     job_pipeline.auto_apply  auto_apply: Collibra: CPS Account Program Manager @ Unknown  [generic]
 09:21:12  INFO     run_daily  Collibra: CPS Account Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:08:13  INFO     run_daily  === DISCOVERY ===
+09:08:14  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:08:14  INFO     job_pipeline.discovery  Jobicy: 1 matching
+09:08:15  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:08:15  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:08:15  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:08:15  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:08:15  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:08:15  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:08:30  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:08:30  INFO     job_pipeline.discovery  Total unique jobs across all sources: 4
+09:08:30  INFO     run_daily  Discovered 4 total, 1 new
+09:08:30  INFO     run_daily  === SCORING ===
+09:08:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:08:36  INFO     run_daily  ✓ Senior Technical Project Manager @ Thinkific  score=62  → approved
+09:08:36  INFO     run_daily  === AUTO-APPLY ===
+09:08:36  INFO     run_daily  1 job(s) to attempt
+09:08:39  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:08:39  INFO     job_pipeline.auto_apply  auto_apply: Senior Technical Project Manager @ Thinkific  [generic]
+09:08:46  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+09:08:46  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:08:47  INFO     run_daily  Senior Technical Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
