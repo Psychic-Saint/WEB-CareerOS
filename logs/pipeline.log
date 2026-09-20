@@ -2248,3 +2248,24 @@ Process @ SandForce  score=15  → rejected
 09:08:46  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 09:08:46  INFO     job_pipeline.auto_apply  ✓ CV attached
 09:08:47  INFO     run_daily  Senior Technical Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:34:07  INFO     run_daily  === DISCOVERY ===
+09:34:07  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:34:07  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:34:08  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+09:34:09  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:34:09  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:34:10  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:34:10  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:34:10  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:34:25  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:34:25  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+09:34:25  INFO     run_daily  Discovered 6 total, 1 new
+09:34:25  INFO     run_daily  === SCORING ===
+09:34:30  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:34:30  INFO     run_daily  ✓ Project Manager - Software Implementation (m/f/x) @ Makersite GmbH  score=62  → approved
+09:34:30  INFO     run_daily  === AUTO-APPLY ===
+09:34:30  INFO     run_daily  1 job(s) to attempt
+09:34:35  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:34:35  INFO     job_pipeline.auto_apply  auto_apply: Project Manager - Software Implementation (m/f/x) @ Makersite GmbH  [generic]
+09:34:41  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+09:34:41  INFO     run_daily  Project Manager - Software Implementation (m/f/x) → escalated  (captcha_detected)
