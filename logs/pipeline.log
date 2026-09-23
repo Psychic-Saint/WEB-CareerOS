@@ -2302,3 +2302,19 @@ Process @ SandForce  score=15  → rejected
 09:36:12  INFO     run_daily  ✗ Anthropic: Anthropic Fellows Program, ML Systems & Reinforcement Learning @ Unknown  score=18  → rejected
 09:36:12  INFO     run_daily  === AUTO-APPLY ===
 09:36:12  INFO     run_daily  No approved jobs ready
+09:41:26  INFO     run_daily  === DISCOVERY ===
+09:41:27  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+09:41:27  WARNING  job_pipeline.discovery  Jobicy fetch failed: 403 Client Error: Forbidden for url: https://jobicy.com/api/v2/remote-jobs?count=50
+09:41:28  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:41:29  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:41:29  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:41:30  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:41:30  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:41:30  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:41:45  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:41:45  INFO     job_pipeline.discovery  Total unique jobs across all sources: 3
+09:41:45  INFO     run_daily  Discovered 3 total, 0 new
+09:41:45  INFO     run_daily  === SCORING ===
+09:41:45  INFO     run_daily  No new jobs to score
+09:41:45  INFO     run_daily  === AUTO-APPLY ===
+09:41:45  INFO     run_daily  No approved jobs ready
