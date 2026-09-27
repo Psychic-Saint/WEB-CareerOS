@@ -2379,3 +2379,42 @@ Process @ SandForce  score=15  → rejected
 09:40:30  INFO     job_pipeline.auto_apply  auto_apply: Senior Technical Project Manager - PMO (all genders) @ Contabo  [generic]
 09:40:37  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
 09:40:38  INFO     run_daily  Senior Technical Project Manager - PMO (all genders) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+10:19:36  INFO     run_daily  === DISCOVERY ===
+10:19:36  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+10:19:36  INFO     job_pipeline.discovery  Jobicy: 4 matching
+10:19:37  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+10:19:37  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+10:19:38  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:19:38  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:19:38  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:19:38  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:19:53  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:19:53  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+10:19:53  INFO     run_daily  Discovered 8 total, 5 new
+10:19:53  INFO     run_daily  === SCORING ===
+10:20:00  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:00  INFO     run_daily  ✓ Project Manager, Gaming Localization Production @ LILT (Production)  score=42  → approved
+10:20:03  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:03  INFO     run_daily  ✓ Plumbing Career Coach @ CourseCareers  score=42  → approved
+10:20:07  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:07  INFO     run_daily  ✗ HVAC Career Coach @ CourseCareers  score=28  → rejected
+10:20:10  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:10  INFO     run_daily  ✗ Electrician Career Coach @ CourseCareers  score=28  → rejected
+10:20:15  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:15  INFO     run_daily  ✓ Sales Development Representative Career Coach @ CourseCareers  score=42  → approved
+10:20:15  INFO     run_daily  === AUTO-APPLY ===
+10:20:15  INFO     run_daily  3 job(s) to attempt
+10:20:19  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:19  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Gaming Localization Production @ LILT (Production)  [generic]
+10:20:27  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+10:20:28  INFO     run_daily  Project Manager, Gaming Localization Production → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+10:20:35  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:35  INFO     job_pipeline.auto_apply  auto_apply: Plumbing Career Coach @ CourseCareers  [generic]
+10:20:41  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+10:20:42  INFO     job_pipeline.auto_apply  ✓ CV attached
+10:20:43  INFO     run_daily  Plumbing Career Coach → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:20:49  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:20:49  INFO     job_pipeline.auto_apply  auto_apply: Sales Development Representative Career Coach @ CourseCareers  [generic]
+10:20:56  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+10:20:56  INFO     job_pipeline.auto_apply  ✓ CV attached
+10:20:57  INFO     run_daily  Sales Development Representative Career Coach → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
