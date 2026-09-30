@@ -2460,3 +2460,20 @@ Process @ SandForce  score=15  → rejected
 11:02:12  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 11:02:12  INFO     job_pipeline.auto_apply  auto_apply: Wisevu: Web Development Project Manager @ Unknown  [generic]
 11:02:17  INFO     run_daily  Wisevu: Web Development Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:51:48  INFO     run_daily  === DISCOVERY ===
+10:51:48  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+10:51:49  INFO     job_pipeline.discovery  Jobicy: 1 matching
+10:51:50  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+10:51:51  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+10:51:52  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:51:52  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:51:52  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:51:52  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:52:07  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:52:07  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+10:52:07  INFO     run_daily  Discovered 5 total, 1 new
+10:52:07  INFO     run_daily  === SCORING ===
+10:52:11  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:52:11  INFO     run_daily  ✗ Seminar Staff Candidate Program @ CrossFit  score=15  → rejected
+10:52:11  INFO     run_daily  === AUTO-APPLY ===
+10:52:11  INFO     run_daily  No approved jobs ready
