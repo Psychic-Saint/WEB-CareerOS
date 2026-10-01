@@ -2477,3 +2477,41 @@ Process @ SandForce  score=15  → rejected
 10:52:11  INFO     run_daily  ✗ Seminar Staff Candidate Program @ CrossFit  score=15  → rejected
 10:52:11  INFO     run_daily  === AUTO-APPLY ===
 10:52:11  INFO     run_daily  No approved jobs ready
+11:18:35  INFO     run_daily  === DISCOVERY ===
+11:18:36  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+11:18:36  INFO     job_pipeline.discovery  Jobicy: 3 matching
+11:18:37  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+11:18:37  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+11:18:38  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:18:38  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:18:38  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:18:38  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:18:53  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:18:53  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+11:18:53  INFO     run_daily  Discovered 8 total, 4 new
+11:18:53  INFO     run_daily  === SCORING ===
+11:18:59  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:18:59  INFO     run_daily  ✓ Senior Shopify Project Manager / Project Lead (m/w/d) @ Strix Group B.V.  score=35  → approved
+11:19:04  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:19:04  INFO     run_daily  ✓ Educational Content Developer @ Karbon  score=42  → approved
+11:19:08  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:19:08  INFO     run_daily  ✓ Onboarding Support Specialist @ Karbon  score=52  → approved
+11:19:13  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:19:13  INFO     run_daily  ✓ Global Project Manager - Customer Success PMS (Clinics/Enterprises) @ Docplanner  score=62  → approved
+11:19:13  INFO     run_daily  === AUTO-APPLY ===
+11:19:13  INFO     run_daily  3 job(s) to attempt
+11:19:16  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:19:16  INFO     job_pipeline.auto_apply  auto_apply: Global Project Manager - Customer Success PMS (Clinics/Enterprises) @ Docplanner  [generic]
+11:19:23  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+11:19:23  INFO     job_pipeline.auto_apply  ✓ CV attached
+11:19:24  INFO     run_daily  Global Project Manager - Customer Success PMS (Clinics/Enterprises) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+11:19:30  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:19:30  INFO     job_pipeline.auto_apply  auto_apply: Onboarding Support Specialist @ Karbon  [generic]
+11:19:37  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+11:19:37  INFO     job_pipeline.auto_apply  ✓ CV attached
+11:19:38  INFO     run_daily  Onboarding Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+11:19:44  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:19:44  INFO     job_pipeline.auto_apply  auto_apply: Educational Content Developer @ Karbon  [generic]
+11:19:51  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+11:19:51  INFO     job_pipeline.auto_apply  ✓ CV attached
+11:19:52  INFO     run_daily  Educational Content Developer → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
