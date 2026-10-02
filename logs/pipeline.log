@@ -2515,3 +2515,19 @@ Process @ SandForce  score=15  → rejected
 11:19:51  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 11:19:51  INFO     job_pipeline.auto_apply  ✓ CV attached
 11:19:52  INFO     run_daily  Educational Content Developer → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:50:55  INFO     run_daily  === DISCOVERY ===
+10:50:56  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+10:50:56  INFO     job_pipeline.discovery  Jobicy: 3 matching
+10:50:57  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+10:50:58  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+10:50:59  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:50:59  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:50:59  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:50:59  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:51:14  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:51:14  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+10:51:14  INFO     run_daily  Discovered 7 total, 0 new
+10:51:14  INFO     run_daily  === SCORING ===
+10:51:14  INFO     run_daily  No new jobs to score
+10:51:14  INFO     run_daily  === AUTO-APPLY ===
+10:51:14  INFO     run_daily  No approved jobs ready
