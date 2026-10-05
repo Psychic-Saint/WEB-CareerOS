@@ -2567,3 +2567,36 @@ Process @ SandForce  score=15  → rejected
 10:51:53  INFO     run_daily  No new jobs to score
 10:51:53  INFO     run_daily  === AUTO-APPLY ===
 10:51:53  INFO     run_daily  No approved jobs ready
+11:59:36  INFO     run_daily  === DISCOVERY ===
+11:59:36  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+11:59:37  INFO     job_pipeline.discovery  Jobicy: 4 matching
+11:59:39  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+11:59:39  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+11:59:40  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:59:40  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:59:40  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:59:40  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:59:55  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:59:55  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+11:59:55  INFO     run_daily  Discovered 9 total, 5 new
+11:59:55  INFO     run_daily  === SCORING ===
+12:00:01  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:00:01  INFO     run_daily  ✓ Chime Financial, Inc: Sr. Instructional Designer, Learning Operations @ Unknown  score=62  → approved
+12:00:05  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:00:05  INFO     run_daily  ✓ External Contractor - Mentor role for Data Product Manager track @ Udacity  score=62  → approved
+12:00:09  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:00:09  INFO     run_daily  ✗ 1 on 1 Grades 1-4 Math Tutor (Remote in US) @ Think Academy US  score=28  → rejected
+12:00:13  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:00:13  INFO     run_daily  ✗ 1 on 1 High School Math Tutor @ Think Academy US  score=28  → rejected
+12:00:18  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:00:18  INFO     run_daily  ✗ 1 on 1 AMC Tutor (Remote in US) @ Think Academy US  score=28  → rejected
+12:00:18  INFO     run_daily  === AUTO-APPLY ===
+12:00:18  INFO     run_daily  2 job(s) to attempt
+12:00:23  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:00:23  INFO     job_pipeline.auto_apply  auto_apply: Chime Financial, Inc: Sr. Instructional Designer, Learning Operations @ Unknown  [generic]
+12:00:29  INFO     run_daily  Chime Financial, Inc: Sr. Instructional Designer, Learning Operations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:00:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:00:36  INFO     job_pipeline.auto_apply  auto_apply: External Contractor - Mentor role for Data Product Manager track @ Udacity  [generic]
+12:00:43  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+12:00:43  INFO     job_pipeline.auto_apply  ✓ CV attached
+12:00:58  INFO     run_daily  External Contractor - Mentor role for Data Product Manager track → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
