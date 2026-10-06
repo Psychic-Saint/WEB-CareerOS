@@ -2600,3 +2600,33 @@ Process @ SandForce  score=15  → rejected
 12:00:43  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 12:00:43  INFO     job_pipeline.auto_apply  ✓ CV attached
 12:00:58  INFO     run_daily  External Contractor - Mentor role for Data Product Manager track → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+11:40:45  INFO     run_daily  === DISCOVERY ===
+11:40:46  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+11:40:46  INFO     job_pipeline.discovery  Jobicy: 1 matching
+11:40:47  INFO     job_pipeline.discovery  Arbeitnow: 2 matching
+11:40:47  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+11:40:48  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:40:48  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:40:48  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:40:48  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:41:04  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:41:04  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+11:41:04  INFO     run_daily  Discovered 6 total, 3 new
+11:41:04  INFO     run_daily  === SCORING ===
+11:41:10  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:41:10  INFO     run_daily  ✓ Customer Support Specialist (m/w/d)-SaaS & digitale Produkte @ Cannaleo Digital GmbH  score=62  → approved
+11:41:15  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:41:16  INFO     run_daily  ✓ Senior IT Project Manager (m/w/d) @ Natuvion GmbH  score=58  → approved
+11:41:22  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:41:22  INFO     run_daily  ✗ Senior Channel Enablement Manager @ Fastly  score=28  → rejected
+11:41:22  INFO     run_daily  === AUTO-APPLY ===
+11:41:22  INFO     run_daily  2 job(s) to attempt
+11:41:27  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:41:27  INFO     job_pipeline.auto_apply  auto_apply: Customer Support Specialist (m/w/d)-SaaS & digitale Produkte @ Cannaleo Digital GmbH  [generic]
+11:41:32  INFO     job_pipeline.auto_apply  ✓ CV attached
+11:41:32  INFO     job_pipeline.auto_apply  Clicking submit for Customer Support Specialist (m/w/d)-SaaS & digitale Produkte @ Cannaleo Digital GmbH
+11:41:35  INFO     run_daily  Customer Support Specialist (m/w/d)-SaaS & digitale Produkte → escalated  (success_not_confirmed — check screenshot)
+11:41:41  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:41:41  INFO     job_pipeline.auto_apply  auto_apply: Senior IT Project Manager (m/w/d) @ Natuvion GmbH  [generic]
+11:41:48  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+11:41:49  INFO     run_daily  Senior IT Project Manager (m/w/d) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
