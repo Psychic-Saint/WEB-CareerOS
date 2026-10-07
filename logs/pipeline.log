@@ -2630,3 +2630,20 @@ Process @ SandForce  score=15  → rejected
 11:41:41  INFO     job_pipeline.auto_apply  auto_apply: Senior IT Project Manager (m/w/d) @ Natuvion GmbH  [generic]
 11:41:48  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
 11:41:49  INFO     run_daily  Senior IT Project Manager (m/w/d) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+11:28:37  INFO     run_daily  === DISCOVERY ===
+11:28:37  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+11:28:37  INFO     job_pipeline.discovery  Jobicy: 1 matching
+11:28:38  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+11:28:39  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+11:28:40  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:28:40  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:28:40  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:28:40  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:28:55  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:28:55  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+11:28:55  INFO     run_daily  Discovered 5 total, 1 new
+11:28:55  INFO     run_daily  === SCORING ===
+11:29:01  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:29:01  INFO     run_daily  ✗ Senior Customer Technical Program Manager - AI Datacenter @ NVIDIA  score=32  → rejected
+11:29:01  INFO     run_daily  === AUTO-APPLY ===
+11:29:01  INFO     run_daily  No approved jobs ready
