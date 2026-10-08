@@ -2647,3 +2647,27 @@ Process @ SandForce  score=15  → rejected
 11:29:01  INFO     run_daily  ✗ Senior Customer Technical Program Manager - AI Datacenter @ NVIDIA  score=32  → rejected
 11:29:01  INFO     run_daily  === AUTO-APPLY ===
 11:29:01  INFO     run_daily  No approved jobs ready
+11:44:16  INFO     run_daily  === DISCOVERY ===
+11:44:17  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+11:44:17  INFO     job_pipeline.discovery  Jobicy: 1 matching
+11:44:18  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+11:44:18  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+11:44:19  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:44:19  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:44:19  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:44:19  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:44:34  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:44:34  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+11:44:34  INFO     run_daily  Discovered 8 total, 3 new
+11:44:34  INFO     run_daily  === SCORING ===
+11:44:39  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:44:40  INFO     run_daily  ✗ Jumio: Machine Learning Engineer @ Unknown  score=12  → rejected
+11:44:43  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:44:43  INFO     run_daily  ✗ Jumio: Machine Learning Engineer - IV (Biometrics) @ Unknown  score=15  → rejected
+11:44:48  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:44:48  INFO     run_daily  ✓ Project Manager @ Spiralyze  score=72  → approved
+11:44:48  INFO     run_daily  === AUTO-APPLY ===
+11:44:48  INFO     run_daily  1 job(s) to attempt
+11:44:52  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:44:52  INFO     job_pipeline.auto_apply  auto_apply: Project Manager @ Spiralyze  [generic]
+11:44:56  INFO     run_daily  Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
