@@ -2688,3 +2688,28 @@ Process @ SandForce  score=15  → rejected
 11:37:45  INFO     run_daily  ✗ Technical Customer Support Specialist @ Happyrobot.ai  score=32  → rejected
 11:37:45  INFO     run_daily  === AUTO-APPLY ===
 11:37:45  INFO     run_daily  No approved jobs ready
+10:54:58  INFO     run_daily  === DISCOVERY ===
+10:54:59  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+10:54:59  INFO     job_pipeline.discovery  Jobicy: 0 matching
+10:55:00  INFO     job_pipeline.discovery  Arbeitnow: 2 matching
+10:55:01  INFO     job_pipeline.discovery  WeWorkRemotely: 7 matching
+10:55:01  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:55:02  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:55:02  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:55:02  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:55:17  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:55:17  INFO     job_pipeline.discovery  Total unique jobs across all sources: 11
+10:55:17  INFO     run_daily  Discovered 11 total, 3 new
+10:55:17  INFO     run_daily  === SCORING ===
+10:55:22  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:55:22  INFO     run_daily  ✗ Jumio: Machine Learning Engineer - IV (Computer Vision) @ Unknown  score=12  → rejected
+10:55:26  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:55:26  INFO     run_daily  ✗ Jumio: Machine Learning Engineer - IV (Fraud) @ Unknown  score=15  → rejected
+10:55:31  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:55:31  INFO     run_daily  ✓ AI Program Manager (w/m/d) @ Timetoact Group  score=52  → approved
+10:55:31  INFO     run_daily  === AUTO-APPLY ===
+10:55:31  INFO     run_daily  1 job(s) to attempt
+10:55:35  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:55:35  INFO     job_pipeline.auto_apply  auto_apply: AI Program Manager (w/m/d) @ Timetoact Group  [generic]
+10:55:41  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+10:55:42  INFO     run_daily  AI Program Manager (w/m/d) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
