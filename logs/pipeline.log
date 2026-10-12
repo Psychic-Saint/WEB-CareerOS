@@ -2730,3 +2730,38 @@ Process @ SandForce  score=15  → rejected
 11:10:14  INFO     run_daily  ✗ Credit Model Validation Manager (Machine Learning & NPV Models) @ Monzo  score=28  → rejected
 11:10:14  INFO     run_daily  === AUTO-APPLY ===
 11:10:14  INFO     run_daily  No approved jobs ready
+12:41:07  INFO     run_daily  === DISCOVERY ===
+12:41:08  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+12:41:08  INFO     job_pipeline.discovery  Jobicy: 2 matching
+12:41:08  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+12:41:09  INFO     job_pipeline.discovery  WeWorkRemotely: 7 matching
+12:41:10  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+12:41:10  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+12:41:10  INFO     job_pipeline.discovery  Himalayas: 0 matching
+12:41:10  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+12:41:25  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+12:41:25  INFO     job_pipeline.discovery  Total unique jobs across all sources: 12
+12:41:25  INFO     run_daily  Discovered 12 total, 3 new
+12:41:25  INFO     run_daily  === SCORING ===
+12:41:31  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:41:31  INFO     run_daily  ✓ Project Manager - Software Implementation (m/f/x) @ Makersite GmbH  score=62  → approved
+12:41:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:41:37  INFO     run_daily  ✓ Order Processing Tech Support Specialist 6-Month Fixed-Term Contract @ LevelUp  score=48  → approved
+12:41:40  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:41:40  INFO     run_daily  ✓ Order Processing Tech Support Specialist @ LevelUp  score=52  → approved
+12:41:40  INFO     run_daily  === AUTO-APPLY ===
+12:41:40  INFO     run_daily  3 job(s) to attempt
+12:41:44  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:41:44  INFO     job_pipeline.auto_apply  auto_apply: Project Manager - Software Implementation (m/f/x) @ Makersite GmbH  [generic]
+12:41:51  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+12:41:52  INFO     run_daily  Project Manager - Software Implementation (m/f/x) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+12:41:58  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:41:58  INFO     job_pipeline.auto_apply  auto_apply: Order Processing Tech Support Specialist @ LevelUp  [generic]
+12:42:04  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+12:42:05  INFO     job_pipeline.auto_apply  ✓ CV attached
+12:42:06  INFO     run_daily  Order Processing Tech Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:42:12  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:42:12  INFO     job_pipeline.auto_apply  auto_apply: Order Processing Tech Support Specialist 6-Month Fixed-Term Contract @ LevelUp  [generic]
+12:42:18  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
+12:42:18  INFO     job_pipeline.auto_apply  ✓ CV attached
+12:42:20  INFO     run_daily  Order Processing Tech Support Specialist 6-Month Fixed-Term Contract → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
