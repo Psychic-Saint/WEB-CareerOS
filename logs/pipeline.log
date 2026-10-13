@@ -2765,3 +2765,19 @@ Process @ SandForce  score=15  → rejected
 12:42:18  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 12:42:18  INFO     job_pipeline.auto_apply  ✓ CV attached
 12:42:20  INFO     run_daily  Order Processing Tech Support Specialist 6-Month Fixed-Term Contract → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:25:27  INFO     run_daily  === DISCOVERY ===
+12:25:27  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+12:25:28  INFO     job_pipeline.discovery  Jobicy: 0 matching
+12:25:29  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+12:25:29  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+12:25:30  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+12:25:31  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+12:25:31  INFO     job_pipeline.discovery  Himalayas: 0 matching
+12:25:31  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+12:25:46  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+12:25:46  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+12:25:46  INFO     run_daily  Discovered 6 total, 0 new
+12:25:46  INFO     run_daily  === SCORING ===
+12:25:46  INFO     run_daily  No new jobs to score
+12:25:46  INFO     run_daily  === AUTO-APPLY ===
+12:25:46  INFO     run_daily  No approved jobs ready
