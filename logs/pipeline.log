@@ -2816,3 +2816,29 @@ Process @ SandForce  score=15  → rejected
 09:53:59  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 09:53:59  INFO     job_pipeline.auto_apply  auto_apply: Huble: Technical CRM Project Manager (French Speaking) @ Unknown  [generic]
 09:54:03  INFO     run_daily  Huble: Technical CRM Project Manager (French Speaking) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:34:04  INFO     run_daily  === DISCOVERY ===
+09:34:05  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+09:34:05  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:34:06  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:34:06  INFO     job_pipeline.discovery  WeWorkRemotely: 6 matching
+09:34:07  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:34:07  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:34:07  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:34:07  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:34:22  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:34:22  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+09:34:22  INFO     run_daily  Discovered 10 total, 4 new
+09:34:22  INFO     run_daily  === SCORING ===
+09:34:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:34:29  INFO     run_daily  ✓ 6sense: IT Support Specialist @ Unknown  score=52  → approved
+09:34:32  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:34:32  INFO     run_daily  ✗ Clinical Project Manager / Senior Clinical Project Manager @ Precision Medicine Group  score=28  → rejected
+09:34:37  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:34:37  INFO     run_daily  ✗ Staff Machine Learning Engineer, Ads Foundational Representations @ Reddit  score=15  → rejected
+09:34:41  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:34:42  INFO     run_daily  ✗ Customer Support Specialist @ Ultimate Marketing  score=32  → rejected
+09:34:42  INFO     run_daily  === AUTO-APPLY ===
+09:34:42  INFO     run_daily  1 job(s) to attempt
+09:34:45  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:34:45  INFO     job_pipeline.auto_apply  auto_apply: 6sense: IT Support Specialist @ Unknown  [generic]
+09:34:49  INFO     run_daily  6sense: IT Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
