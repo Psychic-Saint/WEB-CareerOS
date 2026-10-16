@@ -2842,3 +2842,23 @@ Process @ SandForce  score=15  → rejected
 09:34:45  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 09:34:45  INFO     job_pipeline.auto_apply  auto_apply: 6sense: IT Support Specialist @ Unknown  [generic]
 09:34:49  INFO     run_daily  6sense: IT Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:26:54  INFO     run_daily  === DISCOVERY ===
+09:26:55  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+09:26:55  INFO     job_pipeline.discovery  Jobicy: 3 matching
+09:26:56  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:26:57  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+09:26:57  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:26:57  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:26:57  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:26:58  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:27:13  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:27:13  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+09:27:13  INFO     run_daily  Discovered 10 total, 1 new
+09:27:13  INFO     run_daily  === SCORING ===
+09:27:19  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:27:19  INFO     run_daily  ✓ BeyondTrust: eLearning Developer @ Unknown  score=48  → approved
+09:27:19  INFO     run_daily  === AUTO-APPLY ===
+09:27:19  INFO     run_daily  1 job(s) to attempt
+09:27:22  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:27:22  INFO     job_pipeline.auto_apply  auto_apply: BeyondTrust: eLearning Developer @ Unknown  [generic]
+09:27:28  INFO     run_daily  BeyondTrust: eLearning Developer → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
