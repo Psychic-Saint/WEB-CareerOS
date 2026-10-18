@@ -2879,3 +2879,22 @@ Process @ SandForce  score=15  → rejected
 08:58:44  INFO     run_daily  ✓ Demand Generation Program Manager | Canada | Remote @ Grafana Labs  score=35  → approved
 08:58:44  INFO     run_daily  === AUTO-APPLY ===
 08:58:44  INFO     run_daily  No approved jobs ready
+09:17:03  INFO     run_daily  === DISCOVERY ===
+09:17:04  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+09:17:04  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:17:05  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:17:06  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+09:17:10  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:17:11  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:17:11  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:17:11  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:17:26  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:17:26  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+09:17:26  INFO     run_daily  Discovered 9 total, 2 new
+09:17:26  INFO     run_daily  === SCORING ===
+09:17:32  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:17:32  INFO     run_daily  ✗ Machine Learning Engineer / ML Engineer - Roleplay Sessions @ Synthesia  score=15  → rejected
+09:17:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:17:36  INFO     run_daily  ✗ Machine Learning Engineer @ StackAdapt  score=18  → rejected
+09:17:36  INFO     run_daily  === AUTO-APPLY ===
+09:17:36  INFO     run_daily  No approved jobs ready
