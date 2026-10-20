@@ -2914,3 +2914,23 @@ Process @ SandForce  score=15  → rejected
 10:27:22  INFO     run_daily  No new jobs to score
 10:27:23  INFO     run_daily  === AUTO-APPLY ===
 10:27:23  INFO     run_daily  No approved jobs ready
+09:45:50  INFO     run_daily  === DISCOVERY ===
+09:45:51  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+09:45:51  INFO     job_pipeline.discovery  Jobicy: 0 matching
+09:45:53  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:45:53  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+09:45:54  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:45:54  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:45:54  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:45:54  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:46:09  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:46:09  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+09:46:09  INFO     run_daily  Discovered 6 total, 1 new
+09:46:09  INFO     run_daily  === SCORING ===
+09:46:14  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:46:14  INFO     run_daily  ✓ Evolve Peptides: Operations Support Specialist @ Unknown  score=62  → approved
+09:46:15  INFO     run_daily  === AUTO-APPLY ===
+09:46:15  INFO     run_daily  1 job(s) to attempt
+09:46:18  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:46:18  INFO     job_pipeline.auto_apply  auto_apply: Evolve Peptides: Operations Support Specialist @ Unknown  [generic]
+09:46:23  INFO     run_daily  Evolve Peptides: Operations Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
