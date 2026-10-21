@@ -2934,3 +2934,20 @@ Process @ SandForce  score=15  → rejected
 09:46:18  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 09:46:18  INFO     job_pipeline.auto_apply  auto_apply: Evolve Peptides: Operations Support Specialist @ Unknown  [generic]
 09:46:23  INFO     run_daily  Evolve Peptides: Operations Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+09:47:13  INFO     run_daily  === DISCOVERY ===
+09:47:14  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+09:47:14  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:47:15  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:47:15  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+09:47:15  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:47:15  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:47:15  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:47:16  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:47:31  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:47:31  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+09:47:31  INFO     run_daily  Discovered 7 total, 1 new
+09:47:31  INFO     run_daily  === SCORING ===
+09:47:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:47:36  INFO     run_daily  ✗ Manager, Machine Learning Engineering @ Tala  score=28  → rejected
+09:47:36  INFO     run_daily  === AUTO-APPLY ===
+09:47:36  INFO     run_daily  No approved jobs ready
