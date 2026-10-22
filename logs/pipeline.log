@@ -2951,3 +2951,39 @@ Process @ SandForce  score=15  → rejected
 09:47:36  INFO     run_daily  ✗ Manager, Machine Learning Engineering @ Tala  score=28  → rejected
 09:47:36  INFO     run_daily  === AUTO-APPLY ===
 09:47:36  INFO     run_daily  No approved jobs ready
+09:49:03  INFO     run_daily  === DISCOVERY ===
+09:49:04  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+09:49:04  INFO     job_pipeline.discovery  Jobicy: 0 matching
+09:49:05  INFO     job_pipeline.discovery  Arbeitnow: 3 matching
+09:49:06  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+09:49:06  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:49:07  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:49:07  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:49:07  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:49:22  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:49:22  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+09:49:22  INFO     run_daily  Discovered 8 total, 3 new
+09:49:22  INFO     run_daily  === SCORING ===
+09:49:27  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:49:27  INFO     run_daily  ✓ IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  score=52  → approved
+09:49:32  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:49:32  INFO     run_daily  ✓ Meldewesenspezialist:in / IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  score=42  → approved
+09:49:37  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:49:37  INFO     run_daily  ✓ Business Consultant / IT Business Analyst - Banking & Insurance (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  score=52  → approved
+09:49:37  INFO     run_daily  === AUTO-APPLY ===
+09:49:37  INFO     run_daily  3 job(s) to attempt
+09:49:41  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:49:41  INFO     job_pipeline.auto_apply  auto_apply: IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  [generic]
+09:49:46  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:49:46  INFO     job_pipeline.auto_apply  Clicking submit for IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG
+09:49:49  INFO     run_daily  IT Business Analyst (w/m/d) → escalated  (success_not_confirmed — check screenshot)
+09:49:56  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:49:56  INFO     job_pipeline.auto_apply  auto_apply: Business Consultant / IT Business Analyst - Banking & Insurance (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  [generic]
+09:50:00  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:50:00  INFO     job_pipeline.auto_apply  Clicking submit for Business Consultant / IT Business Analyst - Banking & Insurance (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG
+09:50:03  INFO     run_daily  Business Consultant / IT Business Analyst - Banking & Insurance (w/m/d) → escalated  (success_not_confirmed — check screenshot)
+09:50:10  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:50:10  INFO     job_pipeline.auto_apply  auto_apply: Meldewesenspezialist:in / IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  [generic]
+09:50:14  INFO     job_pipeline.auto_apply  ✓ CV attached
+09:50:15  INFO     job_pipeline.auto_apply  Clicking submit for Meldewesenspezialist:in / IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG
+09:50:18  INFO     run_daily  Meldewesenspezialist:in / IT Business Analyst (w/m/d) → escalated  (success_not_confirmed — check screenshot)
