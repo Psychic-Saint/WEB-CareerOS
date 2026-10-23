@@ -2987,3 +2987,36 @@ Process @ SandForce  score=15  → rejected
 09:50:14  INFO     job_pipeline.auto_apply  ✓ CV attached
 09:50:15  INFO     job_pipeline.auto_apply  Clicking submit for Meldewesenspezialist:in / IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG
 09:50:18  INFO     run_daily  Meldewesenspezialist:in / IT Business Analyst (w/m/d) → escalated  (success_not_confirmed — check screenshot)
+09:42:47  INFO     run_daily  === DISCOVERY ===
+09:42:47  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+09:42:47  INFO     job_pipeline.discovery  Jobicy: 1 matching
+09:42:48  INFO     job_pipeline.discovery  Arbeitnow: 2 matching
+09:42:49  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:42:49  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:42:49  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:42:49  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:42:49  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:43:05  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:43:05  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+09:43:05  INFO     run_daily  Discovered 7 total, 3 new
+09:43:05  INFO     run_daily  === SCORING ===
+09:43:11  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:11  INFO     run_daily  ✓ Project Manager, Gaming Localization Production @ LILT (Production)  score=42  → approved
+09:43:15  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:15  INFO     run_daily  ✓ Project Manager - Software Implementation (m/f/x) @ Makersite GmbH  score=62  → approved
+09:43:20  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:20  INFO     run_daily  ✓ Technical Program Manager @ Playson  score=58  → approved
+09:43:20  INFO     run_daily  === AUTO-APPLY ===
+09:43:20  INFO     run_daily  3 job(s) to attempt
+09:43:23  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:23  INFO     job_pipeline.auto_apply  auto_apply: Project Manager - Software Implementation (m/f/x) @ Makersite GmbH  [generic]
+09:43:30  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+09:43:31  INFO     run_daily  Project Manager - Software Implementation (m/f/x) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+09:43:37  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:37  INFO     job_pipeline.auto_apply  auto_apply: Technical Program Manager @ Playson  [generic]
+09:43:41  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+09:43:41  INFO     run_daily  Technical Program Manager → escalated  (captcha_detected)
+09:43:48  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:43:48  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Gaming Localization Production @ LILT (Production)  [generic]
+09:43:54  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+09:43:55  INFO     run_daily  Project Manager, Gaming Localization Production → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
