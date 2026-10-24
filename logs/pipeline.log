@@ -3020,3 +3020,27 @@ Process @ SandForce  score=15  → rejected
 09:43:48  INFO     job_pipeline.auto_apply  auto_apply: Project Manager, Gaming Localization Production @ LILT (Production)  [generic]
 09:43:54  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
 09:43:55  INFO     run_daily  Project Manager, Gaming Localization Production → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+09:15:25  INFO     run_daily  === DISCOVERY ===
+09:15:26  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+09:15:26  INFO     job_pipeline.discovery  Jobicy: 2 matching
+09:15:27  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+09:15:27  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+09:15:27  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+09:15:28  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+09:15:28  INFO     job_pipeline.discovery  Himalayas: 0 matching
+09:15:28  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+09:15:43  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+09:15:43  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+09:15:43  INFO     run_daily  Discovered 7 total, 3 new
+09:15:43  INFO     run_daily  === SCORING ===
+09:15:49  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:15:49  INFO     run_daily  ✗ Senior Machine Learning Engineer, Ads - Quora @ Quora  score=15  → rejected
+09:15:53  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:15:53  INFO     run_daily  ✗ Lead Machine Learning Engineer @ Serve Robotics  score=18  → rejected
+09:15:58  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:15:58  INFO     run_daily  ✓ Travel Support Specialist @ Aisles &amp; Abroad  score=42  → approved
+09:15:58  INFO     run_daily  === AUTO-APPLY ===
+09:15:58  INFO     run_daily  1 job(s) to attempt
+09:16:01  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+09:16:01  INFO     job_pipeline.auto_apply  auto_apply: Travel Support Specialist @ Aisles &amp; Abroad  [generic]
+09:16:06  INFO     run_daily  Travel Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
