@@ -3060,3 +3060,28 @@ Process @ SandForce  score=15  → rejected
 09:32:37  INFO     run_daily  No new jobs to score
 09:32:37  INFO     run_daily  === AUTO-APPLY ===
 09:32:37  INFO     run_daily  No approved jobs ready
+10:42:22  INFO     run_daily  === DISCOVERY ===
+10:42:23  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+10:42:24  INFO     job_pipeline.discovery  Jobicy: 0 matching
+10:42:25  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+10:42:25  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+10:42:26  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:42:26  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:42:26  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:42:26  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:42:41  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:42:41  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+10:42:41  INFO     run_daily  Discovered 7 total, 2 new
+10:42:41  INFO     run_daily  === SCORING ===
+10:42:47  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:42:47  INFO     run_daily  ✓ Mercury: Customer Support Specialist @ Unknown  score=42  → approved
+10:42:52  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:42:52  INFO     run_daily  ✓ Salesforce nonprofit support consultant @ CISIS Goede Doelen Consultancy  score=42  → approved
+10:42:52  INFO     run_daily  === AUTO-APPLY ===
+10:42:52  INFO     run_daily  2 job(s) to attempt
+10:42:55  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:42:55  INFO     job_pipeline.auto_apply  auto_apply: Mercury: Customer Support Specialist @ Unknown  [generic]
+10:42:59  INFO     run_daily  Mercury: Customer Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:43:06  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:43:06  INFO     job_pipeline.auto_apply  auto_apply: Salesforce nonprofit support consultant @ CISIS Goede Doelen Consultancy  [generic]
+10:43:10  INFO     run_daily  Salesforce nonprofit support consultant → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
