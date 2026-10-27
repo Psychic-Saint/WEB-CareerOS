@@ -3085,3 +3085,30 @@ Process @ SandForce  score=15  → rejected
 10:43:06  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 10:43:06  INFO     job_pipeline.auto_apply  auto_apply: Salesforce nonprofit support consultant @ CISIS Goede Doelen Consultancy  [generic]
 10:43:10  INFO     run_daily  Salesforce nonprofit support consultant → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:09:59  INFO     run_daily  === DISCOVERY ===
+10:09:59  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+10:10:00  INFO     job_pipeline.discovery  Jobicy: 6 matching
+10:10:01  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+10:10:02  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+10:10:02  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:10:03  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:10:03  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:10:03  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:10:18  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:10:18  INFO     job_pipeline.discovery  Total unique jobs across all sources: 12
+10:10:18  INFO     run_daily  Discovered 12 total, 2 new
+10:10:18  INFO     run_daily  === SCORING ===
+10:10:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:10:24  INFO     run_daily  ✓ Instructor, AI/Machine Learning, Simplilearn (Part time) @ Fullstack Academy  score=42  → approved
+10:10:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:10:29  INFO     run_daily  ✓ Digital Project Manager II @ Wpromote  score=62  → approved
+10:10:29  INFO     run_daily  === AUTO-APPLY ===
+10:10:29  INFO     run_daily  2 job(s) to attempt
+10:10:33  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:10:33  INFO     job_pipeline.auto_apply  auto_apply: Digital Project Manager II @ Wpromote  [generic]
+10:10:36  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+10:10:36  INFO     run_daily  Digital Project Manager II → escalated  (captcha_detected)
+10:10:42  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:10:42  INFO     job_pipeline.auto_apply  auto_apply: Instructor, AI/Machine Learning, Simplilearn (Part time) @ Fullstack Academy  [generic]
+10:10:46  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+10:10:46  INFO     run_daily  Instructor, AI/Machine Learning, Simplilearn (Part time) → escalated  (captcha_detected)
