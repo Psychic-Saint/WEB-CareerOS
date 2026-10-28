@@ -3112,3 +3112,46 @@ Process @ SandForce  score=15  → rejected
 10:10:42  INFO     job_pipeline.auto_apply  auto_apply: Instructor, AI/Machine Learning, Simplilearn (Part time) @ Fullstack Academy  [generic]
 10:10:46  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 10:10:46  INFO     run_daily  Instructor, AI/Machine Learning, Simplilearn (Part time) → escalated  (captcha_detected)
+10:56:43  INFO     run_daily  === DISCOVERY ===
+10:56:44  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+10:56:45  INFO     job_pipeline.discovery  Jobicy: 4 matching
+10:56:46  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+10:56:47  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+10:56:47  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:56:47  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:56:47  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:56:48  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:57:03  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:57:03  INFO     job_pipeline.discovery  Total unique jobs across all sources: 12
+10:57:03  INFO     run_daily  Discovered 12 total, 5 new
+10:57:03  INFO     run_daily  === SCORING ===
+10:57:09  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:09  INFO     run_daily  ✓ Trusted Building Technologies Inc.: Executive Assistant / Project Manager @ Unknown  score=42  → approved
+10:57:12  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:12  INFO     run_daily  ✓ Freshly Commerce: Technical Support Specialist @ Unknown  score=48  → approved
+10:57:17  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:17  INFO     run_daily  ✓ Product Support Specialist - Australia @ Ashby  score=42  → approved
+10:57:22  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:22  INFO     run_daily  ✓ Product Support Specialist - Americas @ Ashby  score=42  → approved
+10:57:27  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:27  INFO     run_daily  ✓ Technical Support Specialist , UK @ Nash  score=42  → approved
+10:57:27  INFO     run_daily  === AUTO-APPLY ===
+10:57:27  INFO     run_daily  5 job(s) to attempt
+10:57:30  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:30  INFO     job_pipeline.auto_apply  auto_apply: Freshly Commerce: Technical Support Specialist @ Unknown  [generic]
+10:57:35  INFO     run_daily  Freshly Commerce: Technical Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:57:41  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:41  INFO     job_pipeline.auto_apply  auto_apply: Trusted Building Technologies Inc.: Executive Assistant / Project Manager @ Unknown  [generic]
+10:57:45  INFO     run_daily  Trusted Building Technologies Inc.: Executive Assistant / Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+10:57:51  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:57:51  INFO     job_pipeline.auto_apply  auto_apply: Product Support Specialist - Australia @ Ashby  [generic]
+10:57:55  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+10:57:55  INFO     run_daily  Product Support Specialist - Australia → escalated  (captcha_detected)
+10:58:01  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:58:01  INFO     job_pipeline.auto_apply  auto_apply: Product Support Specialist - Americas @ Ashby  [generic]
+10:58:04  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+10:58:04  INFO     run_daily  Product Support Specialist - Americas → escalated  (captcha_detected)
+10:58:11  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:58:11  INFO     job_pipeline.auto_apply  auto_apply: Technical Support Specialist , UK @ Nash  [generic]
+10:58:15  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+10:58:15  INFO     run_daily  Technical Support Specialist , UK → escalated  (captcha_detected)
