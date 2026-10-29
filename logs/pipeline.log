@@ -3155,3 +3155,23 @@ Process @ SandForce  score=15  → rejected
 10:58:11  INFO     job_pipeline.auto_apply  auto_apply: Technical Support Specialist , UK @ Nash  [generic]
 10:58:15  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 10:58:15  INFO     run_daily  Technical Support Specialist , UK → escalated  (captcha_detected)
+11:14:25  INFO     run_daily  === DISCOVERY ===
+11:14:26  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+11:14:26  INFO     job_pipeline.discovery  Jobicy: 0 matching
+11:14:27  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+11:14:28  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+11:14:29  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:14:29  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:14:29  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:14:29  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:14:44  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:14:44  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+11:14:44  INFO     run_daily  Discovered 8 total, 1 new
+11:14:44  INFO     run_daily  === SCORING ===
+11:14:51  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:14:51  INFO     run_daily  ✓ IT Support Analyst – Application Operations @ Coopers Group AG  score=52  → approved
+11:14:51  INFO     run_daily  === AUTO-APPLY ===
+11:14:51  INFO     run_daily  1 job(s) to attempt
+11:14:54  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:14:54  INFO     job_pipeline.auto_apply  auto_apply: IT Support Analyst – Application Operations @ Coopers Group AG  [generic]
+11:14:59  INFO     run_daily  IT Support Analyst – Application Operations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
