@@ -3175,3 +3175,35 @@ Process @ SandForce  score=15  → rejected
 11:14:54  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 11:14:54  INFO     job_pipeline.auto_apply  auto_apply: IT Support Analyst – Application Operations @ Coopers Group AG  [generic]
 11:14:59  INFO     run_daily  IT Support Analyst – Application Operations → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+11:08:10  INFO     run_daily  === DISCOVERY ===
+11:08:11  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+11:08:12  INFO     job_pipeline.discovery  Jobicy: 1 matching
+11:08:13  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+11:08:13  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+11:08:14  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:08:14  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:08:14  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:08:14  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:08:29  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:08:29  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+11:08:30  INFO     run_daily  Discovered 7 total, 3 new
+11:08:30  INFO     run_daily  === SCORING ===
+11:08:35  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:08:35  INFO     run_daily  ✓ Keeper Security: Consumer Support Specialist (Weekend Shift, Sunday - Thursday) @ Unknown  score=42  → approved
+11:08:40  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:08:40  INFO     run_daily  ✓ Program Manager, Aircraft @ Swarmaero  score=42  → approved
+11:08:44  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:08:44  INFO     run_daily  ✓ Creative eLearning Developer @ Tenable  score=42  → approved
+11:08:44  INFO     run_daily  === AUTO-APPLY ===
+11:08:44  INFO     run_daily  3 job(s) to attempt
+11:08:48  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:08:48  INFO     job_pipeline.auto_apply  auto_apply: Keeper Security: Consumer Support Specialist (Weekend Shift, Sunday - Thursday) @ Unknown  [generic]
+11:08:52  INFO     run_daily  Keeper Security: Consumer Support Specialist (Weekend Shift, Sunday - Thursday) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+11:08:59  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:08:59  INFO     job_pipeline.auto_apply  auto_apply: Program Manager, Aircraft @ Swarmaero  [generic]
+11:09:06  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+11:09:07  INFO     run_daily  Program Manager, Aircraft → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+11:09:13  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:09:13  INFO     job_pipeline.auto_apply  auto_apply: Creative eLearning Developer @ Tenable  [generic]
+11:09:16  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+11:09:16  INFO     run_daily  Creative eLearning Developer → escalated  (captcha_detected)
