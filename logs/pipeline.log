@@ -3207,3 +3207,26 @@ Process @ SandForce  score=15  → rejected
 11:09:13  INFO     job_pipeline.auto_apply  auto_apply: Creative eLearning Developer @ Tenable  [generic]
 11:09:16  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 11:09:16  INFO     run_daily  Creative eLearning Developer → escalated  (captcha_detected)
+10:41:53  INFO     run_daily  === DISCOVERY ===
+10:41:53  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+10:41:54  INFO     job_pipeline.discovery  Jobicy: 4 matching
+10:41:56  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+10:41:56  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+10:41:57  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+10:41:57  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+10:41:57  INFO     job_pipeline.discovery  Himalayas: 0 matching
+10:41:57  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+10:42:12  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+10:42:12  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+10:42:12  INFO     run_daily  Discovered 9 total, 2 new
+10:42:12  INFO     run_daily  === SCORING ===
+10:42:18  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:42:18  INFO     run_daily  ✓ Dental Field Trainer - Seattle @ Dandy  score=42  → approved
+10:42:22  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:42:22  INFO     run_daily  ✗ Software Engineer New Grad, Machine Learning Platform - Quora @ Quora  score=18  → rejected
+10:42:22  INFO     run_daily  === AUTO-APPLY ===
+10:42:22  INFO     run_daily  1 job(s) to attempt
+10:42:26  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+10:42:26  INFO     job_pipeline.auto_apply  auto_apply: Dental Field Trainer - Seattle @ Dandy  [generic]
+10:42:30  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+10:42:30  INFO     run_daily  Dental Field Trainer - Seattle → escalated  (captcha_detected)
