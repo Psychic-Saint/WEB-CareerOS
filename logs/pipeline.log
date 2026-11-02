@@ -3246,3 +3246,27 @@ Process @ SandForce  score=15  → rejected
 11:37:47  INFO     run_daily  No new jobs to score
 11:37:47  INFO     run_daily  === AUTO-APPLY ===
 11:37:47  INFO     run_daily  No approved jobs ready
+13:00:57  INFO     run_daily  === DISCOVERY ===
+13:00:58  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+13:00:59  INFO     job_pipeline.discovery  Jobicy: 1 matching
+13:01:00  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+13:01:01  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+13:01:01  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+13:01:02  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+13:01:02  INFO     job_pipeline.discovery  Himalayas: 0 matching
+13:01:02  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+13:01:17  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+13:01:17  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+13:01:17  INFO     run_daily  Discovered 7 total, 2 new
+13:01:17  INFO     run_daily  === SCORING ===
+13:01:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:01:29  INFO     run_daily  ✓ Business Analyst (gn) @ New Monday GmbH  score=58  → approved
+13:01:34  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:01:34  INFO     run_daily  ✓ Senior Program Manager - Privacy Compliance & Data Governance @ Qualtrics  score=35  → approved
+13:01:34  INFO     run_daily  === AUTO-APPLY ===
+13:01:34  INFO     run_daily  1 job(s) to attempt
+13:01:38  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:01:38  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst (gn) @ New Monday GmbH  [generic]
+13:01:49  INFO     job_pipeline.auto_apply  ✓ CV attached
+13:01:50  INFO     job_pipeline.auto_apply  Clicking submit for Business Analyst (gn) @ New Monday GmbH
+13:01:53  INFO     run_daily  Business Analyst (gn) → escalated  (success_not_confirmed — check screenshot)
