@@ -3308,3 +3308,34 @@ Process @ SandForce  score=15  → rejected
 12:44:20  INFO     run_daily  No new jobs to score
 12:44:20  INFO     run_daily  === AUTO-APPLY ===
 12:44:20  INFO     run_daily  No approved jobs ready
+12:54:35  INFO     run_daily  === DISCOVERY ===
+12:54:36  INFO     job_pipeline.discovery  RemoteOK: 5 matching
+12:54:36  INFO     job_pipeline.discovery  Jobicy: 5 matching
+12:54:38  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+12:54:39  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+12:54:39  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+12:54:39  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+12:54:39  INFO     job_pipeline.discovery  Himalayas: 0 matching
+12:54:40  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+12:54:55  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+12:54:55  INFO     job_pipeline.discovery  Total unique jobs across all sources: 13
+12:54:55  INFO     run_daily  Discovered 13 total, 6 new
+12:54:55  INFO     run_daily  === SCORING ===
+12:54:59  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:55:00  INFO     run_daily  ✗ French Speaking Fitbit Customer Support Specialist - Work In Sofia, Bulgaria @ Patrique Mercier Recruitment Fr  score=28  → rejected
+12:55:04  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:55:04  INFO     run_daily  ✗ Machine Learning Engineer, Answers Relevance @ Reddit  score=18  → rejected
+12:55:09  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:55:09  INFO     run_daily  ✓ Sales Enablement and Training Manager @ Socure  score=62  → approved
+12:55:13  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:55:13  INFO     run_daily  ✗ Machine Learning Engineering Manager - Core Ads Ranking @ Reddit  score=18  → rejected
+12:55:16  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:55:16  INFO     run_daily  ✗ Machine Learning Manager, Feed Ecosystems @ Reddit  score=28  → rejected
+12:55:20  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:55:20  INFO     run_daily  ✗ Machine Learning Manager, Feed Relevance (Retrieval) @ Reddit  score=18  → rejected
+12:55:20  INFO     run_daily  === AUTO-APPLY ===
+12:55:20  INFO     run_daily  1 job(s) to attempt
+12:55:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:55:24  INFO     job_pipeline.auto_apply  auto_apply: Sales Enablement and Training Manager @ Socure  [generic]
+12:55:29  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+12:55:29  INFO     run_daily  Sales Enablement and Training Manager → escalated  (captcha_detected)
