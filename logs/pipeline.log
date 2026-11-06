@@ -3339,3 +3339,58 @@ Process @ SandForce  score=15  → rejected
 12:55:24  INFO     job_pipeline.auto_apply  auto_apply: Sales Enablement and Training Manager @ Socure  [generic]
 12:55:29  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 12:55:29  INFO     run_daily  Sales Enablement and Training Manager → escalated  (captcha_detected)
+12:51:16  INFO     run_daily  === DISCOVERY ===
+12:51:17  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+12:51:18  INFO     job_pipeline.discovery  Jobicy: 5 matching
+12:51:19  INFO     job_pipeline.discovery  Arbeitnow: 2 matching
+12:51:20  INFO     job_pipeline.discovery  WeWorkRemotely: 5 matching
+12:51:21  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+12:51:21  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+12:51:21  INFO     job_pipeline.discovery  Himalayas: 0 matching
+12:51:21  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+12:51:36  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+12:51:36  INFO     job_pipeline.discovery  Total unique jobs across all sources: 16
+12:51:36  INFO     run_daily  Discovered 16 total, 10 new
+12:51:36  INFO     run_daily  === SCORING ===
+12:51:42  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:51:42  INFO     run_daily  ✓ Toptal: Agile Program Manager @ Unknown  score=62  → approved
+12:51:47  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:51:47  INFO     run_daily  ✓ UPROSPECT: Marketing Lead | $2.5K - $3K USD Base monthly | Exciting Multicultural E-learning Company @ Unknown  score=42  → approved
+12:51:50  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:51:51  INFO     run_daily  ✓ Lighthouse: Review Program Manager @ Unknown  score=45  → approved
+12:51:55  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:51:55  INFO     run_daily  ✗ Business Analyst - Krankenversicherung @ Coopers Group AG  score=28  → rejected
+12:52:00  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:00  INFO     run_daily  ✓ Business Analyst:in @ Coopers Group AG  score=42  → approved
+12:52:04  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:04  INFO     run_daily  ✓ School of Product Management - Accelerator Mentor @ Udacity  score=58  → approved
+12:52:08  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:08  INFO     run_daily  ✓ Clinical Project Manager @ Alimentiv  score=35  → approved
+12:52:12  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:12  INFO     run_daily  ✗ Senior Staff Machine Learning Engineer - Content Platform @ Spotify  score=15  → rejected
+12:52:16  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:16  INFO     run_daily  ✗ Sr. Principal Sales Training Manager @ Keyfactor, Inc.  score=28  → rejected
+12:52:20  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:20  INFO     run_daily  ✓ Dental Field Trainer - Detroit @ Dandy  score=42  → approved
+12:52:20  INFO     run_daily  === AUTO-APPLY ===
+12:52:20  INFO     run_daily  6 job(s) to attempt
+12:52:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:24  INFO     job_pipeline.auto_apply  auto_apply: Toptal: Agile Program Manager @ Unknown  [generic]
+12:52:30  INFO     run_daily  Toptal: Agile Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:52:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:36  INFO     job_pipeline.auto_apply  auto_apply: School of Product Management - Accelerator Mentor @ Udacity  [generic]
+12:52:40  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+12:52:40  INFO     run_daily  School of Product Management - Accelerator Mentor → escalated  (captcha_detected)
+12:52:46  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:46  INFO     job_pipeline.auto_apply  auto_apply: Lighthouse: Review Program Manager @ Unknown  [generic]
+12:52:50  INFO     run_daily  Lighthouse: Review Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:52:57  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:52:57  INFO     job_pipeline.auto_apply  auto_apply: UPROSPECT: Marketing Lead | $2.5K - $3K USD Base monthly | Exciting Multicultural E-learning Company @ Unknown  [generic]
+12:53:01  INFO     run_daily  UPROSPECT: Marketing Lead | $2.5K - $3K USD Base monthly | Exciting Multicultural E-learning Company → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:53:07  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:53:07  INFO     job_pipeline.auto_apply  auto_apply: Business Analyst:in @ Coopers Group AG  [generic]
+12:53:11  INFO     run_daily  Business Analyst:in → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:53:17  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:53:17  INFO     job_pipeline.auto_apply  auto_apply: Dental Field Trainer - Detroit @ Dandy  [generic]
+12:53:21  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+12:53:21  INFO     run_daily  Dental Field Trainer - Detroit → escalated  (captcha_detected)
