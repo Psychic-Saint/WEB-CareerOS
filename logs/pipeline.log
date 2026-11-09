@@ -3441,3 +3441,31 @@ Process @ SandForce  score=15  → rejected
 11:39:12  INFO     job_pipeline.auto_apply  auto_apply: Senior Program Manager, Lead-to-Cash @ Juniper Square  [generic]
 11:39:15  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 11:39:15  INFO     run_daily  Senior Program Manager, Lead-to-Cash → escalated  (captcha_detected)
+13:32:24  INFO     run_daily  === DISCOVERY ===
+13:32:25  INFO     job_pipeline.discovery  RemoteOK: 3 matching
+13:32:25  INFO     job_pipeline.discovery  Jobicy: 1 matching
+13:32:26  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+13:32:28  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+13:32:29  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+13:32:29  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+13:32:29  INFO     job_pipeline.discovery  Himalayas: 0 matching
+13:32:29  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+13:32:44  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+13:32:44  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+13:32:44  INFO     run_daily  Discovered 7 total, 3 new
+13:32:44  INFO     run_daily  === SCORING ===
+13:32:50  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:32:50  INFO     run_daily  ✓ CareTalk Health: Patient Support Specialist (Remote) @ Unknown  score=35  → approved
+13:32:54  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:32:54  INFO     run_daily  ✓ DEPT®: Project Manager - Creative - US Remote @ Unknown  score=58  → approved
+13:32:58  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:32:58  INFO     run_daily  ✓ Program Manager, Customer Programs @ Dropbox  score=52  → approved
+13:32:58  INFO     run_daily  === AUTO-APPLY ===
+13:32:58  INFO     run_daily  2 job(s) to attempt
+13:33:02  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:33:02  INFO     job_pipeline.auto_apply  auto_apply: DEPT®: Project Manager - Creative - US Remote @ Unknown  [generic]
+13:33:06  INFO     run_daily  DEPT®: Project Manager - Creative - US Remote → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+13:33:12  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:33:12  INFO     job_pipeline.auto_apply  auto_apply: Program Manager, Customer Programs @ Dropbox  [generic]
+13:33:16  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:33:16  INFO     run_daily  Program Manager, Customer Programs → escalated  (captcha_detected)
