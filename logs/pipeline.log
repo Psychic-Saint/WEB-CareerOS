@@ -3498,3 +3498,30 @@ Process @ SandForce  score=15  → rejected
 13:12:47  INFO     job_pipeline.auto_apply  auto_apply: Client Support Specialist (Workplaces - B2B) @ Clipboard  [generic]
 13:12:50  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 13:12:51  INFO     run_daily  Client Support Specialist (Workplaces - B2B) → escalated  (captcha_detected)
+12:20:55  INFO     run_daily  === DISCOVERY ===
+12:20:55  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+12:20:55  INFO     job_pipeline.discovery  Jobicy: 0 matching
+12:20:56  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+12:20:57  INFO     job_pipeline.discovery  WeWorkRemotely: 4 matching
+12:20:57  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+12:20:57  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+12:20:57  INFO     job_pipeline.discovery  Himalayas: 0 matching
+12:20:57  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+12:21:12  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+12:21:12  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+12:21:12  INFO     run_daily  Discovered 9 total, 3 new
+12:21:12  INFO     run_daily  === SCORING ===
+12:21:18  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:21:18  INFO     run_daily  ✓ EdgeQ Technologies Private Limited: IT Support Specialist @ Unknown  score=72  → approved
+12:21:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:21:24  INFO     run_daily  ✓ Senior Business Analyst / Requirements Engineer (76080) @ IQ Plus AG  score=48  → approved
+12:21:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:21:29  INFO     run_daily  ✗ HIL Support Specialist @ Extend Your Team  score=28  → rejected
+12:21:29  INFO     run_daily  === AUTO-APPLY ===
+12:21:29  INFO     run_daily  2 job(s) to attempt
+12:21:33  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:21:33  INFO     job_pipeline.auto_apply  auto_apply: EdgeQ Technologies Private Limited: IT Support Specialist @ Unknown  [generic]
+12:21:37  INFO     run_daily  EdgeQ Technologies Private Limited: IT Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+12:21:44  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:21:44  INFO     job_pipeline.auto_apply  auto_apply: Senior Business Analyst / Requirements Engineer (76080) @ IQ Plus AG  [generic]
+12:21:48  INFO     run_daily  Senior Business Analyst / Requirements Engineer (76080) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
