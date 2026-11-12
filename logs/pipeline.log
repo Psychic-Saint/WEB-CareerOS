@@ -3525,3 +3525,32 @@ Process @ SandForce  score=15  → rejected
 12:21:44  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 12:21:44  INFO     job_pipeline.auto_apply  auto_apply: Senior Business Analyst / Requirements Engineer (76080) @ IQ Plus AG  [generic]
 12:21:48  INFO     run_daily  Senior Business Analyst / Requirements Engineer (76080) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+13:29:49  INFO     run_daily  === DISCOVERY ===
+13:29:50  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+13:29:50  INFO     job_pipeline.discovery  Jobicy: 2 matching
+13:29:51  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+13:29:52  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+13:29:52  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+13:29:52  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+13:29:52  INFO     job_pipeline.discovery  Himalayas: 0 matching
+13:29:53  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+13:30:08  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+13:30:08  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+13:30:08  INFO     run_daily  Discovered 9 total, 3 new
+13:30:08  INFO     run_daily  === SCORING ===
+13:30:13  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:30:13  INFO     run_daily  ✓ D2B: Bookkeeper & Admin Support Specialist - Dayshift Remote @ Unknown  score=35  → approved
+13:30:16  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:30:16  INFO     run_daily  ✓ Construction Estimating Career Coach @ CourseCareers  score=52  → approved
+13:30:20  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:30:20  INFO     run_daily  ✓ Drafting Career Coach @ CourseCareers  score=42  → approved
+13:30:20  INFO     run_daily  === AUTO-APPLY ===
+13:30:20  INFO     run_daily  2 job(s) to attempt
+13:30:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:30:24  INFO     job_pipeline.auto_apply  auto_apply: Construction Estimating Career Coach @ CourseCareers  [generic]
+13:30:27  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:30:28  INFO     run_daily  Construction Estimating Career Coach → escalated  (captcha_detected)
+13:30:34  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:30:34  INFO     job_pipeline.auto_apply  auto_apply: Drafting Career Coach @ CourseCareers  [generic]
+13:30:37  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:30:38  INFO     run_daily  Drafting Career Coach → escalated  (captcha_detected)
