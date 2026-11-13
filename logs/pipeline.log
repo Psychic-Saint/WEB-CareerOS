@@ -3554,3 +3554,19 @@ Process @ SandForce  score=15  → rejected
 13:30:34  INFO     job_pipeline.auto_apply  auto_apply: Drafting Career Coach @ CourseCareers  [generic]
 13:30:37  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 13:30:38  INFO     run_daily  Drafting Career Coach → escalated  (captcha_detected)
+12:46:21  INFO     run_daily  === DISCOVERY ===
+12:46:22  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+12:46:22  INFO     job_pipeline.discovery  Jobicy: 0 matching
+12:46:23  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+12:46:25  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+12:46:25  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+12:46:25  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+12:46:25  INFO     job_pipeline.discovery  Himalayas: 0 matching
+12:46:26  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+12:46:41  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+12:46:41  INFO     job_pipeline.discovery  Total unique jobs across all sources: 6
+12:46:41  INFO     run_daily  Discovered 6 total, 0 new
+12:46:41  INFO     run_daily  === SCORING ===
+12:46:41  INFO     run_daily  No new jobs to score
+12:46:41  INFO     run_daily  === AUTO-APPLY ===
+12:46:41  INFO     run_daily  No approved jobs ready
