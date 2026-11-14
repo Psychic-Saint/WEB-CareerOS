@@ -3570,3 +3570,41 @@ Process @ SandForce  score=15  → rejected
 12:46:41  INFO     run_daily  No new jobs to score
 12:46:41  INFO     run_daily  === AUTO-APPLY ===
 12:46:41  INFO     run_daily  No approved jobs ready
+11:54:07  INFO     run_daily  === DISCOVERY ===
+11:54:08  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+11:54:08  INFO     job_pipeline.discovery  Jobicy: 3 matching
+11:54:09  INFO     job_pipeline.discovery  Arbeitnow: 2 matching
+11:54:10  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+11:54:11  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+11:54:11  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+11:54:11  INFO     job_pipeline.discovery  Himalayas: 0 matching
+11:54:11  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+11:54:26  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+11:54:26  INFO     job_pipeline.discovery  Total unique jobs across all sources: 12
+11:54:26  INFO     run_daily  Discovered 12 total, 6 new
+11:54:26  INFO     run_daily  === SCORING ===
+11:54:31  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:54:31  INFO     run_daily  ✓ CapsLock: Creative Marketing Project Coordinator @ Unknown  score=52  → approved
+11:54:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:54:36  INFO     run_daily  ✗ Senior Business Analyst - Versicherung @ Coopers Group AG  score=32  → rejected
+11:54:42  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:54:42  INFO     run_daily  ✓ Technical Program Manager, Software @ Swarmaero  score=52  → approved
+11:54:47  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:54:47  INFO     run_daily  ✗ Machine Learning Engineering Manager II @ Spotify  score=18  → rejected
+11:54:51  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:54:51  INFO     run_daily  ✓ Senior / Lead Program Manager @ Nebius  score=42  → approved
+11:54:55  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:54:55  INFO     run_daily  ✗ Technical Program Manager - IP Backbone @ Nebius  score=28  → rejected
+11:54:55  INFO     run_daily  === AUTO-APPLY ===
+11:54:55  INFO     run_daily  3 job(s) to attempt
+11:54:58  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:54:58  INFO     job_pipeline.auto_apply  auto_apply: CapsLock: Creative Marketing Project Coordinator @ Unknown  [generic]
+11:55:02  INFO     run_daily  CapsLock: Creative Marketing Project Coordinator → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+11:55:09  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:55:09  INFO     job_pipeline.auto_apply  auto_apply: Technical Program Manager, Software @ Swarmaero  [generic]
+11:55:16  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+11:55:17  INFO     run_daily  Technical Program Manager, Software → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+11:55:23  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+11:55:23  INFO     job_pipeline.auto_apply  auto_apply: Senior / Lead Program Manager @ Nebius  [generic]
+11:55:27  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+11:55:27  INFO     run_daily  Senior / Lead Program Manager → escalated  (captcha_detected)
