@@ -3608,3 +3608,20 @@ Process @ SandForce  score=15  → rejected
 11:55:23  INFO     job_pipeline.auto_apply  auto_apply: Senior / Lead Program Manager @ Nebius  [generic]
 11:55:27  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 11:55:27  INFO     run_daily  Senior / Lead Program Manager → escalated  (captcha_detected)
+12:26:06  INFO     run_daily  === DISCOVERY ===
+12:26:07  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+12:26:07  INFO     job_pipeline.discovery  Jobicy: 1 matching
+12:26:08  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+12:26:09  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+12:26:09  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+12:26:09  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+12:26:09  INFO     job_pipeline.discovery  Himalayas: 0 matching
+12:26:09  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+12:26:24  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+12:26:24  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+12:26:24  INFO     run_daily  Discovered 7 total, 1 new
+12:26:24  INFO     run_daily  === SCORING ===
+12:26:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+12:26:29  INFO     run_daily  ✗ Part-Time MCAT Tutor @ Inspira Education  score=28  → rejected
+12:26:29  INFO     run_daily  === AUTO-APPLY ===
+12:26:29  INFO     run_daily  No approved jobs ready
