@@ -3676,3 +3676,32 @@ Process @ SandForce  score=15  → rejected
 14:03:47  INFO     job_pipeline.auto_apply  auto_apply: Program Manager, Life Sciences @ Smartling  [generic]
 14:03:51  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 14:03:51  INFO     run_daily  Program Manager, Life Sciences → escalated  (captcha_detected)
+13:38:05  INFO     run_daily  === DISCOVERY ===
+13:38:05  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+13:38:05  INFO     job_pipeline.discovery  Jobicy: 4 matching
+13:38:06  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+13:38:07  INFO     job_pipeline.discovery  WeWorkRemotely: 0 matching
+13:38:07  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+13:38:07  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+13:38:07  INFO     job_pipeline.discovery  Himalayas: 0 matching
+13:38:07  WARNING  job_pipeline.discovery  Jobspresso fetch failed: 403 Client Error: Forbidden for url: https://jobspresso.co/remote-work/feed/
+13:38:22  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+13:38:22  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+13:38:22  INFO     run_daily  Discovered 9 total, 5 new
+13:38:22  INFO     run_daily  === SCORING ===
+13:38:28  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:38:28  INFO     run_daily  ✗ Senior Business Analyst:in - Derivate @ Coopers Group AG  score=28  → rejected
+13:38:33  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:38:33  INFO     run_daily  ✓ IT Support Specialist @ 6sense  score=52  → approved
+13:38:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:38:36  INFO     run_daily  ✗ 1 on 1 High School Math Tutor @ Think Academy US  score=28  → rejected
+13:38:40  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:38:40  INFO     run_daily  ✗ Machine Learning Engineer (Governance ML Platform) @ EDB  score=18  → rejected
+13:38:43  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:38:43  INFO     run_daily  ✗ International Audio/Video Remote Toisan and Mandarin or Cantonese Interpreter @ Language Services Associates  score=8  → rejected
+13:38:43  INFO     run_daily  === AUTO-APPLY ===
+13:38:43  INFO     run_daily  1 job(s) to attempt
+13:38:45  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:38:45  INFO     job_pipeline.auto_apply  auto_apply: IT Support Specialist @ 6sense  [generic]
+13:38:51  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:38:51  INFO     run_daily  IT Support Specialist → escalated  (captcha_detected)
