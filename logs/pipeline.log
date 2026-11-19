@@ -3705,3 +3705,30 @@ Process @ SandForce  score=15  → rejected
 13:38:45  INFO     job_pipeline.auto_apply  auto_apply: IT Support Specialist @ 6sense  [generic]
 13:38:51  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
 13:38:51  INFO     run_daily  IT Support Specialist → escalated  (captcha_detected)
+14:03:58  INFO     run_daily  === DISCOVERY ===
+14:03:59  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+14:03:59  INFO     job_pipeline.discovery  Jobicy: 0 matching
+14:04:00  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+14:04:01  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+14:04:01  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+14:04:01  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+14:04:01  INFO     job_pipeline.discovery  Himalayas: 0 matching
+14:04:01  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+14:04:16  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+14:04:16  INFO     job_pipeline.discovery  Total unique jobs across all sources: 8
+14:04:17  INFO     run_daily  Discovered 8 total, 3 new
+14:04:17  INFO     run_daily  === SCORING ===
+14:04:22  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:04:22  INFO     run_daily  ✓ Veracode: Technical Program Manager, Customer Onboarding @ Unknown  score=52  → approved
+14:04:26  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:04:26  INFO     run_daily  ✓ Driversnote: Customer Support Specialist, 30 hrs @ Unknown  score=42  → approved
+14:04:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:04:30  INFO     run_daily  ✗ Proxify AB: Senior Machine Learning Engineer @ Unknown  score=15  → rejected
+14:04:30  INFO     run_daily  === AUTO-APPLY ===
+14:04:30  INFO     run_daily  2 job(s) to attempt
+14:04:33  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:04:33  INFO     job_pipeline.auto_apply  auto_apply: Veracode: Technical Program Manager, Customer Onboarding @ Unknown  [generic]
+14:04:37  INFO     run_daily  Veracode: Technical Program Manager, Customer Onboarding → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+14:04:43  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:04:43  INFO     job_pipeline.auto_apply  auto_apply: Driversnote: Customer Support Specialist, 30 hrs @ Unknown  [generic]
+14:04:47  INFO     run_daily  Driversnote: Customer Support Specialist, 30 hrs → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
