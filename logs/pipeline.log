@@ -3732,3 +3732,38 @@ Process @ SandForce  score=15  → rejected
 14:04:43  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 14:04:43  INFO     job_pipeline.auto_apply  auto_apply: Driversnote: Customer Support Specialist, 30 hrs @ Unknown  [generic]
 14:04:47  INFO     run_daily  Driversnote: Customer Support Specialist, 30 hrs → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+13:46:43  INFO     run_daily  === DISCOVERY ===
+13:46:43  INFO     job_pipeline.discovery  RemoteOK: 4 matching
+13:46:43  INFO     job_pipeline.discovery  Jobicy: 3 matching
+13:46:44  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+13:46:45  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+13:46:45  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+13:46:46  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+13:46:46  INFO     job_pipeline.discovery  Himalayas: 0 matching
+13:46:46  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+13:47:01  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+13:47:01  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+13:47:01  INFO     run_daily  Discovered 10 total, 7 new
+13:47:01  INFO     run_daily  === SCORING ===
+13:47:06  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:06  INFO     run_daily  ✗ Airbnb: Machine Learning Engineer, Assistance Engineering @ Unknown  score=15  → rejected
+13:47:10  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:10  INFO     run_daily  ✗ Discord: Engineering Manager, Machine Learning - Safety @ Unknown  score=18  → rejected
+13:47:15  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:15  INFO     run_daily  ✓ Mercury: Customer Support Specialist - Risk @ Unknown  score=42  → approved
+13:47:19  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:19  INFO     run_daily  ✗ Lead Machine Learning Scientist, Customer Operations @ Monzo  score=18  → rejected
+13:47:22  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:22  INFO     run_daily  ✗ Lead Machine Learning Scientist, FinCrime @ Monzo  score=18  → rejected
+13:47:27  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:27  INFO     run_daily  ✗ Lead Machine Learning Scientist, Search @ Monzo  score=15  → rejected
+13:47:32  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:32  INFO     run_daily  ✓ Project Manager @ Syner-G  score=52  → approved
+13:47:32  INFO     run_daily  === AUTO-APPLY ===
+13:47:32  INFO     run_daily  2 job(s) to attempt
+13:47:36  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:36  INFO     job_pipeline.auto_apply  auto_apply: Project Manager @ Syner-G  [generic]
+13:47:41  INFO     run_daily  Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+13:47:47  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:47:47  INFO     job_pipeline.auto_apply  auto_apply: Mercury: Customer Support Specialist - Risk @ Unknown  [generic]
+13:47:51  INFO     run_daily  Mercury: Customer Support Specialist - Risk → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
