@@ -3767,3 +3767,33 @@ Process @ SandForce  score=15  → rejected
 13:47:47  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 13:47:47  INFO     job_pipeline.auto_apply  auto_apply: Mercury: Customer Support Specialist - Risk @ Unknown  [generic]
 13:47:51  INFO     run_daily  Mercury: Customer Support Specialist - Risk → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+13:11:52  INFO     run_daily  === DISCOVERY ===
+13:11:53  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+13:11:53  INFO     job_pipeline.discovery  Jobicy: 1 matching
+13:11:54  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+13:11:54  INFO     job_pipeline.discovery  WeWorkRemotely: 2 matching
+13:11:54  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+13:11:55  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+13:11:55  INFO     job_pipeline.discovery  Himalayas: 0 matching
+13:11:55  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+13:12:10  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+13:12:10  INFO     job_pipeline.discovery  Total unique jobs across all sources: 5
+13:12:10  INFO     run_daily  Discovered 5 total, 4 new
+13:12:10  INFO     run_daily  === SCORING ===
+13:12:16  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:12:16  INFO     run_daily  ✗ Global Dimensions, LLC: Part-Time HUBZone Business Operations & Support Specialist @ Unknown  score=28  → rejected
+13:12:19  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:12:19  INFO     run_daily  ✗ Resolv.Global: Bilingual Customer Support Specialist (English/French-Canadian) @ Unknown  score=25  → rejected
+13:12:23  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:12:23  INFO     run_daily  ✓ Localisation Project Manager @ Smartling  score=52  → approved
+13:12:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:12:29  INFO     run_daily  ✓ Senior Manager, Commercial Learning and Development @ Elation Health  score=72  → approved
+13:12:30  INFO     run_daily  === AUTO-APPLY ===
+13:12:30  INFO     run_daily  2 job(s) to attempt
+13:12:34  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:12:34  INFO     job_pipeline.auto_apply  auto_apply: Senior Manager, Commercial Learning and Development @ Elation Health  [generic]
+13:12:39  INFO     run_daily  Senior Manager, Commercial Learning and Development → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+13:12:46  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:12:46  INFO     job_pipeline.auto_apply  auto_apply: Localisation Project Manager @ Smartling  [generic]
+13:12:49  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:12:49  INFO     run_daily  Localisation Project Manager → escalated  (captcha_detected)
