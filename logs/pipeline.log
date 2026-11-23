@@ -3843,3 +3843,42 @@ Process @ SandForce  score=15  → rejected
 13:01:44  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 13:01:44  INFO     job_pipeline.auto_apply  auto_apply: JFrog: Senior Technical Project Manager @ Unknown  [generic]
 13:01:48  INFO     run_daily  JFrog: Senior Technical Project Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+15:36:51  INFO     run_daily  === DISCOVERY ===
+15:36:51  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+15:36:52  INFO     job_pipeline.discovery  Jobicy: 2 matching
+15:36:53  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+15:36:53  INFO     job_pipeline.discovery  WeWorkRemotely: 6 matching
+15:36:54  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+15:36:54  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+15:36:54  INFO     job_pipeline.discovery  Himalayas: 0 matching
+15:36:54  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+15:37:09  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+15:37:09  INFO     job_pipeline.discovery  Total unique jobs across all sources: 10
+15:37:09  INFO     run_daily  Discovered 10 total, 7 new
+15:37:09  INFO     run_daily  === SCORING ===
+15:37:15  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:16  INFO     run_daily  ✓ Smartsheet: Sr. Technical Program Manager (Remote Eligible in Bulgaria) @ Unknown  score=52  → approved
+15:37:20  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:20  INFO     run_daily  ✗ Pinterest: Machine Learning Engineer, Core Engineering @ Unknown  score=15  → rejected
+15:37:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:24  INFO     run_daily  ✗ Pinterest: Machine Learning Engineer II, Responsible AI @ Unknown  score=15  → rejected
+15:37:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:29  INFO     run_daily  ✓ Elation Health: Senior Manager, Commercial Learning and Development @ Unknown  score=72  → approved
+15:37:33  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:33  INFO     run_daily  ✗ BeyondTrust: Senior Security Technical Program Manager @ Unknown  score=32  → rejected
+15:37:37  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:37  INFO     run_daily  ✓ Project Manager @ Echodyne  score=42  → approved
+15:37:42  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:42  INFO     run_daily  ✗ Clinical Project Manager / Senior Clinical Project Manager @ Precision Medicine Group  score=28  → rejected
+15:37:42  INFO     run_daily  === AUTO-APPLY ===
+15:37:42  INFO     run_daily  3 job(s) to attempt
+15:37:46  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:46  INFO     job_pipeline.auto_apply  auto_apply: Elation Health: Senior Manager, Commercial Learning and Development @ Unknown  [generic]
+15:37:50  INFO     run_daily  Elation Health: Senior Manager, Commercial Learning and Development → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+15:37:56  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:37:56  INFO     job_pipeline.auto_apply  auto_apply: Smartsheet: Sr. Technical Program Manager (Remote Eligible in Bulgaria) @ Unknown  [generic]
+15:38:00  INFO     run_daily  Smartsheet: Sr. Technical Program Manager (Remote Eligible in Bulgaria) → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+15:38:06  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:38:06  INFO     job_pipeline.auto_apply  auto_apply: Project Manager @ Echodyne  [generic]
+15:38:09  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+15:38:10  INFO     run_daily  Project Manager → escalated  (captcha_detected)
