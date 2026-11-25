@@ -3906,3 +3906,32 @@ Process @ SandForce  score=15  → rejected
 15:29:09  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
 15:29:09  INFO     job_pipeline.auto_apply  auto_apply: Elation Health: Technical Support Specialist @ Unknown  [generic]
 15:29:13  INFO     run_daily  Elation Health: Technical Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+15:14:39  INFO     run_daily  === DISCOVERY ===
+15:14:39  INFO     job_pipeline.discovery  RemoteOK: 2 matching
+15:14:40  INFO     job_pipeline.discovery  Jobicy: 0 matching
+15:14:40  INFO     job_pipeline.discovery  Arbeitnow: 0 matching
+15:14:41  INFO     job_pipeline.discovery  WeWorkRemotely: 6 matching
+15:14:41  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+15:14:41  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+15:14:41  INFO     job_pipeline.discovery  Himalayas: 0 matching
+15:14:42  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+15:14:57  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+15:14:57  INFO     job_pipeline.discovery  Total unique jobs across all sources: 7
+15:14:57  INFO     run_daily  Discovered 7 total, 4 new
+15:14:57  INFO     run_daily  === SCORING ===
+15:15:01  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:15:01  INFO     run_daily  ✓ Custom Data Processing: Retail Support Specialist @ Unknown  score=42  → approved
+15:15:06  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:15:06  INFO     run_daily  ✗ Airbnb: Senior Staff Machine Learning Engineer, Post Training @ Unknown  score=12  → rejected
+15:15:10  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:15:10  INFO     run_daily  ✗ Airbnb: Senior Staff Machine Learning Engineer, Trust @ Unknown  score=15  → rejected
+15:15:14  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:15:14  INFO     run_daily  ✓ Dropbox: GTM Program Manager @ Unknown  score=58  → approved
+15:15:14  INFO     run_daily  === AUTO-APPLY ===
+15:15:14  INFO     run_daily  2 job(s) to attempt
+15:15:18  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:15:18  INFO     job_pipeline.auto_apply  auto_apply: Dropbox: GTM Program Manager @ Unknown  [generic]
+15:15:22  INFO     run_daily  Dropbox: GTM Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+15:15:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+15:15:29  INFO     job_pipeline.auto_apply  auto_apply: Custom Data Processing: Retail Support Specialist @ Unknown  [generic]
+15:15:33  INFO     run_daily  Custom Data Processing: Retail Support Specialist → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
