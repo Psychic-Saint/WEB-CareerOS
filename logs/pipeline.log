@@ -3977,3 +3977,29 @@ Process @ SandForce  score=15  → rejected
 14:40:59  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply for this Job")
 14:40:59  INFO     job_pipeline.auto_apply  ✓ CV attached
 14:41:01  INFO     run_daily  1201 - Program Manager → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+14:35:39  INFO     run_daily  === DISCOVERY ===
+14:35:40  INFO     job_pipeline.discovery  RemoteOK: 0 matching
+14:35:40  INFO     job_pipeline.discovery  Jobicy: 0 matching
+14:35:40  INFO     job_pipeline.discovery  Arbeitnow: 1 matching
+14:35:46  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+14:35:46  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+14:35:46  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+14:35:46  INFO     job_pipeline.discovery  Himalayas: 0 matching
+14:35:46  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+14:36:01  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+14:36:01  INFO     job_pipeline.discovery  Total unique jobs across all sources: 4
+14:36:01  INFO     run_daily  Discovered 4 total, 3 new
+14:36:01  INFO     run_daily  === SCORING ===
+14:36:07  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:36:07  INFO     run_daily  ✗ Pinterest: Senior Staff Technical Program Manager, Search Signals @ Unknown  score=28  → rejected
+14:36:11  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:36:11  INFO     run_daily  ✗ Vultr: Senior Technical Program Manager, Physical Security @ Unknown  score=28  → rejected
+14:36:15  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:36:15  INFO     run_daily  ✓ Technische/r InformatikerIn als IT ProjektleiterIn & Business AnalystIn 100% (a) @ Sogema Software GmbH  score=48  → approved
+14:36:16  INFO     run_daily  === AUTO-APPLY ===
+14:36:16  INFO     run_daily  1 job(s) to attempt
+14:36:20  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+14:36:20  INFO     job_pipeline.auto_apply  auto_apply: Technische/r InformatikerIn als IT ProjektleiterIn & Business AnalystIn 100% (a) @ Sogema Software GmbH  [generic]
+14:36:24  INFO     job_pipeline.auto_apply  ✓ CV attached
+14:36:25  INFO     job_pipeline.auto_apply  Clicking submit for Technische/r InformatikerIn als IT ProjektleiterIn & Business AnalystIn 100% (a) @ Sogema Software GmbH
+14:36:28  INFO     run_daily  Technische/r InformatikerIn als IT ProjektleiterIn & Business AnalystIn 100% (a) → escalated  (success_not_confirmed — check screenshot)
