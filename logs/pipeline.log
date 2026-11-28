@@ -4003,3 +4003,59 @@ Process @ SandForce  score=15  → rejected
 14:36:24  INFO     job_pipeline.auto_apply  ✓ CV attached
 14:36:25  INFO     job_pipeline.auto_apply  Clicking submit for Technische/r InformatikerIn als IT ProjektleiterIn & Business AnalystIn 100% (a) @ Sogema Software GmbH
 14:36:28  INFO     run_daily  Technische/r InformatikerIn als IT ProjektleiterIn & Business AnalystIn 100% (a) → escalated  (success_not_confirmed — check screenshot)
+13:48:54  INFO     run_daily  === DISCOVERY ===
+13:48:54  INFO     job_pipeline.discovery  RemoteOK: 1 matching
+13:48:55  INFO     job_pipeline.discovery  Jobicy: 1 matching
+13:48:56  INFO     job_pipeline.discovery  Arbeitnow: 4 matching
+13:48:57  INFO     job_pipeline.discovery  WeWorkRemotely: 3 matching
+13:48:57  INFO     job_pipeline.discovery  WorkingNomads: 0 matching
+13:48:57  WARNING  job_pipeline.discovery  Himalayas fetch failed (page 1): 404 Client Error: Not Found for url: https://himalayas.app/api/jobs?limit=100&page=1
+13:48:57  INFO     job_pipeline.discovery  Himalayas: 0 matching
+13:48:58  INFO     job_pipeline.discovery  Jobspresso: 0 matching
+13:49:13  WARNING  job_pipeline.discovery  Remote.co fetch failed: HTTPSConnectionPool(host='remote.co', port=443): Read timed out. (read timeout=15)
+13:49:13  INFO     job_pipeline.discovery  Total unique jobs across all sources: 9
+13:49:13  INFO     run_daily  Discovered 9 total, 9 new
+13:49:13  INFO     run_daily  === SCORING ===
+13:49:19  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:19  INFO     run_daily  ✓ Pinterest: Senior Technical Program Manager, Infrastructure @ Unknown  score=42  → approved
+13:49:24  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:24  INFO     run_daily  ✓ Oportun: Staff Technical Program Manager (R14286) @ Unknown  score=42  → approved
+13:49:29  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:29  INFO     run_daily  ✓ AirVu Media: Senior Digital Project Manager @ Unknown  score=72  → approved
+13:49:35  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:35  INFO     run_daily  ✓ Senior RWE Program Manager - Data/IA Expert @ Excelya  score=42  → approved
+13:49:38  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:38  INFO     run_daily  ✓ Senior Business Consultant / IT Business Analyst - Banking & Insurance (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  score=42  → approved
+13:49:42  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:42  INFO     run_daily  ✓ Senior IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  score=48  → approved
+13:49:47  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:47  INFO     run_daily  ✗ Senior Meldewesenspezialist:in / IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  score=32  → rejected
+13:49:51  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:51  INFO     run_daily  ✗ Staff Software Engineer, Machine Learning (Consumer Revenue) @ Discord  score=15  → rejected
+13:49:55  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:55  INFO     run_daily  ✗ Bilingual Spanish Customer Support Specialist @ Experian  score=28  → rejected
+13:49:55  INFO     run_daily  === AUTO-APPLY ===
+13:49:55  INFO     run_daily  6 job(s) to attempt
+13:49:58  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:49:58  INFO     job_pipeline.auto_apply  auto_apply: AirVu Media: Senior Digital Project Manager @ Unknown  [generic]
+13:50:03  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:50:03  INFO     run_daily  AirVu Media: Senior Digital Project Manager → escalated  (captcha_detected)
+13:50:10  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:50:10  INFO     job_pipeline.auto_apply  auto_apply: Senior IT Business Analyst (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  [generic]
+13:50:17  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+13:50:18  INFO     run_daily  Senior IT Business Analyst (w/m/d) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
+13:50:25  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:50:25  INFO     job_pipeline.auto_apply  auto_apply: Pinterest: Senior Technical Program Manager, Infrastructure @ Unknown  [generic]
+13:50:29  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:50:29  INFO     run_daily  Pinterest: Senior Technical Program Manager, Infrastructure → escalated  (captcha_detected)
+13:50:35  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:50:35  INFO     job_pipeline.auto_apply  auto_apply: Oportun: Staff Technical Program Manager (R14286) @ Unknown  [generic]
+13:50:39  WARNING  job_pipeline.auto_apply  CAPTCHA detected: iframe[src*="recaptcha"]
+13:50:39  INFO     run_daily  Oportun: Staff Technical Program Manager (R14286) → escalated  (captcha_detected)
+13:50:45  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:50:45  INFO     job_pipeline.auto_apply  auto_apply: Senior RWE Program Manager - Data/IA Expert @ Excelya  [generic]
+13:50:49  INFO     run_daily  Senior RWE Program Manager - Data/IA Expert → escalated  (fill_rate_too_low (0/6 = 0% < 40%))
+13:50:56  INFO     httpx2  HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+13:50:56  INFO     job_pipeline.auto_apply  auto_apply: Senior Business Consultant / IT Business Analyst - Banking & Insurance (w/m/d) @ BBHT Beratungsgesellschaft mbH & Co. KG  [generic]
+13:51:02  INFO     job_pipeline.auto_apply  Clicked Apply button via: a:has-text("Apply Now")
+13:51:03  INFO     run_daily  Senior Business Consultant / IT Business Analyst - Banking & Insurance (w/m/d) → escalated  (fill_rate_too_low (1/6 = 17% < 40%))
